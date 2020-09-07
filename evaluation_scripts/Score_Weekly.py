@@ -1,4 +1,8 @@
 # This script can be used to score the 1 week and 2 week forecast forecasts
+
+# You should run this script twice first to judge the one week forecasts from last week
+# And then to judge the two week forecasts from two weeks ago
+
 # Potential additions - 
 # Make this a functiona
 # Addd graphical outputs
@@ -14,19 +18,35 @@ import os
 
 # %%
 # User variables
+# forecast num refers to the forecast issue number. This is the same as the row number
+# in the forecast entries csv. 
+# refer to Weekly_Frorecast_Date.pdf for the 1 and 2 week forecast dates associated with each foreacst
+
+#Set these  to the dates of the previous week, this is the week ou will be evaluating
+start_date = '2020-08-30'
+stop_date =  '2020-09-05'
+
+#select the forecast number and forecast week these dates correspond to
 forecast_num = 1
-start_date = '2020-08-03'
-stop_date =  '2020-08-04'
+forecast_col ='1week'
+
+# Enter three names that you will award bonus points to
+# NOTE: Bonus points should always be added on the 1week forecast
+#bonus_names = ['condon', 'bunn', 'ferre']
+bonus_names=['Lourdes', 'Richard', 'Adam']
+
+# %%
 station_id = "09506000"
 
-forecast_col ='2week'
-
-# NOTE: Bonus points shoudl always be added on the 1week forecast
-bonus_names = []
-#bonus_names = ['condon', 'aschoff'] #people to give bonus points to
-
-# setup a class roster
-names=['name1', 'name2', 'name3']
+# list of students in the class
+names=['fierro', 'hsieh', 'hull', 'kahler', 'lau', 'marcelain',
+        'marcovecchio', 'medina', 'mitchell', 'narkhede',
+        'neri', 'noonan', 'pereira', 'ridlinghaver', 'salcedo',
+        'schulze', 'stratman', 'tadych']
+firstnames=['Lourdes', 'Diana', 'Quinn', 'Abagail', 'Alcely', 'Richard',
+        'Alexa', 'Xenia', 'Ben', 'Shweta',
+        'Patrick', 'Jill', 'Mekha', 'Jake', 'Camilo',
+        'Scott', 'Adam', 'Danielle']
 nstudent=len(names)
 
 # %%
@@ -38,7 +58,8 @@ for i in range(nstudent):
     filename = names[i] + '.csv'
     filepath = os.path.join('..', 'forecast_entries', filename)
     print(filepath)
-    temp = pd.read_csv(filepath, index_col='Forecast')
+    temp = pd.read_csv(filepath, index_col='Forecast #')
+    print(temp.loc[forecast_num, forecast_col])
     forecasts[i] = temp.loc[forecast_num, forecast_col]
 
 # %%
@@ -49,10 +70,9 @@ obs_week = np.mean(obs_day['00060_Mean'])
 dif = abs(forecasts-obs_week)
 
 # %%
-
 #Make a data frame for the results
 summary = pd.DataFrame({'start': start_date, 'end': stop_date, 'observation': obs_week,
-                        'forecast': forecasts, 'Difference': dif}, index=names)
+                        'forecast': forecasts, 'Difference': dif}, index=firstnames)
 
 #Rank the forecasts
 summary['ranking'] = summary['Difference'].rank(ascending=True, method='dense', na_option='bottom')
@@ -75,3 +95,6 @@ summary['total_points'] = summary.bonus_points + summary.points
 filename_out = forecast_col + '_forecast' + str(forecast_num) + '.csv'
 filepath_out = os.path.join('..', 'weekly_results', filename_out)
 summary.to_csv(filepath_out, index_label='name')
+
+
+# %%

@@ -16,18 +16,18 @@ ___
 
 |      | Name    | Points    |
 |:-----|---------|---------  |
-|  1   |         |           |
-|  2   |         |           |
-|  3   |         |           |
-|  4   |         |           |
-|  5   |         |           |
-|  6   |         |           |
-|  7   |         |           |
-|  8   |         |           |
-|  9   |         |           |
-|  10  |         |           |
-|  11  |         |           |
-|  12  |         |           |
+|  1   | Diana    |    2    |
+|  1   | Scott     |    2    |
+|  1   | Abagail    |    1    |
+|  2   | Alexa     |    1    |
+|  2   | Camilo     |    1    |
+|  2   | Quinn    |    1    |
+|  2   | Shweta   |    1    |
+|  2   | Adam   |    1    |
+|  2   | Lourdes   |    1    |
+|  2  | Richard      |    1    |
+|  3  |  Everyone Else       |     0      |
+
 
 ## Seasonal Forecast Leaders
 
@@ -46,11 +46,36 @@ ___
 |  11        |         |           |          |
 |  12        |         |           |          |
 
-### Week 1 Points Awarded:
-- Weekly forecast:
-- Two week forecast:
-- Bonus points:
+### Forecast 1 Points Awarded:
+- **One Week forecast (8/30-9/5)**:
+  - Observed flow = 57.1 cfs
+  - First place: 59 cfs, Diana & Scott
+  - Second place: 55 cfs, Abagail & Alexa
+  - Third place: 60 cfs, Camilo, Quinn & Shweta
 
+
+- **Two week forecast (9/6 - 9/12)**:
+
+
+- **Bonus points**:
+  - Adam, Lourdes & Richard
+  - for being the first non ranking forecasts to be submitted on GitHub
+
+-----
+### Template forecast scoring text copy this above and fill out the info to add a new week.
+### Forecast X Points Awarded:
+- **One Week forecast (m/dd-m/dd)**:
+  - Observed flow = XX cfs
+  - First place: XX cfs, NAMES
+  - Second place: XX cfs, NAMES
+  - Third place: XX cfs, NAMES
+
+- **Two week forecast (m/dd - m/dd)**:
+
+
+- **Bonus points**:
+  - NAMES
+  - Reason
 
 ___
 <a name="howto"></a>
@@ -95,23 +120,46 @@ That said there will be prizes for the forecast competition (described below) an
 
  Each week one person will be assigned the job of 'Evaluator'. Your job description is as follows. Note that for your development tasks you should create a branch and then do a pull request when you are ready to merge them in.
 
- 1. Make an addition to improve the functionality of the forecast evaluation scripts. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder.
+ 1. **Run the forecast evaluation scripts to score the weekly forecasts** after the forecast submission deadline (noon on Monday). You will be evaluating two forecasts (1) the one week forecast from last week and (2) the two week forecast from  two weeks ago
+  - To run these scripts you will need to first add the following to your hastools conda environment by doing the following from your shell:
+  ```
+  conda activate hastools
+  conda install pip
+  pip install climata
+  ```
 
- 2. Run the forecast evaluation scripts to score the forecasts after the forecast submission deadline (noon on Monday).
+  - First evaluate the 1 week forecast for last week:
+      - Open Score_weekly.py from the evaluation scripts and update the start and stop dates to match the start and stop dates for the previous week as listed in the Weekly_forecast_date.pdf
+      - Set the forecast number to match the forecast number for which this set of dates is the week1 forecast
+      - set the forecast_col to be '1week'
+      - Run the script to evaluate the forecasts
 
- 3. Do some analysis on your own and assign your bonus points. Your analysis must be done in python, and can build on others if you want, but should be unique (i.e. don't use the same criteria as previous weeks). Your analysis should be submitted in a separate python script named: "lastname_weekx_analysis.py" in the *evaluation_scripts* folder. *Note:* this can use your added functionality but does not count as your added functionality).
+  - Next evaluate the 2 week forecast made two weeks ago for last week:
+    - To do this you only need to update the forecast_num(it should be 1 - your previous forecast number) and the forecast_col to '2week'
+    - Run the script again to generate the summary for that weekly forecast.
 
- 3. Update the **scoreboard**, **seasonal forecast leaders** and  **weekly points awarded** at the top of this readme.
+  3. Make an improvement to the forecast analysis (see instructions below)
 
- 4. Make a short presentation for Tuesday class (1) summarizing the points awarded this week, (2) the current scores and how they changed, (3) how you awarded your bonus points and, (4) what functionality you added to our forecast calculation.
+  4. Do some analysis on your own and assign your bonus points. Your analysis must be done in python, and can build on others if you want, but should be unique (i.e. don't use the same criteria as previous weeks). Your analysis should be submitted in a separate python script named: "lastname_weekx_analysis.py" in the *evaluation_scripts* folder. *Note:* this can use your added functionality but does not count as your added functionality).
+    - Add the bonus points names to the top of the script and re-run so that these points get added to the **week1** csv.
 
- *Note: You can start working on your analysis script and your functionality addition before the forecasts have actually been submitted and just run it after Monday at noon. For the analysis you can start on it anytime, as this will be occurring within your own script. For the functionality addition you can only start after class on Tuesday when the previous evaluator is finished.*
+  5. Update the **scoreboard**, **seasonal forecast leaders** and  **weekly points awarded** at the top of this readme.
+
+  6. Make a short presentation for Tuesday class (1) summarizing the points awarded this week, (2) the current scores and how they changed, (3) how you awarded your bonus points and, (4) what functionality you added to our forecast calculation.
+
+
+### Forecast Evaluation Improvements
+When it is your week as the evaluator you will be expected to make an addition to improve the functionality of the forecast evaluation scripts for everyone. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder.
+
+ - You can start working on your analysis script and your functionality addition before the forecasts have actually been submitted and just run it after Monday at noon. For the analysis you can start on it anytime, as this will be occurring within your own script. For the functionality addition you can only start after class on Tuesday when the previous evaluator is finished.
+
+ - For weeks with two evaluators we will need to coordinate our additions so come prepared the week before your assigned week with an idea of what you would like to do.
 
  ___
  <a name="evaluatorlist"></a>
  # Evaluator Assignments
  2. September 8: Laura
- 3. September 15:
+ 3. September 15: Laura
  4. September 22:
  5. September 29:
  6. October 6:
@@ -122,5 +170,5 @@ That said there will be prizes for the forecast competition (described below) an
  11. November 10:
  12. November 17:
  13. November 24:
- 14. November 31
+ 14. November 31:
  15. December 8:
