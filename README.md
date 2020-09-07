@@ -16,16 +16,16 @@ ___
 
 |      | Name    | Points    |
 |:-----|---------|---------  |
-|  1   | Camilo    |    2    |
-|  1   | Quinn     |    2    |
-|  1   | Shweta    |    2    |
-|  2   | Diana     |    1    |
-|  2   | Scott     |    1    |
-|  2   | Alcely    |    1    |
-|  2   | Lourdus   |    1    |
-|  2   | Abagail   |    1    |
-|  2   | Richard   |    1    |
-|  2  | Adam      |    1    |
+|  1   | Diana    |    2    |
+|  1   | Scott     |    2    |
+|  1   | Abagail    |    1    |
+|  2   | Alexa     |    1    |
+|  2   | Camilo     |    1    |
+|  2   | Quinn    |    1    |
+|  2   | Shweta   |    1    |
+|  2   | Adam   |    1    |
+|  2   | Lourdes   |    1    |
+|  2  | Richard      |    1    |
 |  3  |  Everyone Else       |     0      |
 
 
@@ -48,17 +48,17 @@ ___
 
 ### Forecast 1 Points Awarded:
 - **One Week forecast (8/30-9/5)**:
-  - Observed flow = 60.22 cfs
-  - First place: 60 cfs, Camilo, Quinn & Shweta
-  - Second place: 59 cfs, Diana & Scott
-  - Third place: 65 cfs, Lourdus & Alceley
+  - Observed flow = 57.1 cfs
+  - First place: 59 cfs, Diana & Scott
+  - Second place: 55 cfs, Abagail & Alexa
+  - Third place: 60 cfs, Camilo, Quinn & Shweta
 
 
 - **Two week forecast (9/6 - 9/12)**:
 
 
 - **Bonus points**:
-  - Abagail, Richard & Adam
+  - Adam, Lourdes & Richard
   - for being the first non ranking forecasts to be submitted on GitHub
 
 -----
@@ -135,23 +135,25 @@ That said there will be prizes for the forecast competition (described below) an
       - Run the script to evaluate the forecasts
 
   - Next evaluate the 2 week forecast made two weeks ago for last week:
-    - To do this you only need to update the forecast_num(it shoudl be 1 - your previous forecast number) and the forecast_col to '2week'
+    - To do this you only need to update the forecast_num(it should be 1 - your previous forecast number) and the forecast_col to '2week'
     - Run the script again to generate the summary for that weekly forecast.
 
+  3. Make an improvement to the forecast analysis (see instructions below)
 
-  - Look at the summary that is generated in the weekly_results folder and decide how you will assign your bonus points
-    - Add the bonus points names to the top of the script and re-run so that these points get added to the csv.  
-    
-  - Next modify the forecast week number in 'Get_Observations.py' and run this script to download the most recent observations. If this has worked you should see the *./weekly_results/weekly_observations.csv* file has been updated with the most recent streamflow values.  
+  4. Do some analysis on your own and assign your bonus points. Your analysis must be done in python, and can build on others if you want, but should be unique (i.e. don't use the same criteria as previous weeks). Your analysis should be submitted in a separate python script named: "lastname_weekx_analysis.py" in the *evaluation_scripts* folder. *Note:* this can use your added functionality but does not count as your added functionality).
+    - Add the bonus points names to the top of the script and re-run so that these points get added to the **week1** csv.
 
- 1. Make an addition to improve the functionality of the forecast evaluation scripts. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder.
- 3. Do some analysis on your own and assign your bonus points. Your analysis must be done in python, and can build on others if you want, but should be unique (i.e. don't use the same criteria as previous weeks). Your analysis should be submitted in a separate python script named: "lastname_weekx_analysis.py" in the *evaluation_scripts* folder. *Note:* this can use your added functionality but does not count as your added functionality).
+  5. Update the **scoreboard**, **seasonal forecast leaders** and  **weekly points awarded** at the top of this readme.
 
- 3. Update the **scoreboard**, **seasonal forecast leaders** and  **weekly points awarded** at the top of this readme.
+  6. Make a short presentation for Tuesday class (1) summarizing the points awarded this week, (2) the current scores and how they changed, (3) how you awarded your bonus points and, (4) what functionality you added to our forecast calculation.
 
- 4. Make a short presentation for Tuesday class (1) summarizing the points awarded this week, (2) the current scores and how they changed, (3) how you awarded your bonus points and, (4) what functionality you added to our forecast calculation.
 
- *Note: You can start working on your analysis script and your functionality addition before the forecasts have actually been submitted and just run it after Monday at noon. For the analysis you can start on it anytime, as this will be occurring within your own script. For the functionality addition you can only start after class on Tuesday when the previous evaluator is finished.*
+### Forecast Evaluation Improvements
+When it is your week as the evaluator you will be expected to make an addition to improve the functionality of the forecast evaluation scripts for everyone. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder.
+
+ - You can start working on your analysis script and your functionality addition before the forecasts have actually been submitted and just run it after Monday at noon. For the analysis you can start on it anytime, as this will be occurring within your own script. For the functionality addition you can only start after class on Tuesday when the previous evaluator is finished.
+
+ - For weeks with two evaluators we will need to coordinate our additions so come prepared the week before your assigned week with an idea of what you would like to do.
 
  ___
  <a name="evaluatorlist"></a>

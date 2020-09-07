@@ -33,7 +33,7 @@ forecast_col ='1week'
 # Enter three names that you will award bonus points to
 # NOTE: Bonus points should always be added on the 1week forecast
 #bonus_names = ['condon', 'bunn', 'ferre']
-bonus_names=['Abagail', 'Richard', 'Adam']
+bonus_names=['Lourdes', 'Richard', 'Adam']
 
 # %%
 station_id = "09506000"
@@ -43,7 +43,7 @@ names=['fierro', 'hsieh', 'hull', 'kahler', 'lau', 'marcelain',
         'marcovecchio', 'medina', 'mitchell', 'narkhede',
         'neri', 'noonan', 'pereira', 'ridlinghaver', 'salcedo',
         'schulze', 'stratman', 'tadych']
-firstnames=['Lourdus', 'Diana', 'Quinn', 'Abagail', 'Alcely', 'Richard',
+firstnames=['Lourdes', 'Diana', 'Quinn', 'Abagail', 'Alcely', 'Richard',
         'Alexa', 'Xenia', 'Ben', 'Shweta',
         'Patrick', 'Jill', 'Mekha', 'Jake', 'Camilo',
         'Scott', 'Adam', 'Danielle']
