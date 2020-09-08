@@ -1,5 +1,14 @@
 # This script downloads the observations from USGS aggreages to 
 # weekly and saves as a csv
+
+# we are using the climata package to download data
+# if you don't have it installed you will need to 
+# pip install cliamata before you start
+
+# here is a climata example:
+# https://www.earthdatascience.org/tutorials/acquire-and-visualize-usgs-hydrology-data/
+
+
 # Potential additions:
 # Make this a function 
 # Modify so it reads in the previous observation file and only adds in the new obs
@@ -8,13 +17,18 @@
 # %%
 import pandas as pd
 import numpy as np
-import dataretrieval.nwis as nwis
 import os
+from climata.usgs import DailyValueIO
 #print(os.getcwd())
 
+# Climata tutorial 
 # %% 
 # User settings
-forecast_num = 4
+# refer to Seasonal_Forecast_Dates.pdf for the 
+# list of dates associated with each forecast week
+# you should set forecast_week equal to the forecast
+# week that just completed
+forecast_week = 2
 station_id = "09506000"
 
 # %%
@@ -29,15 +43,32 @@ date_table.observed = np.nan
 # %%
 # Read in the observations and get weekly averages
 for i in range(1, forecast_num+1):
+    print(i)
     starti = date_table.loc[i, 'start_date']
     endi = date_table.loc[i, 'end_date']
-    obs_day = nwis.get_record(sites=station_id, service='dv',
-                          start=starti, end=endi, parameterCd='00060')
-    #print(i)
-    #print(np.mean(obs_day['00060_Mean']))
-    date_table.loc[i, 'observed'] = np.mean(obs_day['00060_Mean'])
+
+    #read in the data from USGS
+    data = DailyValueIO(
+        start_date=starti,
+        end_date=endi,
+        station=station_id,
+        parameter='00060',
+    )
+
+    #format the flow and dates into lists
+    for series in data:
+        flow = [r[1] for r in series.data]
+        dates = [r[0] for r in series.data]
+    
+    print(dates)
+    date_table.loc[i, 'observed'] = np.mean(flow)
+
 
 # %%
 # Write the updated observations out
 filepath_out = os.path.join('..','weekly_results', 'weekly_observations.csv')
 date_table.to_csv(filepath_out, index_label='forecast_week')
+
+
+# %%
+
