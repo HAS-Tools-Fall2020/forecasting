@@ -22,28 +22,29 @@ import os
 # in the forecast entries csv. 
 # refer to Weekly_Frorecast_Date.pdf for the 1 and 2 week forecast dates associated with each foreacst
 
-#Set these  to the dates of the previous week, this is the week ou will be evaluating
-start_date = '2020-08-30'
-stop_date =  '2020-09-05'
+#Set these  to the dates of the previous week, this is the week you will be evaluating
+start_date = '2020-09-06'
+stop_date =  '2020-09-12'
 
 #select the forecast number and forecast week these dates correspond to
-forecast_num = 1
+forecast_num = 2
 forecast_col ='1week'
 
 # Enter three names that you will award bonus points to
 # NOTE: Bonus points should always be added on the 1week forecast
 #bonus_names = ['condon', 'bunn', 'ferre']
-bonus_names=['Lourdes', 'Richard', 'Adam']
+#bonus_names=['Adam', 'Lourdes', 'Richard']
+bonus_names=['Ty', 'Adam', 'Patrick']
 
 # %%
 station_id = "09506000"
 
 # list of students in the class
-names=['fierro', 'hsieh', 'hull', 'kahler', 'lau', 'marcelain',
+names=['ferre', 'fierro', 'hsieh', 'hull', 'kahler', 'lau', 'marcelain',
         'marcovecchio', 'medina', 'mitchell', 'narkhede',
         'neri', 'noonan', 'pereira', 'ridlinghaver', 'salcedo',
         'schulze', 'stratman', 'tadych']
-firstnames=['Lourdes', 'Diana', 'Quinn', 'Abagail', 'Alcely', 'Richard',
+firstnames=['Ty', 'Lourdes', 'Diana', 'Quinn', 'Abagail', 'Alcely', 'Richard',
         'Alexa', 'Xenia', 'Ben', 'Shweta',
         'Patrick', 'Jill', 'Mekha', 'Jake', 'Camilo',
         'Scott', 'Adam', 'Danielle']
@@ -92,7 +93,7 @@ summary['total_points'] = summary.bonus_points + summary.points
 
 # %%
 # Write out the reults
-filename_out = forecast_col + '_forecast' + str(forecast_num) + '.csv'
+filename_out = 'forecast' + str(forecast_num) + '_' + forecast_col + '.csv'
 filepath_out = os.path.join('..', 'weekly_results', filename_out)
 summary.to_csv(filepath_out, index_label='name')
 

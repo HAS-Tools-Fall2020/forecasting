@@ -16,17 +16,21 @@ ___
 
 |      | Name    | Points    |
 |:-----|---------|---------  |
-|  1   | Diana    |    2    |
-|  1   | Scott     |    2    |
-|  1   | Abagail    |    1    |
-|  2   | Alexa     |    1    |
-|  2   | Camilo     |    1    |
-|  2   | Quinn    |    1    |
-|  2   | Shweta   |    1    |
-|  2   | Adam   |    1    |
-|  2   | Lourdes   |    1    |
-|  2  | Richard      |    1    |
-|  3  |  Everyone Else       |     0      |
+|  1   | Diana    |    4    |
+|  2   | Abagail    |    3    |
+|  2   | Alexa     |    3    |
+|  3   | Scott     |    2    |
+|  3   | Adam   |    2    |
+|  4   | Camilo     |    1    |
+|  4   | Quinn    |    1    |
+|  4   | Shweta   |    1    |
+|  4   | Lourdes   |    1    |
+|  4  | Richard      |    1    |
+|  4  | Danielle      |    1    |
+|  4  | Xenia      |    1    |
+|  4  | Patrick      |    1    |
+|  4  | Ty      |    1    |
+|  5  |  Everyone Else       |     0      |
 
 
 ## Seasonal Forecast Leaders
@@ -55,11 +59,28 @@ ___
 
 
 - **Two week forecast (9/6 - 9/12)**:
-
+  - Observed flow = 42.26 cfs
+  - First place: 45 cfs, Alexa
+  - Second place: 52 cfs, Abagail
+  - Third place: 30 cfs, Danielle
 
 - **Bonus points**:
   - Adam, Lourdes & Richard
   - for being the first non ranking forecasts to be submitted on GitHub
+
+### Forecast 2 Points Awarded:
+- **One Week forecast (9/6 - 9/12)**:
+  - Observed flow = 42.26 cfs
+  - First place: 40 cfs, Diana
+  - Second place: 50 cfs, Abagail
+  - Third place: 53.6 cfs, Xenia
+
+- **Two week forecast (m/dd - m/dd)**:
+
+
+- **Bonus points**:
+  - Adam, Patrick and Ty
+  - For being our most optimistic forecasters :) (i.e. the largest flow  predictions of the 1week forecasts for this week)
 
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.
