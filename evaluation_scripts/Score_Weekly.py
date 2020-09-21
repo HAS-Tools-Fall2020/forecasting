@@ -30,12 +30,6 @@ stop_date =  '2020-09-12'
 forecast_num = 2
 forecast_col ='1week'
 
-# Enter three names that you will award bonus points to
-# NOTE: Bonus points should always be added on the 1week forecast
-#bonus_names = ['condon', 'bunn', 'ferre']
-#bonus_names=['Adam', 'Lourdes', 'Richard']
-bonus_names=['Ty', 'Adam', 'Patrick']
-
 # %%
 station_id = "09506000"
 
@@ -84,18 +78,22 @@ summary.loc[summary.ranking == 1, 'points'] = 2
 summary.loc[summary.ranking == 2, 'points'] = 1
 summary.loc[summary.ranking == 3, 'points'] = 1
 
-# Add some bonus points
-summary['bonus_points'] =np.zeros(nstudent)
-summary.loc[bonus_names, 'bonus_points'] += 1
-
-#Get the total points
-summary['total_points'] = summary.bonus_points + summary.points
-
 # %%
 # Write out the reults
 filename_out = 'forecast' + str(forecast_num) + '_' + forecast_col + '.csv'
 filepath_out = os.path.join('..', 'weekly_results', filename_out)
 summary.to_csv(filepath_out, index_label='name')
 
+
+# %%
+# print a summary
+print(forecast_col, 'Forecast (', start_date, '-', stop_date, ')')
+print('Observed Flow =', obs_week)
+print('Frist Place = ', list(summary.loc[summary['ranking']==1].index), 
+        'flow forecast = ', summary.loc[summary['ranking']==1, 'forecast'].head(1).values)
+print('Second Place = ', list(summary.loc[summary['ranking']==2].index), 
+        'flow forecast = ', summary.loc[summary['ranking']==2, 'forecast'].head(1).values)
+print('Third Place = ', list(summary.loc[summary['ranking']==3].index), 
+        'flow forecast = ', summary.loc[summary['ranking']==3, 'forecast'].head(1).values)
 
 # %%
