@@ -1,8 +1,20 @@
 # Forecast evaluation
 This  folder contains the python scripts for doing forecast evaluation. When it is your week to be the evaluator you should follow the instructions below to score the forecasts.  Additionally you should modify the scripts here to provide some added functionality and if needed update the instructions for future forecast evaluators.
 
-## Step by step Instructions
-1. Create a branch for your forecast evaluation work
+## Github instructions
+You will be using a  branching workflow for your feature development. To understand this workflow checkout [this link](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). I will walk you through it step by step here using GitKraken.
+
+1. Create a branch for your forecast evaluation work. You can refer to the
+ - first pull the forecast repo to make sure you are up to date and have the latest
+ - Create a branch for your work by right clicking on the current master and selecting 'create branch here'. You will be prompted to name your branch -- name it whatever you want. I named mine "eval_dev"
+ ![](assets/Readme-eef849b6.png)
+ - When this is successfully done you will see that you are now working on your new branch and not the master. (Note you can always swap back to the master branch by selecting it from your local branches and 'checking it out')
+ ![](assets/Readme-36b541e3.png)
+
+2. Make some updates to files and **commit** your changes using your standard GitHub workflow.  
+
+3. Click **Push** to push your branch to GitHub. When you do you will see a dialog that looks like this. Keep this set to 'origin' as shown here and select *submit*.
+![](assets/Readme-1278d7ba.png)
 
  - To run these scripts you will need to first add the following to your hastools conda environment by doing the following from your shell:
  ```
