@@ -167,8 +167,8 @@ ___
  6. November 3: Alcely & Diana
  7. November 10: Danielle & Abigail
  8. November 17: Ben & Quinn
- 9. November 24: Jill
- 10. November 31: Xenia & Adam
+ 9. November 24: Jill & Adam
+ 10. November 31: Xenia
  11. December 8: Patrick
  *Ty - Floater
 
