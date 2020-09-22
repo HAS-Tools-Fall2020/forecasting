@@ -25,7 +25,12 @@ You will be using a  branching workflow for your feature development. To underst
 4. From here you can continue committing changes and pushing them as you normally would. Note that you will be pushing to your branch on GithHub though not the master branch. You can see that in the image below both my local and remote versions are up to date with the 'Eval_Dev' branch and the master branch is behind my changes.
 ![](assets/Readme-6bbd36b3.png)
 
-5. Finally when you are done you should submit a pull request to merge your changes into the master repo.
+5. Finally when you are done you should submit a pull request to merge your changes into the master repo. Before you do this make sure all of your changes are committed and pushed.
+  - Right click on your branch and select 'start a pull request'
+  ![](assets/Readme-75f975d9.png)
+  - Fill out the information for your pull request.  No need to select any reviewers. Then say 'create pull request'
+  ![](assets/Readme-05707ea7.png)
+
 
 ___
 <a name="evaluation"></a>
