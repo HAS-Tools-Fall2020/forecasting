@@ -18,23 +18,10 @@ import os
 
 # %%
 # User variables
-# forecast num refers to the forecast issue number. This is the same as the row number
-# in the forecast entries csv. 
-# refer to Weekly_Frorecast_Date.pdf for the 1 and 2 week forecast dates associated with each foreacst
-
-#Set these  to the dates of the previous week, this is the week you will be evaluating
-start_date = '2020-09-06'
-stop_date =  '2020-09-12'
-
-#select the forecast number and forecast week these dates correspond to
-forecast_num = 2
-forecast_col ='1week'
-
-# Enter three names that you will award bonus points to
-# NOTE: Bonus points should always be added on the 1week forecast
-#bonus_names = ['condon', 'bunn', 'ferre']
-#bonus_names=['Adam', 'Lourdes', 'Richard']
-bonus_names=['Ty', 'Adam', 'Patrick']
+# forecast_week is the week number that you are going to be judging. 
+# You can find this in the seasonal_forecst_Dates.pdf 
+# You should look up the forecast number for the week that just ended
+forecast_week = 4
 
 # %%
 station_id = "09506000"
@@ -50,9 +37,20 @@ firstnames=['Ty', 'Lourdes', 'Diana', 'Quinn', 'Abagail', 'Alcely', 'Richard',
         'Scott', 'Adam', 'Danielle']
 nstudent=len(names)
 
+
+datefile = os.path.join('..', 'Seasonal_Foercast_Dates.csv')
+forecast_dates=pd.read_csv(datefile, index_col='forecast_week')
+
+start_date = forecast_dates.loc[forecast_week, 'start_date']
+stop_date = forecast_dates.loc[forecast_week, 'end_date']
+
+print("Evaluating forecasts for", start_date, 'To', stop_date)
+
+
 # %%
 # Read in everyone's forecast entries
-forecasts=np.zeros(nstudent)
+forecasts1=np.zeros(nstudent) # The 1week forecasts for this week
+forecasts2=np.zeros(nstudent) # The 2week forecasts for this week
 
 for i in range(nstudent):
     #i = 0
@@ -60,42 +58,73 @@ for i in range(nstudent):
     filepath = os.path.join('..', 'forecast_entries', filename)
     print(filepath)
     temp = pd.read_csv(filepath, index_col='Forecast #')
-    print(temp.loc[forecast_num, forecast_col])
-    forecasts[i] = temp.loc[forecast_num, forecast_col]
+    #print(temp.loc[(forecast_week - 1), '1week'])
+    forecasts1[i] = temp.loc[(forecast_week - 1), '1week']
+    forecasts2[i] = temp.loc[(forecast_week - 2), '2week']
 
 # %%
 # Read in the streamflow data and get the weekly average
 obs_day = nwis.get_record(sites=station_id, service='dv',
                       start=start_date, end=stop_date, parameterCd='00060')
 obs_week = np.mean(obs_day['00060_Mean'])
-dif = abs(forecasts-obs_week)
+dif1 = abs(forecasts1-obs_week)
+#dif2 = np.zeros(nstudent)
+dif2 = abs(forecasts2-obs_week)
+
+print('Average streamflow for this week:', np.round(obs_week,3))
 
 # %%
 #Make a data frame for the results
 summary = pd.DataFrame({'start': start_date, 'end': stop_date, 'observation': obs_week,
-                        'forecast': forecasts, 'Difference': dif}, index=firstnames)
+                        '1week_forecast': forecasts1, '1week_difference': dif1, 
+                        '2week_forecast': forecasts2, '2week_difference': dif2}, index=firstnames)
 
 #Rank the forecasts
-summary['ranking'] = summary['Difference'].rank(ascending=True, method='dense', na_option='bottom')
+summary['1week_ranking'] = summary['1week_difference'].rank(ascending=True, method='dense', na_option='bottom')
+summary['2week_ranking'] = summary['2week_difference'].rank(ascending=True, method='dense', na_option='bottom')
 
-#Add points
-summary['points'] = np.zeros(nstudent)
-summary.loc[summary.ranking == 1, 'points'] = 2
-summary.loc[summary.ranking == 2, 'points'] = 1
-summary.loc[summary.ranking == 3, 'points'] = 1
 
-# Add some bonus points
-summary['bonus_points'] =np.zeros(nstudent)
-summary.loc[bonus_names, 'bonus_points'] += 1
+#Add points for the 1 week forecasts
+summary['1week_points'] = np.zeros(nstudent)
+summary.loc[summary['1week_ranking'] == 1, '1week_points'] = 2
+summary.loc[summary['1week_ranking'] == 2, '1week_points'] = 1
+summary.loc[summary['1week_ranking'] == 3, '1week_points'] = 1
 
-#Get the total points
-summary['total_points'] = summary.bonus_points + summary.points
+#Add points for the 2 week forecasts
+summary['2week_points'] = np.zeros(nstudent)
+summary.loc[summary['2week_ranking'] == 1, '2week_points'] = 2
+summary.loc[summary['2week_ranking'] == 2, '2week_points'] = 1
+summary.loc[summary['2week_ranking'] == 3, '2week_points'] = 1
+
+#summary['2week_ranking'] = 0
+#summary['2week_points'] = 0
 
 # %%
 # Write out the reults
-filename_out = 'forecast' + str(forecast_num) + '_' + forecast_col + '.csv'
+filename_out = 'forecast_week' + str(forecast_week) + '_results.csv'
 filepath_out = os.path.join('..', 'weekly_results', filename_out)
 summary.to_csv(filepath_out, index_label='name')
+
+
+# %%
+# print a summary
+print('1 Week Forecast (', start_date, '-', stop_date, ')')
+print('Observed Flow =', round(obs_week,3))
+print('Frist Place = ', list(summary.loc[summary['1week_ranking']==1].index), 
+        'flow forecast = ', summary.loc[summary['1week_ranking']==1, '1week_forecast'].head(1).values)
+print('Second Place = ', list(summary.loc[summary['1week_ranking']==2].index), 
+        'flow forecast = ', summary.loc[summary['1week_ranking']==2, '1week_forecast'].head(1).values)
+print('Third Place = ', list(summary.loc[summary['1week_ranking']==3].index), 
+        'flow forecast = ', summary.loc[summary['1week_ranking']==3, '1week_forecast'].head(1).values)
+
+print('2 Week Forecast (', start_date, '-', stop_date, ')')
+print('Observed Flow =', round(obs_week,3))
+print('Frist Place = ', list(summary.loc[summary['2week_ranking']==1].index), 
+        'flow forecast = ', summary.loc[summary['2week_ranking']==1, '2week_forecast'].head(1).values)
+print('Second Place = ', list(summary.loc[summary['2week_ranking']==2].index), 
+        'flow forecast = ', summary.loc[summary['2week_ranking']==2, '2week_forecast'].head(1).values)
+print('Third Place = ', list(summary.loc[summary['2week_ranking']==3].index), 
+        'flow forecast = ', summary.loc[summary['2week_ranking']==3, '2week_forecast'].head(1).values)
 
 
 # %%
