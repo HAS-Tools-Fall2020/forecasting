@@ -13,13 +13,15 @@ import os
 # For more information on glob refer to:
 # https://www.earthdatascience.org/courses/intro-to-earth-data-science/
 # Chapter 12 lesson 3
-file_list = glob(os.path.join('../weekly_results', 'forecast*week.csv'))
+file_list = glob(os.path.join('../weekly_results', 'forecast_week*.csv'))
 file_listB = glob(os.path.join('../weekly_results', 'bonus*.csv'))
+
+
 # %%
 #CHANGE This
-bonus_names = ['Ty', 'Lourdes'] #names  to aply  bonus  to
-weeknum = 2 #forecast week -- this should be the forecast_week for the 
-          # week 1 forecast you are judging
+bonus_names = ['Adam', 'Patrick', 'Ty'] #names  to aply  bonus  to
+weeknum =  #forecast week -- this should be the forecast_week you are judging
+            # The same as the forecast week number you used in the score_weekly
 ###
 
 # Add bonus points if you would like
@@ -31,7 +33,7 @@ del(temp)
 
 bonus.loc[bonus_names, 'points'] = 1
 
-filename='bonus' + str(weeknum) + '.csv'
+filename='bonus_week' + str(weeknum) + '.csv'
 bonus_file = os.path.join('../weekly_results', filename )
 
 bonus.to_csv(bonus_file)
@@ -50,7 +52,7 @@ scoreboard = pd.DataFrame(data = np.zeros((len(temp),2)),
 for file in file_list:
     print(file)
     temp=pd.read_csv(file, index_col='name')
-    scoreboard['regular'] += temp['points']
+    scoreboard['regular'] += temp['1week_points']+ temp['2week_points']
 
 # Add in thte bonus points
 for file in file_listB:
@@ -66,4 +68,4 @@ scoreboard['rank'] = scoreboard.total.rank(method='dense', ascending=False)
 scoreboard = scoreboard.sort_values(by='total', ascending=False)
 print(scoreboard)
 
-# %%
+

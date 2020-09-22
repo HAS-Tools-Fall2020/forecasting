@@ -1,6 +1,11 @@
 # Forecast evaluation
 This  folder contains the python scripts for doing forecast evaluation. When it is your week to be the evaluator you should follow the instructions below to score the forecasts.  Additionally you should modify the scripts here to provide some added functionality and if needed update the instructions for future forecast evaluators.
-
+____
+## Table of Contents:
+1. [ GitHub Instructions](#github)
+1. [ Evaluation Instructions](#eval)
+___
+<a name="github"></a>
 ## Github instructions
 You will be using a  branching workflow for your feature development. To understand this workflow checkout [this link](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). I will walk you through it step by step here using GitKraken.
 
@@ -11,23 +16,34 @@ You will be using a  branching workflow for your feature development. To underst
  - When this is successfully done you will see that you are now working on your new branch and not the master. (Note you can always swap back to the master branch by selecting it from your local branches and 'checking it out')
  ![](assets/Readme-36b541e3.png)
 
+
 2. Make some updates to files and **commit** your changes using your standard GitHub workflow.  
 
 3. Click **Push** to push your branch to GitHub. When you do you will see a dialog that looks like this. Keep this set to 'origin' as shown here and select *submit*.
 ![](assets/Readme-1278d7ba.png)
 
- - To run these scripts you will need to first add the following to your hastools conda environment by doing the following from your shell:
+4. From here you can continue committing changes and pushing them as you normally would. Note that you will be pushing to your branch on GithHub though not the master branch. You can see that in the image below both my local and remote versions are up to date with the 'Eval_Dev' branch and the master branch is behind my changes.
+![](assets/Readme-6bbd36b3.png)
+
+5. Finally when you are done you should submit a pull request to merge your changes into the master repo.
+
+___
+<a name="evaluation"></a>
+## Evaluation Instructions
+
+1. **Install necessary Packages** To run these scripts you will need to first add the following to your hastools conda environment by doing the following from your shell:
+
  ```
  conda activate hastools
  conda install pip
- pip install climata
+ pip install dataretrieval
  ```
 
- - First evaluate the 1 week forecast for last week:
-     - Open Score_weekly.py from the evaluation scripts and update the start and stop dates to match the start and stop dates for the previous week as listed in the Weekly_forecast_date.pdf
-     - Set the forecast number to match the forecast number for which this set of dates is the week1 forecast
-     - set the forecast_col to be '1week'
-     - Run the script to evaluate the forecasts
+2. **After noon on Monday** pull the latest updates from everyone and run the weekly forecast evaluation. Using the `score_weekly.py` script. You will need to update the following to run this script:
+     - The start and stop dates should be set to match the start and stop dates for the previous week as listed in the `Weekly_forecast_date.pdf` file in the main directory of this repo.
+     - Specify the forecast number and forecast week you want to evaluate. Note that you will run this script twice. Once for the '1week' forecast that corresponds to the week you are evaluating and once for the  '2week'
+     - Run the script once for the '1week' forecast and once for the '2week' forecast. Look at the printed results and the csv's that get created in the `weekly_results`  folder.
+
 
  - Next evaluate the 2 week forecast made two weeks ago for last week:
    - To do this you only need to update the forecast_num(it should be 1 - your previous forecast number) and the forecast_col to '2week'
