@@ -28,7 +28,7 @@ You will be using a  branching workflow for your feature development. To underst
 5. Finally when you are done you should submit a pull request to merge your changes into the master repo. Before you do this make sure all of your changes are committed and pushed.
   - Right click on your branch and select 'start a pull request'
   ![](assets/Readme-75f975d9.png)
-  - Fill out the information for your pull request.  No need to select any reviewers. Then say 'create pull request'
+  - Fill out the information for your pull request.  Select me as your reviewer. Then say 'create pull request'
   ![](assets/Readme-05707ea7.png)
 
 
