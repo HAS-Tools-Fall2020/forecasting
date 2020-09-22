@@ -38,13 +38,12 @@ ___
  conda install pip
  pip install dataretrieval
  ```
+2.  ** Work on your added functionality** Look through the scripts in this folder and add the functionality you would like. When you are done adding functionality you can do a pull request to merge your branch back in with the mater.
 
-2. **After noon on Monday** pull the latest updates from everyone and run the weekly forecast evaluation. Using the `score_weekly.py` script. You will need to update the following to run this script:
-     - The start and stop dates should be set to match the start and stop dates for the previous week as listed in the `Weekly_forecast_date.pdf` file in the main directory of this repo.
-     - Specify the forecast number and forecast week you want to evaluate. Note that you will run this script twice. Once for the '1week' forecast that corresponds to the week you are evaluating and once for the  '2week'
-     - Run the script once for the '1week' forecast and once for the '2week' forecast. Look at the printed results and the csv's that get created in the `weekly_results`  folder.
+3. **Score the Forecasts After noon on Monday** pull the latest updates from everyone and run the weekly forecast evaluation. Using the `score_weekly.py` script. You will need to update the following the forecast week to run this script. You can look that up in the `Seasonal_Forecast_Dates.pdf` file. This will create the `forecast_week4_results.csv` file. Look at these results and the results that get printed from the script to see how everyone did.
 
+4.  **Assign Bonus points** After you do the scoring decide how you will assign bonus points. Once this is change the  `names` and `forecast_week` in the bonus points cell on `Bonus_Points.py` and run this section to write out your Bonus points file for this week.
 
- - Next evaluate the 2 week forecast made two weeks ago for last week:
-   - To do this you only need to update the forecast_num(it should be 1 - your previous forecast number) and the forecast_col to '2week'
-   - Run the script again to generate the summary for that weekly forecast.
+5.  **Calculate total scores** Run `Scoreboard.py` script to see the overall rankings and total scores.
+
+6. **Update the markdown file with your scores** update the README.md file in the  main directory of this folder with the points you applied this week and the updated overall scores.

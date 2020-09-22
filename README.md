@@ -14,23 +14,27 @@ ___
 <a name="Scoreboard"></a>
 ## Scoreboard
 
-|      | Name    | Points    |
+|   Place   | Name    | Points    |
 |:-----|---------|---------  |
 |  1   | Diana    |    4    |
 |  2   | Abagail    |    3    |
+|  2   | Richard     |    3    |
 |  2   | Alexa     |    3    |
-|  3   | Scott     |    2    |
-|  3   | Adam   |    2    |
-|  4   | Camilo     |    1    |
-|  4   | Quinn    |    1    |
-|  4   | Shweta   |    1    |
-|  4   | Lourdes   |    1    |
-|  4  | Richard      |    1    |
+|  2   | Xenia   |    3    |
+|  3   | Mekha     |    2    |
+|  3   | Quinn     |    2    |
+|  3   | Adam    |    2    |
+|  3   | Scott   |    2    |
+|  4   | Ty   |    1    |
+|  4  | Camilo      |    1    |
+|  4  | Jake      |    1    |
 |  4  | Danielle      |    1    |
-|  4  | Xenia      |    1    |
-|  4  | Patrick      |    1    |
-|  4  | Ty      |    1    |
-|  5  |  Everyone Else       |     0      |
+|  4  | Jill      |    1    |
+|  4  | Patrick     |    1    |
+|  4  | Shweta      |    1    |
+|  4  | Lourdes      |    1    |
+|  4  |  Alceley       |     1      |
+|  5  |  Ben       |     0      |
 
 
 ## Seasonal Forecast Leaders
@@ -75,12 +79,26 @@ ___
   - Second place: 50 cfs, Abagail
   - Third place: 53.6 cfs, Xenia
 
-- **Two week forecast (m/dd - m/dd)**:
-
+- **Two week forecast (9/13 - 9/19)**:
+  - Observed Flow = 56.2
+  - Frist Place: 57.114 cfs, Xenia
+  - Second Place: 55 cfs  Jill
+  - Third Place = 60 cfs, Quinn, Mekha, Jake
 
 - **Bonus points**:
   - Adam, Patrick and Ty
   - For being our most optimistic forecasters :) (i.e. the largest flow  predictions of the 1week forecasts for this week)
+
+### Forecast 3 Points Awarded:
+  - **One Week forecast (9/13 - 9/19)**:
+    - Observed flow = 56.2 cfs
+    - First place: 56 cfs, Richard
+    - Second place: 55 cfs, Mekha
+    - Third place: 54.04 cfs, Alcely
+
+  - **Bonus points**:
+      - Adam, Patrick and Ty
+      - For being our most optimistic forecasters :) (i.e. the largest flow  predictions of the 1week forecasts for this week)
 
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.

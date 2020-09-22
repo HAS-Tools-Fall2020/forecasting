@@ -18,19 +18,10 @@ import os
 
 # %%
 # User variables
-# forecast num refers to the forecast issue number. This is the same as the row number
-# in the forecast entries csv. 
-# refer to Weekly_Frorecast_Date.pdf for the 1 and 2 week forecast dates associated with each foreacst
-
-forecast_week = 2
-
-#Set these  to the dates of the previous week, this is the week you will be evaluating
-#start_date = '2020-09-06'
-#stop_date =  '2020-09-12'
-
-#select the forecast number and forecast week these dates correspond to
-#forecast_num = 2
-#forecast_col ='1week'  #should be either '1week' or '2week'
+# forecast_week is the week number that you are going to be judging. 
+# You can find this in the seasonal_forecst_Dates.pdf 
+# You should look up the forecast number for the week that just ended
+forecast_week = 4
 
 # %%
 station_id = "09506000"
@@ -53,6 +44,8 @@ forecast_dates=pd.read_csv(datefile, index_col='forecast_week')
 start_date = forecast_dates.loc[forecast_week, 'start_date']
 stop_date = forecast_dates.loc[forecast_week, 'end_date']
 
+print("Evaluating forecasts for", start_date, 'To', stop_date)
+
 
 # %%
 # Read in everyone's forecast entries
@@ -67,7 +60,7 @@ for i in range(nstudent):
     temp = pd.read_csv(filepath, index_col='Forecast #')
     #print(temp.loc[(forecast_week - 1), '1week'])
     forecasts1[i] = temp.loc[(forecast_week - 1), '1week']
-    #forecasts2[i] = temp.loc[(forecast_week - 2), '2week']
+    forecasts2[i] = temp.loc[(forecast_week - 2), '2week']
 
 # %%
 # Read in the streamflow data and get the weekly average
