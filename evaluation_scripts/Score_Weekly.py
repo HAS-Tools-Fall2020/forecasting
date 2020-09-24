@@ -21,7 +21,7 @@ import os
 # forecast_week is the week number that you are going to be judging. 
 # You can find this in the seasonal_forecst_Dates.pdf 
 # You should look up the forecast number for the week that just ended
-forecast_week = 4
+forecast_week = 4                       # Changed to week 5 by Schulze. 9/22/20
 
 # %%
 station_id = "09506000"
@@ -72,6 +72,19 @@ dif1 = abs(forecasts1-obs_week)
 dif2 = abs(forecasts2-obs_week)
 
 print('Average streamflow for this week:', np.round(obs_week,3))
+
+# %%
+
+# New block added by Schulze 9/22/20, for assigning the names to a 3-d array 
+# with first and last names, sorted alphabetically. The 3 students to get a point are 
+# randomly chosen and their names returned.
+
+np.array(firstnames).sort()
+
+
+
+
+
 
 # %%
 #Make a data frame for the results
@@ -128,3 +141,5 @@ print('Third Place = ', list(summary.loc[summary['2week_ranking']==3].index),
 
 
 # %%
+
+# Add Histogram of results, plots each student's guess, and 
