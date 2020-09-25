@@ -17,7 +17,7 @@ ___
 |   Place   | Name    | Points    |
 |:-----|---------|---------  |
 |  1   | Diana    |    4    |
-|  2   | Abagail    |    3    |
+|  2   | Abigail    |    3    |
 |  2   | Richard     |    3    |
 |  2   | Alexa     |    3    |
 |  2   | Xenia   |    3    |
@@ -159,17 +159,18 @@ ___
 
 <a name="evaluatorlist"></a>
 ## 1. Evaluator Assignments
- 1. September 29:
- 2. October 6:
- 3. October 13:
- 4. October 20:
- 5. October 27:
- 6. November 3:
- 7. November 10:
- 8. November 17:
- 9. November 24:
- 10. November 31:
- 11. December 8:
+ 1. September 29: Scott
+ 2. October 6: Richard
+ 3. October 13: Mekha & Jake
+ 4. October 20: Alexa & Lourdes
+ 5. October 27: Camillo & Shweta
+ 6. November 3: Alcely & Diana
+ 7. November 10: Danielle & Abigail
+ 8. November 17: Ben & Quinn
+ 9. November 24: Jill & Adam
+ 10. November 31: Xenia
+ 11. December 8: Patrick
+ *Ty - Floater
 
 ## Evaluator Job Description :
 

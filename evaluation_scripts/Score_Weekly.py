@@ -31,7 +31,7 @@ names=['ferre', 'fierro', 'hsieh', 'hull', 'kahler', 'lau', 'marcelain',
         'marcovecchio', 'medina', 'mitchell', 'narkhede',
         'neri', 'noonan', 'pereira', 'ridlinghaver', 'salcedo',
         'schulze', 'stratman', 'tadych']
-firstnames=['Ty', 'Lourdes', 'Diana', 'Quinn', 'Abagail', 'Alcely', 'Richard',
+firstnames=['Ty', 'Lourdes', 'Diana', 'Quinn', 'Abigail', 'Alcely', 'Richard',
         'Alexa', 'Xenia', 'Ben', 'Shweta',
         'Patrick', 'Jill', 'Mekha', 'Jake', 'Camilo',
         'Scott', 'Adam', 'Danielle']
