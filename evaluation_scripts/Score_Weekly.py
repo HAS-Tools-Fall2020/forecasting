@@ -13,6 +13,7 @@
 # %%
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import dataretrieval.nwis as nwis
 import os
 
@@ -74,19 +75,6 @@ dif2 = abs(forecasts2-obs_week)
 print('Average streamflow for this week:', np.round(obs_week,3))
 
 # %%
-
-# New block added by Schulze 9/22/20, for assigning the names to a 3-d array 
-# with first and last names, sorted alphabetically. The 3 students to get a point are 
-# randomly chosen and their names returned.
-
-np.array(firstnames).sort()
-
-
-
-
-
-
-# %%
 #Make a data frame for the results
 summary = pd.DataFrame({'start': start_date, 'end': stop_date, 'observation': obs_week,
                         '1week_forecast': forecasts1, '1week_difference': dif1, 
@@ -142,4 +130,20 @@ print('Third Place = ', list(summary.loc[summary['2week_ranking']==3].index),
 
 # %%
 
-# Add Histogram of results, plots each student's guess, and 
+# Add Histogram of results, plots each student's guess, and the actual mean value for
+# week one.
+plt.hist(forecasts1,bins=120,color = 'blue', alpha=0.75, label = 'Student Guesses')
+plt.plot([obs_week]*3, np.arange(0,3,1),color='orange',linestyle= '-',label = 'Actual mean')
+plt.title('Student Guesses and actual mean, week 1')
+plt.xlabel('Flow Forecast')
+plt.ylabel('Count')
+plt.legend(loc = 'upper right')
+# %%
+
+# Add Histogram of results, plots each student's guess.
+plt.figure(figsize=(8,6))
+plt.hist(forecasts2, bins=120)
+plt.title('Student Guesses, week 2')
+plt.xlabel('Flow Forecast')
+plt.ylabel('Count')
+# %%
