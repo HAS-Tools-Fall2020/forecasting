@@ -1,3 +1,4 @@
+
 # This script downloads the observations from USGS aggreages to 
 # weekly and saves as a csv
 
@@ -30,7 +31,7 @@ import dataretrieval.nwis as nwis
 # list of dates associated with each forecast week
 # you should set forecast_week equal to the forecast
 # week that just completed
-week = 4
+week = 5                        # Schulze changed to week 5. 9/22/20
 station_id = "09506000"
 
 # %%
