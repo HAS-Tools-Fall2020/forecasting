@@ -13,6 +13,7 @@
 # %%
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import dataretrieval.nwis as nwis
 import os
 
@@ -21,7 +22,7 @@ import os
 # forecast_week is the week number that you are going to be judging. 
 # You can find this in the seasonal_forecst_Dates.pdf 
 # You should look up the forecast number for the week that just ended
-forecast_week = 4
+forecast_week = 4                       # Changed to week 5 by Schulze. 9/22/20
 
 # %%
 station_id = "09506000"
@@ -127,4 +128,22 @@ print('Third Place = ', list(summary.loc[summary['2week_ranking']==3].index),
         'flow forecast = ', summary.loc[summary['2week_ranking']==3, '2week_forecast'].head(1).values)
 
 
+# %%
+
+# Add Histogram of results, plots each student's guess, and the actual mean value for
+# week one.
+plt.hist(forecasts1,bins=120,color = 'blue', alpha=0.75, label = 'Student Guesses')
+plt.plot([obs_week]*3, np.arange(0,3,1),color='orange',linestyle= '-',label = 'Actual mean')
+plt.title('Student Guesses and actual mean, week 1')
+plt.xlabel('Flow Forecast')
+plt.ylabel('Count')
+plt.legend(loc = 'upper right')
+# %%
+
+# Add Histogram of results, plots each student's guess.
+plt.figure(figsize=(8,6))
+plt.hist(forecasts2, bins=120)
+plt.title('Student Guesses, week 2')
+plt.xlabel('Flow Forecast')
+plt.ylabel('Count')
 # %%
