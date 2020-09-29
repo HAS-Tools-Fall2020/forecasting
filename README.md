@@ -194,9 +194,9 @@ ___
 
 Each week one or two people will be assigned the job of 'Forecast Evaluator'. Your job description is as follows:
 
-1. **Run the forecast evaluation scripts to score the weekly forecasts** after the forecast submission deadline (noon on Monday). You will be evaluating two forecasts (1) the one week forecast from last week and (2) the two week forecast from  two weeks ago
+1. **Make an improvement to the functionality of our forecast analysis scripts**. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder so that we can continuously build on people's improvements. Once your additions have been made you will submit a pull request for  me to review your changes and merger your branch (this is covered in the detailed instructions). You should submit your pull request by Monday morning at 8am so that  I can review your code changes and merge your branch. 
 
-2. **Make an improvement to the functionality of our forecast analysis scripts**. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder so that we can continuously build on people's improvements.
+2. **Run the forecast evaluation scripts to score the weekly forecasts** after the forecast submission deadline (noon on Monday). You will be evaluating two forecasts (1) the one week forecast from last week and (2) the two week forecast from  two weeks ago
 
 3. **Assign your bonus points**.  You can use literally whatever criteria you want to assign bonus  points as long as you provide some rational for how you did it, and only use python to evaluate whatever criteria you choose.  Also, note the scoring rules above that you can't give bonus points to  yourself of anyone already receiving points in a given week.
 
@@ -210,6 +210,6 @@ Each week one or two people will be assigned the job of 'Forecast Evaluator'. Yo
   - Talk to your partner and come prepared the week before your assigned week with an idea of what you each would like to do.
   - You should choose the assignments of bonus points together though and make a single presentation that includes both of your additions.
 
-**Note 2: You can start working functionality addition before the forecasts have actually been submitted**  you only need to wait to run your final scoring until Monday at noon. For the analysis, you can start on it anytime and test that it's working with the existing data from previous weeks. You can start doing your functionality addition on Tuesday the week before its due once the previous group has finished.
+**Note 2: You can start working functionality addition before the forecasts have actually been submitted**  you only need to wait to run your final scoring until Monday at noon. For the analysis, you can start on it anytime and test that it's working with the existing data from previous weeks. You can start doing your functionality addition on Tuesday the week before its due once the previous group has finished. If possible you should submit the pull request by the Friday before your assignment is  due but at a minimum you must do this by Monday morning at 8 am.
 
 **Note 3: Refer to the readme in the evaluation_scripts folder for step  by step instructions on running the analysis**. If your functionality addition changes the instructions make sure you update them when you are done.
