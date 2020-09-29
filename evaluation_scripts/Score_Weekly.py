@@ -22,7 +22,7 @@ import os
 # forecast_week is the week number that you are going to be judging. 
 # You can find this in the seasonal_forecst_Dates.pdf 
 # You should look up the forecast number for the week that just ended
-forecast_week = 4                       # Changed to week 5 by Schulze. 9/22/20
+forecast_week = 5                       # Changed to week 5 by Schulze. 9/28/20
 
 # %%
 station_id = "09506000"
