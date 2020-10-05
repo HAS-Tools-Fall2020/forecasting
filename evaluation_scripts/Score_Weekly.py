@@ -17,12 +17,13 @@ import matplotlib.pyplot as plt
 import dataretrieval.nwis as nwis
 import os
 
+
 # %%
 # User variables
 # forecast_week is the week number that you are going to be judging. 
 # You can find this in the seasonal_forecst_Dates.pdf 
 # You should look up the forecast number for the week that just ended
-forecast_week = 5                       # Changed to week 5 by Schulze. 9/28/20
+forecast_week = 6       # wk 5 (Schulze 9/28), wk 6 (marcelain 10/5)
 
 # %%
 station_id = "09506000"
@@ -146,4 +147,37 @@ plt.hist(forecasts2, bins=120)
 plt.title('Student Guesses, week 2')
 plt.xlabel('Flow Forecast')
 plt.ylabel('Count')
+# %%
+# Week 6 addition:  Line plots
+# Week 1 - Obs vs Forecasts
+class_avg1 = np.mean(forecasts1)
+
+fig, ax = plt.subplots()
+ax.plot(forecasts1, '-g', label='Forecast', alpha=.8)
+plt.axhline(y=class_avg1, linestyle='dashed', label='Class Avg', alpha=.8, color = 'red')
+plt.axhline(y=obs_week, linestyle='dotted', label='Observed', alpha=.8, color = 'blue')
+plt.xticks(np.arange(0, 19, 1))
+ax.set(title="Week 1 Forecasts", xlabel="Students", 
+        ylabel="Weekly Avg Flow [cfs]")
+ax.legend(fancybox=True, framealpha=1, shadow=True, borderpad=1)
+
+fig.set_size_inches(10,4)
+#plt.savefig('Lplot_1.png')
+
+# Week 2 - Obs vs Forecasts
+class_avg2 = np.mean(forecasts2)
+
+fig, ax = plt.subplots()
+ax.plot(forecasts2, '-g', label='Forecast', alpha=.8)
+plt.axhline(y=class_avg2, linestyle='dashed', label='Class Avg', alpha=.8, color = 'red')
+plt.axhline(y=obs_week, linestyle='dotted', label='Observed', alpha=.8, color = 'blue')
+plt.xticks(np.arange(0, 19, 1))
+ax.set(title="Week 2 Forecasts", xlabel="Students", 
+        ylabel="Weekly Avg Flow [cfs]",)
+ax.legend(fancybox=True, framealpha=1, shadow=True, borderpad=1)
+
+fig.set_size_inches(10,4)
+#plt.savefig('Lplot_2.png')
+
+plt.show()
 # %%
