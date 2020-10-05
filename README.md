@@ -14,27 +14,27 @@ ___
 <a name="Scoreboard"></a>
 ## Scoreboard
 
-|   Place   | Name    | Points    |
+|   Name   | Points    | Rank    |
 |:-----|---------|---------  |
-|  1   | Diana    |    4    |
-|  2   | Abigail    |    3    |
-|  2   | Richard     |    3    |
-|  2   | Alexa     |    3    |
-|  2   | Xenia   |    3    |
-|  3   | Mekha     |    2    |
-|  3   | Quinn     |    2    |
-|  3   | Adam    |    2    |
-|  3   | Scott   |    2    |
-|  4   | Ty   |    1    |
-|  4  | Camilo      |    1    |
-|  4  | Jake      |    1    |
-|  4  | Danielle      |    1    |
-|  4  | Jill      |    1    |
-|  4  | Patrick     |    1    |
-|  4  | Shweta      |    1    |
-|  4  | Lourdes      |    1    |
-|  4  |  Alceley       |     1      |
-|  5  |  Ben       |     0      |
+| Diana        | 5.0  | 1.0 |
+| Abigail      | 4.0  | 2.0 |
+| Richard      | 4.0  | 2.0 |
+| Adam         | 3.0  | 3.0 |
+| Xenia        | 3.0  | 3.0 |
+| Alexa        | 3.0  | 3.0 |
+| Lourdes      | 3.0  | 3.0 |
+| Patrick      | 3.0  | 3.0 |
+| Mekha        | 3.0  | 3.0 |
+| Camilo       | 2.0  | 4.0 |
+| Quinn        | 2.0  | 4.0 |
+| Scott        | 2.0  | 4.0 |
+| Jill         | 2.0  | 4.0 |
+| Ty           | 1.0  | 5.0 |
+| Danielle     | 1.0  | 5.0 |
+| Jake         | 1.0  | 5.0 |
+| Shweta       | 1.0  | 5.0 |
+| Alcely       | 1.0  | 5.0 |
+| Ben          | 0.0  | 6.0 |
 
 
 ## Seasonal Forecast Leaders
@@ -73,13 +73,13 @@ ___
   - for being the first non ranking forecasts to be submitted on GitHub
 
 ### Forecast 2 Points Awarded:
-- **One Week forecast (9/6 - 9/12)**:
+- **One Week forecast (9/13 - 9/19)**:
   - Observed flow = 42.26 cfs
   - First place: 40 cfs, Diana
   - Second place: 50 cfs, Abagail
   - Third place: 53.6 cfs, Xenia
 
-- **Two week forecast (9/13 - 9/19)**:
+- **Two week forecast (9/20 - 9/26)**:
   - Observed Flow = 56.2
   - Frist Place: 57.114 cfs, Xenia
   - Second Place: 55 cfs  Jill
@@ -99,6 +99,24 @@ ___
   - **Bonus points**:
       - Adam, Patrick and Ty
       - For being our most optimistic forecasters :) (i.e. the largest flow  predictions of the 1week forecasts for this week)
+
+      ### Forecast 4 Points Awarded:
+      - **One Week forecast (09/20-09/26)**:
+        - Observed flow = 58.429 cfs
+        - First place: 59 cfs, Patrick
+        - Second place: 60 cfs, Adam
+        - Third place: 56.39 cfs, Camilo
+
+      - **Two week forecast (9/20 - 9/26)**:
+          - Observed Flow = 58.429
+          - Frist Place: 57.5 cfs, Lourdes
+          - Second Place: 57 cfs  Jill
+          - Third Place = 60 cfs, Mekha
+      - **Bonus points**:
+        - Richard, Abigail, and DianaM
+        - Randomly chosen by the newest upgrade to the scoring codes. I did not want to have to subjectively choose.
+
+
 
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.
@@ -176,9 +194,9 @@ ___
 
 Each week one or two people will be assigned the job of 'Forecast Evaluator'. Your job description is as follows:
 
-1. **Run the forecast evaluation scripts to score the weekly forecasts** after the forecast submission deadline (noon on Monday). You will be evaluating two forecasts (1) the one week forecast from last week and (2) the two week forecast from  two weeks ago
+1. **Make an improvement to the functionality of our forecast analysis scripts**. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder so that we can continuously build on people's improvements. Once your additions have been made you will submit a pull request for  me to review your changes and merger your branch (this is covered in the detailed instructions). You should submit your pull request by Monday morning at 8am so that  I can review your code changes and merge your branch. 
 
-2. **Make an improvement to the functionality of our forecast analysis scripts**. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder so that we can continuously build on people's improvements.
+2. **Run the forecast evaluation scripts to score the weekly forecasts** after the forecast submission deadline (noon on Monday). You will be evaluating two forecasts (1) the one week forecast from last week and (2) the two week forecast from  two weeks ago
 
 3. **Assign your bonus points**.  You can use literally whatever criteria you want to assign bonus  points as long as you provide some rational for how you did it, and only use python to evaluate whatever criteria you choose.  Also, note the scoring rules above that you can't give bonus points to  yourself of anyone already receiving points in a given week.
 
@@ -192,6 +210,6 @@ Each week one or two people will be assigned the job of 'Forecast Evaluator'. Yo
   - Talk to your partner and come prepared the week before your assigned week with an idea of what you each would like to do.
   - You should choose the assignments of bonus points together though and make a single presentation that includes both of your additions.
 
-**Note 2: You can start working functionality addition before the forecasts have actually been submitted**  you only need to wait to run your final scoring until Monday at noon. For the analysis, you can start on it anytime and test that it's working with the existing data from previous weeks. You can start doing your functionality addition on Tuesday the week before its due once the previous group has finished.
+**Note 2: You can start working functionality addition before the forecasts have actually been submitted**  you only need to wait to run your final scoring until Monday at noon. For the analysis, you can start on it anytime and test that it's working with the existing data from previous weeks. You can start doing your functionality addition on Tuesday the week before its due once the previous group has finished. If possible you should submit the pull request by the Friday before your assignment is  due but at a minimum you must do this by Monday morning at 8 am.
 
 **Note 3: Refer to the readme in the evaluation_scripts folder for step  by step instructions on running the analysis**. If your functionality addition changes the instructions make sure you update them when you are done.

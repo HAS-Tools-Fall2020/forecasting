@@ -48,4 +48,6 @@ scoreboard['rank'] = scoreboard.total.rank(method='dense', ascending=False)
 scoreboard = scoreboard.sort_values(by='total', ascending=False)
 print(scoreboard)
 
+# %%
+
 
