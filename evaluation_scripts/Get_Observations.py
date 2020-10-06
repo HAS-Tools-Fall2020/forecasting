@@ -31,7 +31,7 @@ import dataretrieval.nwis as nwis
 # list of dates associated with each forecast week
 # you should set forecast_week equal to the forecast
 # week that just completed
-week = 5                        # Schulze changed to week 5. 9/22/20
+week = 6                        # Schulze changed to week 5. 9/22/20, wk 6 (10/5)
 station_id = "09506000"
 
 # %%
@@ -46,8 +46,8 @@ obs_table = pd.read_csv(filepath, index_col='forecast_week')
 # Read in the observations and get weekly averages
 for i in range(1, week+1):
     print(i)
-    starti = date_table.loc[i, 'start_date']
-    endi = date_table.loc[i, 'end_date']
+    starti = obs_table.loc[i, 'start_date']
+    endi = obs_table.loc[i, 'end_date']
 
     #read in the data from USGS
     # Read in the streamflow data and get the weekly average
@@ -62,5 +62,7 @@ filepath_out = os.path.join('..','weekly_results', 'weekly_observations.csv')
 obs_table.to_csv(filepath_out, index_label='forecast_week')
 
 
+
+# %%
 
 # %%
