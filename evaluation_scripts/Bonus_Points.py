@@ -33,6 +33,23 @@ if random_flag:
                                 # Visually verifies the selection being made from the array above
 
 print(bonus_names) 
+
+
+#%%
+# Week 6 - Bonus Points assigned to lowest scores from previous week (see "Scoreboard.png")
+bonus_names = ['Ben']       # Lowest score
+bonus_potentials = ['Alcely', 'Shweta', 'Jake', 'Danielle', 'Ty']     # Second lowest scores (tied)
+weeknum = 6 # Forecast week
+random_flag  = False # Set this to true if you wan to override the names
+
+# Create random loop to obtain a max of 3 bonus recipients
+while len(bonus_names) < 3:
+        temp = random.sample(bonus_potentials,1)    # 1 random samples per iteration
+        if temp not in bonus_names:     # Ensure no repeats
+                bonus_names = bonus_names + temp  # Add randomed name to 2nd list
+print(bonus_names)
+             
+
 #%%
 # Add bonus points if you would like
 file_listB = glob(os.path.join('../weekly_results', 'bonus*.csv'))
@@ -50,3 +67,4 @@ bonus_file = os.path.join('../weekly_results', filename )
 bonus.to_csv(bonus_file)
 
 
+# %%
