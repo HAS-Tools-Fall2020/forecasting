@@ -163,6 +163,7 @@ ax.legend(fancybox=True, framealpha=1, shadow=True, borderpad=1)
 
 fig.set_size_inches(10,4)
 #plt.savefig('Lplot_1.png')
+plt.show()
 
 # Week 2 - Obs vs Forecasts
 class_avg2 = np.mean(forecasts2)
@@ -180,4 +181,5 @@ fig.set_size_inches(10,4)
 #plt.savefig('Lplot_2.png')
 
 plt.show()
+# %%
 # %%

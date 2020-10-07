@@ -16,25 +16,25 @@ ___
 
 |   Name   | Points    | Rank    |
 |:-----|---------|---------  |
-| Diana        | 5.0  | 1.0 |
-| Abigail      | 4.0  | 2.0 |
-| Richard      | 4.0  | 2.0 |
-| Adam         | 3.0  | 3.0 |
-| Xenia        | 3.0  | 3.0 |
-| Alexa        | 3.0  | 3.0 |
-| Lourdes      | 3.0  | 3.0 |
-| Patrick      | 3.0  | 3.0 |
-| Mekha        | 3.0  | 3.0 |
-| Camilo       | 2.0  | 4.0 |
-| Quinn        | 2.0  | 4.0 |
-| Scott        | 2.0  | 4.0 |
-| Jill         | 2.0  | 4.0 |
-| Ty           | 1.0  | 5.0 |
-| Danielle     | 1.0  | 5.0 |
-| Jake         | 1.0  | 5.0 |
-| Shweta       | 1.0  | 5.0 |
-| Alcely       | 1.0  | 5.0 |
-| Ben          | 0.0  | 6.0 |
+| Diana        | 7.0  | 1.0 |
+| Adam         | 5.0  | 2.0 |
+| Abigail      | 4.0  | 3.0 |
+| Richard      | 4.0  | 3.0 |
+| Patrick      | 4.0  | 3.0 |
+| Danielle     | 3.0  | 4.0 |
+| Quinn        | 3.0  | 4.0 |
+| Alexa        | 3.0  | 4.0 |
+| Xenia        | 3.0  | 4.0 |
+| Lourdes      | 3.0  | 4.0 |
+| Jill         | 3.0  | 4.0 |
+| Mekha        | 3.0  | 4.0 |
+| Camilo       | 2.0  | 5.0 |
+| Scott        | 2.0  | 5.0 |
+| Ty           | 2.0  | 5.0 |
+| Jake         | 2.0  | 5.0 |
+| Shweta       | 2.0  | 5.0 |
+| Alcely       | 2.0  | 5.0 |
+| Ben          | 1.0  | 6.0 |
 
 
 ## Seasonal Forecast Leaders
@@ -100,23 +100,37 @@ ___
       - Adam, Patrick and Ty
       - For being our most optimistic forecasters :) (i.e. the largest flow  predictions of the 1week forecasts for this week)
 
-      ### Forecast 4 Points Awarded:
-      - **One Week forecast (09/20-09/26)**:
-        - Observed flow = 58.429 cfs
-        - First place: 59 cfs, Patrick
-        - Second place: 60 cfs, Adam
-        - Third place: 56.39 cfs, Camilo
+### Forecast 4 Points Awarded:
+  - **One Week forecast (09/20-09/26)**:
+    - Observed flow = 58.429 cfs
+    - First place: 59 cfs, Patrick
+    - Second place: 60 cfs, Adam
+    - Third place: 56.39 cfs, Camilo
+  - **Two week forecast (9/20 - 9/26)**:
+    - Observed Flow = 58.429
+    - Frist Place: 57.5 cfs, Lourdes
+    - Second Place: 57 cfs  Jill
+    - Third Place = 60 cfs, Mekha
+  - **Bonus points**:
+    - Richard, Abigail, and DianaM
+    - Randomly chosen by the newest upgrade to the scoring codes. I did not want to have to subjectively choose.
 
-      - **Two week forecast (9/20 - 9/26)**:
-          - Observed Flow = 58.429
-          - Frist Place: 57.5 cfs, Lourdes
-          - Second Place: 57 cfs  Jill
-          - Third Place = 60 cfs, Mekha
-      - **Bonus points**:
-        - Richard, Abigail, and DianaM
-        - Randomly chosen by the newest upgrade to the scoring codes. I did not want to have to subjectively choose.
+### Forecast 5 Points Awarded:
+- **One Week forecast (9/27 - 10/3)**:
+  - Observed flow = 57.29 cfs
+  - First place: 57 cfs, Diana
+  - Second place: 57.9 cfs, Quinn
+  - Third place: 56.2 cfs, Jill
 
+- **Two week forecast (10/40 - 10/10)**:
+  - Observed Flow = 57.29 cfs
+  - Frist Place: 61.14 cfs, Danielle
+  - Second Place: 51.7 cfs, Ben
+  - Third Place = 65 cfs, Adam
 
+- **Bonus points**:
+  - Alcely, Shweta, Jake
+  - A little boost to the lowest point holders (selectively randomed)
 
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.
