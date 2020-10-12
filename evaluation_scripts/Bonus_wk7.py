@@ -9,3 +9,4 @@ data = pd.read_csv(filepath)
 # %%
 data['sum'] = data['1week_difference'] + data['2week_difference']
 data.sort_values('sum')
+# %%
