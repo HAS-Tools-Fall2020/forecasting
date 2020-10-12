@@ -14,27 +14,27 @@ ___
 <a name="Scoreboard"></a>
 ## Scoreboard
 
-|   Name   | Points    | Rank    |
-|:-----|---------|---------  |
-| Diana        | 7.0  | 1.0 |
-| Adam         | 5.0  | 2.0 |
-| Abigail      | 4.0  | 3.0 |
-| Richard      | 4.0  | 3.0 |
-| Patrick      | 4.0  | 3.0 |
-| Danielle     | 3.0  | 4.0 |
-| Quinn        | 3.0  | 4.0 |
-| Alexa        | 3.0  | 4.0 |
-| Xenia        | 3.0  | 4.0 |
-| Lourdes      | 3.0  | 4.0 |
-| Jill         | 3.0  | 4.0 |
-| Mekha        | 3.0  | 4.0 |
-| Camilo       | 2.0  | 5.0 |
-| Scott        | 2.0  | 5.0 |
-| Ty           | 2.0  | 5.0 |
-| Jake         | 2.0  | 5.0 |
-| Shweta       | 2.0  | 5.0 |
-| Alcely       | 2.0  | 5.0 |
-| Ben          | 1.0  | 6.0 |
+|   Name   | Points  | Rank    |
+|:---------|---------|-------  |                                
+| Diana    |    8.0  |  1.0 |
+| Adam     |    6.0  |  2.0 |
+| Danielle |    5.0  |  3.0 |
+| Quinn    |    4.0  |  4.0 |
+| Abigail  |    4.0  |  4.0 |
+| Richard  |    4.0  |  4.0 |
+| Lourdes  |    4.0  |  4.0 |
+| Shweta   |    4.0  |  4.0 |
+| Patrick  |    4.0  |  4.0 |
+| Jill     |    4.0  |  4.0 |
+| Alexa    |    3.0  |  5.0 |
+| Xenia    |    3.0  |  5.0 |
+| Mekha    |    3.0  |  5.0 |
+| Jake     |    3.0  |  5.0 |
+| Scott    |    2.0  |  6.0 |
+| Ty       |    2.0  |  6.0 |
+| Camilo   |    2.0  |  6.0 |
+| Alcely   |    2.0  |  6.0 |
+| Ben      |    2.0  |  6.0 |
 
 
 ## Seasonal Forecast Leaders
@@ -132,6 +132,23 @@ ___
   - Alcely, Shweta, Jake
   - A little boost to the lowest point holders (selectively randomed)
 
+### Forecast 6 Points Awarded:
+- **One Week forecast (10/4 - 10/10)**:
+  - Observed flow = 61.86 cfs
+  - First place: 61 cfs, Danielle
+  - Second place: 60,72 cfs, Lourdes
+  - Third place: 59.6 cfs, Ben
+
+- **Two week forecast (10/4 - 10/10)**:
+  - Observed Flow = 61.86 cfs
+  - First Place: 62.1 cfs, Shweta
+  - Second Place: 60 cfs, Quinn
+  - Third Place: 63.93 cfs, Jake
+
+- **Bonus points**:
+  - Adam (8.1 cfs), Diana (10.9 cfs), Jill (12.15 cfs)
+  - Least combined error for both 1 week and 2 week forecast (and not already receiving points)  
+
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.
 ### Forecast X Points Awarded:
@@ -208,7 +225,7 @@ ___
 
 Each week one or two people will be assigned the job of 'Forecast Evaluator'. Your job description is as follows:
 
-1. **Make an improvement to the functionality of our forecast analysis scripts**. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder so that we can continuously build on people's improvements. Once your additions have been made you will submit a pull request for  me to review your changes and merger your branch (this is covered in the detailed instructions). You should submit your pull request by Monday morning at 8am so that  I can review your code changes and merge your branch. 
+1. **Make an improvement to the functionality of our forecast analysis scripts**. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder so that we can continuously build on people's improvements. Once your additions have been made you will submit a pull request for  me to review your changes and merger your branch (this is covered in the detailed instructions). You should submit your pull request by Monday morning at 8am so that  I can review your code changes and merge your branch.
 
 2. **Run the forecast evaluation scripts to score the weekly forecasts** after the forecast submission deadline (noon on Monday). You will be evaluating two forecasts (1) the one week forecast from last week and (2) the two week forecast from  two weeks ago
 
