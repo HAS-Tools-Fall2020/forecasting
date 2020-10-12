@@ -31,7 +31,7 @@ import dataretrieval.nwis as nwis
 # list of dates associated with each forecast week
 # you should set forecast_week equal to the forecast
 # week that just completed
-week = 6                        # Schulze changed to week 5. 9/22/20, wk 6 (10/5)
+week = 7                        # Schulze changed to week 5. 9/22/20, wk 6 (10/5), wk 7 (10/12)
 station_id = "09506000"
 
 # %%
