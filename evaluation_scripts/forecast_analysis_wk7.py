@@ -40,9 +40,11 @@ for i in range (16):
     weeks.append('week_' '%s'%(i+1))
 
 #%%
+
+# predictions over time
 forecasts_1=np.zeros([nstudent,len(weeks)])
 forecasts_2=np.zeros([nstudent,len(weeks)]) # The 2week forecasts for this week
-#%%
+
 for i in range(nstudent):
     filename = names[i] + '.csv'
     filepath = os.path.join('..', 'forecast_entries', filename)
@@ -53,7 +55,7 @@ for i in range(nstudent):
         forecasts_2[i,n-1] = temp.loc[(n), '2week']
 
 # %%
-#These are data frames you can use for graphing
+# compiled into data frames you can use for graphing
 weekly_forecast1w = pd.DataFrame({}, index=firstnames)
 weekly_forecast2w = pd.DataFrame({}, index=firstnames)
 
@@ -86,6 +88,7 @@ for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 ax.plot(weekly_flows['observed'], color = 'black', marker='o', linestyle='--', linewidth = 3 )
 ax.set(title="1 Week Forecast", xlabel="Week", ylabel="Weekly Avg Flow [cfs]")
+plt.xlim([0, forecast_week-2])
 plot_labels = firstnames + ['Observed Flow']
 ax.legend(plot_labels, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=5)
 fig.set_size_inches(9,5)
@@ -103,6 +106,7 @@ for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 plt.axhline(y=0, color = 'black', linestyle='--', linewidth = 3 )
 ax.set(title="1 Week Forecast Error", xlabel="Week", ylabel="Deviation from Weekly Avg Flow [cfs]", ylim=[-60,60])
+plt.xlim([0, forecast_week-2])
 plot_labels = firstnames
 ax.legend(plot_labels, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=5)
 fig.set_size_inches(9,5)
@@ -118,6 +122,7 @@ for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 ax.plot(weekly_flows['observed'], color = 'black', marker='o', linestyle='--', linewidth = 3 )
 ax.set(title="2 Week Forecast", xlabel="Week", ylabel="Weekly Avg Flow [cfs]")
+plt.xlim([0, forecast_week-2])
 plot_labels = firstnames + ['Observed Flow']
 ax.legend(plot_labels, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=5)
 fig.set_size_inches(9,5)
@@ -135,6 +140,7 @@ for i, line in enumerate(ax.get_lines()):
 plt.axhline(y=0, color = 'black', linestyle='--', linewidth = 3 )
 ax.set(title="2 Week Forecast Error", xlabel="Week", ylabel="Deviation from Weekly Avg Flow [cfs]", ylim=[-60,60])
 plot_labels = firstnames
+plt.xlim([0, forecast_week-2])
 ax.legend(plot_labels, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=5)
 fig.set_size_inches(9,5)
 plt.show()
