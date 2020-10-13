@@ -73,10 +73,10 @@ weekly_flows = pd.read_csv("../weekly_results/weekly_observations.csv")
 
 # %% Week 7 addition, format new dataframes for weekly plotting, and assign same index
 #trim and tanspose to make plotting easier
-weekly_forecast1w_graph = weekly_forecast1w.iloc[:,0:forecast_week].T 
-weekly_forecast2w_graph = weekly_forecast2w.iloc[:,0:forecast_week].T 
-#trim and set index the same
-weekly_flows_graph = weekly_flows.iloc[:forecast_week,3:4]
+weekly_forecast1w_graph = weekly_forecast1w.iloc[:,0:forecast_week-1].T 
+weekly_forecast2w_graph = weekly_forecast2w.iloc[:,0:forecast_week-1].T 
+#trim and set index the same, weekly flow start 8/23 while student forecasts start 8/30 so need to trim dataset
+weekly_flows_graph = weekly_flows.iloc[1:forecast_week,3:4]
 weekly_flows_graph.set_index(weekly_forecast1w_graph.index, append=False, inplace=True) 
 
 
