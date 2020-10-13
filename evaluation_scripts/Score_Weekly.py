@@ -5,10 +5,7 @@
 
 # Potential additions - 
 # Make this a functiona
-# Addd graphical outputs
-# Make a better interface for assigning bonus points
 # Set the class roster from a file.
-# Read in the forecast start and stop dates from a file automatically
 
 # %%
 import pandas as pd

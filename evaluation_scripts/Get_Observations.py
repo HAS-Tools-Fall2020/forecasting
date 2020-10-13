@@ -2,14 +2,6 @@
 # This script downloads the observations from USGS aggreages to 
 # weekly and saves as a csv
 
-# we are using the climata package to download data
-# if you don't have it installed you will need to 
-# pip install cliamata before you start
-
-# here is a climata example:
-# https://www.earthdatascience.org/tutorials/acquire-and-visualize-usgs-hydrology-data/
-
-
 # Potential additions:
 # Make this a function 
 # Modify so it reads in the previous observation file and only adds in the new obs 
@@ -21,8 +13,6 @@ import pandas as pd
 import numpy as np
 import os
 import dataretrieval.nwis as nwis
-#from climata.usgs import DailyValueIO
-#print(os.getcwd())
 
 
 # %% 
@@ -31,7 +21,7 @@ import dataretrieval.nwis as nwis
 # list of dates associated with each forecast week
 # you should set forecast_week equal to the forecast
 # week that just completed
-week = 7                        # Schulze changed to week 5. 9/22/20, wk 6 (10/5), wk 7 (10/12)
+week = 7                        
 station_id = "09506000"
 
 # %%
