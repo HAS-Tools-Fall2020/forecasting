@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import dataretrieval.nwis as nwis
 import os
 
-
 # %%
 forecast_week = 7   #week 7 (Jake/Mekha 10/8/20)
 
@@ -30,21 +29,22 @@ forecast_dates=pd.read_csv(datefile, index_col='forecast_week')
 start_date = forecast_dates.loc[forecast_week, 'start_date']
 stop_date = forecast_dates.loc[forecast_week, 'end_date']
 
-print("Evaluating forecasts for", start_date, 'To', stop_date)
+print("Evaluating forecasts up to", start_date, 'To', stop_date)
 
 #%%
-# helpful for graphing
+# Setting up a list of week numbers to be used in plotting
 weeks = []
 for i in range (16):
     # this is done because python counts 1 behind 
     weeks.append('week_' '%s'%(i+1))
 
 #%%
-
-# predictions over time
+# mamking two empty arrays to  hold the forecasts
 forecasts_1=np.zeros([nstudent,len(weeks)])
 forecasts_2=np.zeros([nstudent,len(weeks)]) # The 2week forecasts for this week
 
+# Reading the individual student forecast csvs to  populate the 
+# dataframe
 for i in range(nstudent):
     filename = names[i] + '.csv'
     filepath = os.path.join('..', 'forecast_entries', filename)
