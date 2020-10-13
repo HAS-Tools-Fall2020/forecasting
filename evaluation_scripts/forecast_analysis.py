@@ -70,6 +70,7 @@ for i in range(16):
 # Week 7 addition, create dataframe containing weekly flows
 # NOTE: Must first run Get_Observations.py script
 weekly_flows = pd.read_csv("../weekly_results/weekly_observations.csv")
+
 # %% Week 7 addition, format new dataframes for weekly plotting, and assign same index
 #trim and tanspose to make plotting easier
 weekly_forecast1w_graph = weekly_forecast1w.iloc[:,0:forecast_week].T 
@@ -80,20 +81,20 @@ weekly_flows_graph.set_index(weekly_forecast1w_graph.index, append=False, inplac
 
 
 # %% 
-# Week 7 addition, plot timeseries of 1 week forecasts and observed weekly avgerage flow
+# Week 7 addition, plot timeseries of 1 week forecasts and observed weekly average flow
 markers = ['o', 'v', '^', 'D', '>', 's', 'P', 'X', '<', '>', 'X', 'o', 'v', 's', '^','P','<', 'D', 's']
 fig, ax = plt.subplots()
 ax.plot(weekly_forecast1w_graph)
 for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 ax.plot(weekly_flows['observed'], color = 'black', marker='o', linestyle='--', linewidth = 3 )
-ax.set(title="1 Week Forecast", xlabel="Week", ylabel="Weekly Avg Flow [cfs]")
-plt.xlim([0, forecast_week-2])
+ax.set(title="1 Week Forecast", xlabel="Week", ylabel="Weekly Avg Flow [cfs]", xlim = (0, forecast_week-2), ylim = (0, None))
+#plt.xlim([0, forecast_week-1])
 plot_labels = firstnames + ['Observed Flow']
 ax.legend(plot_labels, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=5)
 fig.set_size_inches(9,5)
 plt.show()
-#fig.savefig("1Wk_Forecasts")
+#fig.savefig("1Wk_Forecasts", bbox_inches='tight')
 
 
 # %% 
@@ -105,13 +106,12 @@ ax.plot(Errow_1wk)
 for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 plt.axhline(y=0, color = 'black', linestyle='--', linewidth = 3 )
-ax.set(title="1 Week Forecast Error", xlabel="Week", ylabel="Deviation from Weekly Avg Flow [cfs]", ylim=[-60,60])
-plt.xlim([0, forecast_week-2])
+ax.set(title="1 Week Forecast Error", xlabel="Week", ylabel="Deviation from Weekly Avg Flow [cfs]", xlim = (0, forecast_week-2), ylim=[-60,60])
 plot_labels = firstnames
 ax.legend(plot_labels, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=5)
 fig.set_size_inches(9,5)
 plt.show()
-#fig.savefig("1Wk_Error")
+#fig.savefig("1Wk_Error", bbox_inches='tight')
 
 
 # %% 
@@ -121,13 +121,12 @@ ax.plot(weekly_forecast2w_graph)
 for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 ax.plot(weekly_flows['observed'], color = 'black', marker='o', linestyle='--', linewidth = 3 )
-ax.set(title="2 Week Forecast", xlabel="Week", ylabel="Weekly Avg Flow [cfs]")
-plt.xlim([0, forecast_week-2])
+ax.set(title="2 Week Forecast", xlabel="Week", ylabel="Weekly Avg Flow [cfs]", xlim = (0, forecast_week-2), ylim = (0, None))
 plot_labels = firstnames + ['Observed Flow']
 ax.legend(plot_labels, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=5)
 fig.set_size_inches(9,5)
 plt.show()
-#fig.savefig("2Wk_Forecasts")
+#fig.savefig("2Wk_Forecasts", bbox_inches='tight')
 
 # %% 
 # Week 7 addition, plot timeseries of 2 week forecast error
@@ -138,13 +137,13 @@ ax.plot(Errow_2wk)
 for i, line in enumerate(ax.get_lines()):
     line.set_marker(markers[i])
 plt.axhline(y=0, color = 'black', linestyle='--', linewidth = 3 )
-ax.set(title="2 Week Forecast Error", xlabel="Week", ylabel="Deviation from Weekly Avg Flow [cfs]", ylim=[-60,60])
+ax.set(title="2 Week Forecast Error", xlabel="Week", ylabel="Deviation from Weekly Avg Flow [cfs]", xlim = (0, forecast_week-2), ylim=[-60,60])
 plot_labels = firstnames
 plt.xlim([0, forecast_week-2])
 ax.legend(plot_labels, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=5)
 fig.set_size_inches(9,5)
 plt.show()
-#fig.savefig("2Wk_Error")
+#fig.savefig("2Wk_Error", bbox_inches='tight')
 
 # %%
 # week 7 plot
