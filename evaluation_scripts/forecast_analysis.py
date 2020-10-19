@@ -7,7 +7,7 @@ import os
 import eval_functions as ef
 
 # %%
-forecast_week = 7   # week 7 (Jake/Mekha 10/8/20)
+forecast_week = 8   # week 8 (Lourdes/Alexa 10/19/20)
 
 # %%
 station_id = "09506000"
