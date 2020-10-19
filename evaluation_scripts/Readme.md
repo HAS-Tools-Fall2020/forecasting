@@ -47,8 +47,10 @@ ___
 
 3. **Score the Forecasts After noon on Monday** pull the latest updates from everyone and run the weekly forecast evaluation. Using the `score_weekly.py` script. You will need to update the following the forecast week to run this script. You can look that up in the `Seasonal_Forecast_Dates.pdf` file. This will create the `forecast_week4_results.csv` file. Look at these results and the results that get printed from the script to see how everyone did.
 
-4.  **Assign Bonus points** After you do the scoring decide how you will assign bonus points. Once this is change the  `names` and `forecast_week` in the bonus points cell on `Bonus_Points.py` and run this section to write out your Bonus points file for this week.
+4. **Assign Bonus points** After you do the scoring decide how you will assign bonus points. You should write your  own analysis script to determine how to assign bonus points you can save this  as  `Bonus_wk#.py`. Once the bonus points are decided, change the  `names` and `forecast_week` in the the bonus points cell on `Bonus_Points.py` and run this section to write out your Bonus points file for this week.
 
-5.  **Calculate total scores** Run `Scoreboard.py` script to see the overall rankings and total scores.
+5. **Calculate total scores** Run `Scoreboard.py` script to see the overall rankings and total scores.
 
-6. **Update the markdown file with your scores** update the README.md file in the  main directory of this folder with the points you applied this week and the updated overall scores.
+6. **Review the forecasts to date** Using the `Get_Observations.py` script, update the forecast week number and run the script to update the csv file containing the weekly average flows. Then update the week number in `forecast_analysis.py` and run the script to review the class performance of weekly forecasts to date. The `forecast_analysis.py` script will produce timeseries graphs of everyone's 1 week and 2 week forecasts, so we can review everyone's performance to date.
+
+7. **Update the markdown file with your scores** update the README.md file in the main directory of this folder with the points you applied this week and the updated overall scores.
