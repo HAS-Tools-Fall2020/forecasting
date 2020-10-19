@@ -1,6 +1,8 @@
 # %%
 import pandas as pd
 import os
+import numpy as np
+from glob import glob
 
 # %%
 # Alexa's Forecast Functions Week 8
@@ -75,3 +77,18 @@ def weekDates(weekNumber):
     startDate = forecast_dates.loc[weekNumber, 'start_date']
     stopDate = forecast_dates.loc[weekNumber, 'end_date']
     return startDate, stopDate
+
+def write_bonus(bonus_names,weeknum):
+    """" This function needs week forecast (week_no) and the list of student's
+    names (list_names) you want to give bonus points for this week """
+    file_listB = glob(os.path.join('../weekly_results', 'bonus*.csv'))
+    temp = pd.read_csv(file_listB[0], index_col='name')
+    bonus = pd.DataFrame(data=np.zeros(len(temp)), 
+                        index=temp.index,
+                        columns=['points'])
+    del(temp)
+    bonus.loc[bonus_names, 'points'] = 1
+    filename='bonus_week' + str(weeknum) + '.csv'
+    bonus_file = os.path.join('../weekly_results', filename )
+    bonus.to_csv(bonus_file)
+    print("Work done :)")
