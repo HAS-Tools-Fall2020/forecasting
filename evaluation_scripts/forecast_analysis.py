@@ -4,34 +4,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 import dataretrieval.nwis as nwis
 import os
+import eval_functions as ef
 
 # %%
-forecast_week = 7   #week 7 (Jake/Mekha 10/8/20)
+forecast_week = 7   # week 7 (Jake/Mekha 10/8/20)
 
 # %%
 station_id = "09506000"
 
 # list of students in the class
-names=['ferre', 'fierro', 'hsieh', 'hull', 'kahler', 'lau', 'marcelain',
-        'marcovecchio', 'medina', 'mitchell', 'narkhede',
-        'neri', 'noonan', 'pereira', 'ridlinghaver', 'salcedo',
-        'schulze', 'stratman', 'tadych']
-firstnames=['Ty', 'Lourdes', 'Diana', 'Quinn', 'Abigail', 'Alcely', 'Richard',
-        'Alexa', 'Xenia', 'Ben', 'Shweta',
-        'Patrick', 'Jill', 'Mekha', 'Jake', 'Camilo',
-        'Scott', 'Adam', 'Danielle']
-nstudent=len(names)
+# get lists using functions in eval_functions.py
+names = ef.getLastNames()
+firstnames = ef.getFirstNames()
+nstudent = len(names)
 
-
-datefile = os.path.join('..', 'Seasonal_Foercast_Dates.csv')
-forecast_dates=pd.read_csv(datefile, index_col='forecast_week')
-
-start_date = forecast_dates.loc[forecast_week, 'start_date']
-stop_date = forecast_dates.loc[forecast_week, 'end_date']
+# get start and stop dates using functions in eval_functions.py
+dates = ef.weekDates(forecast_week)
+start_date = dates[0]
+stop_date = dates[1]
 
 print("Evaluating forecasts up to", start_date, 'To', stop_date)
 
-#%%
+# %%
 # Setting up a list of week numbers to be used in plotting
 weeks = []
 for i in range (16):
