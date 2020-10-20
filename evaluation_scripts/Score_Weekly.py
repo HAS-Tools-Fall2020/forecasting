@@ -31,12 +31,16 @@ names = ef.getLastNames()
 firstnames = ef.getFirstNames()
 nstudent = len(names)
 
-# get start and end date of forecast weeks
+# get start and end date of forecast week for 1 wk forecast
 week_date = ef.weekDates(forecast_week)
 start_date = week_date[0]
 stop_date = week_date[1]
 print("Evaluating forecasts for", start_date, 'To', stop_date)
 
+# get start and end date of forecast week for 2 wk forecast
+week_date2 = ef.weekDates(forecast_week-1)
+start_date_2wk = week_date2[0]
+stop_date_2wk = week_date2[1]
 
 # %%
 # Read in everyone's forecast entries
@@ -59,9 +63,11 @@ obs_day = nwis.get_record(sites=station_id, service='dv',
                           start=start_date, end=stop_date,
                           parameterCd='00060')
 obs_week = np.mean(obs_day['00060_Mean'])
-dif1 = abs(forecasts1-obs_week)
+dif1 = abs(forecasts1 - obs_week)
 # dif2 = np.zeros(nstudent)
-dif2 = abs(forecasts2-obs_week)
+
+dif2 = abs(forecasts2 - obs_week)
+
 
 print('Average streamflow for this week:', np.round(obs_week, 3))
 
@@ -122,7 +128,7 @@ print('Third Place = ', list(summary.loc[summary['1week_ranking'] == 3].index),
 
 print('2 Week Forecast (', start_date, '-', stop_date, ')')
 print('Observed Flow =', round(obs_week, 3))
-print('Frist Place = ', list(summary.loc[summary['2week_ranking'] == 1].index),
+print('First Place = ', list(summary.loc[summary['2week_ranking'] == 1].index),
       'flow forecast = ', summary.loc[summary['2week_ranking'] == 1,
                                       '2week_forecast'].head(1).values)
 print('Second Place = ', list(summary.loc[summary['2week_ranking'] == 2].index),
@@ -137,14 +143,15 @@ print('Third Place = ', list(summary.loc[summary['2week_ranking'] == 3].index),
 
 # Add Histogram of results, plots each student's guess,
 # and the actual mean value for week one.
+plt.figure(figsize=(8, 6))
 plt.hist(forecasts1, bins=120, color='blue', alpha=0.75,
          label='Student Guesses')
-plt.plot([obs_week]*3, np.arange(0, 3, 1), color='orange',
+plt.plot([obs_week]*3, np.arange(0, 3, 1), color='red',
          linestyle='-', label='Actual mean')
-plt.title('Student Guesses and actual mean, week 1')
+plt.title('Student Guesses, week 1')
 plt.xlabel('Flow Forecast')
 plt.ylabel('Count')
-plt.legend(loc='upper right')
+plt.legend(loc='upper left')
 # %%
 
 # Add Histogram of results, plots each student's guess.
@@ -155,6 +162,7 @@ plt.plot([obs_week]*3, np.arange(0, 3, 1), color='orange',
 plt.title('Student Guesses and actual mean, week 2')
 plt.xlabel('Flow Forecast')
 plt.ylabel('Count')
+plt.legend(loc='upper right')
 # %%
 # Week 6 addition:  Line plots
 # Week 1 - Obs vs Forecasts
