@@ -11,16 +11,15 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import dataretrieval.nwis as nwis
 import os
-
+import dataretrieval.nwis as nwis
 
 # %%
 # User variables
 # forecast_week is the week number that you are going to be judging. 
 # You can find this in the seasonal_forecst_Dates.pdf 
 # You should look up the forecast number for the week that just ended
-forecast_week = 7       # wk 5 (Schulze 9/28), wk 6 (marcelain 10/5) , wk 7 (10/12)
+forecast_week = 8       # wk 5 (Schulze 9/28), wk 6 (marcelain 10/5) , wk 7 (10/12), wk8(10/19)
 
 # %%
 station_id = "09506000"
