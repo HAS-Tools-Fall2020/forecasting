@@ -166,6 +166,24 @@ ___
   - Xenia, Ben, Scott
   - People that has not received bouns points in previous (random selection).   
 
+### Forecast 8 Points Awarded:
+- **One Week forecast (10/11-10/17)**:
+  - Observed flow = 68.843 cfs
+  - First place: 67.81 cfs, Abigail
+  - Second place: 70.00 cfs, Camilo
+  - Third place: 70.38 cfs, Ben
+
+- **Two week forecast (m/dd - m/dd)**:
+  - Observed flow = 61.857 cfs
+  - First place: 61.5 cfs, Lourdes
+  - Second place: 62.6 cfs, Ben
+  - Third place: 60.0 cfs, Danielle
+
+- **Bonus points**:
+  - NAMES
+  - Reason
+
+
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.
 ### Forecast X Points Awarded:
