@@ -17,24 +17,24 @@ ___
 |   Name   | Points  | Rank    |
 |:---------|---------|-------  |                                
 | Diana    |    8.0  |  1.0 |
+| Ben      |    6.0  |  2.0 |
+| Abigail  |    6.0  |  2.0 |
 | Adam     |    6.0  |  2.0 |
-| Danielle |    5.0  |  3.0 |
-| Quinn    |    4.0  |  4.0 |
-| Abigail  |    4.0  |  4.0 |
+| Danielle |    6.0  |  2.0 |
+| Lourdes  |    4.0  |  3.0 |
 | Richard  |    4.0  |  4.0 |
-| Lourdes  |    4.0  |  4.0 |
+| Xenia    |    4.0  |  4.0 |
 | Shweta   |    4.0  |  4.0 |
 | Patrick  |    4.0  |  4.0 |
-| Jill     |    4.0  |  4.0 |
+| Jill     |    3.0  |  4.0 |
+| Quinn    |    3.0  |  4.0 |
 | Alexa    |    3.0  |  5.0 |
-| Xenia    |    3.0  |  5.0 |
 | Mekha    |    3.0  |  5.0 |
-| Jake     |    3.0  |  5.0 |
-| Scott    |    2.0  |  6.0 |
-| Ty       |    2.0  |  6.0 |
-| Camilo   |    2.0  |  6.0 |
+| Jake     |    2.0  |  5.0 |
+| Camilo   |    2.0  |  5.0 |
+| Scott    |    2.0  |  5.0 |
 | Alcely   |    2.0  |  6.0 |
-| Ben      |    2.0  |  6.0 |
+| Ty       |    2.0  |  6.0 |
 
 
 ## Seasonal Forecast Leaders
@@ -164,7 +164,7 @@ ___
 
 - **Bonus points**:
   - Xenia, Ben, Scott
-  - People that has not received bonus points in previous (random selection).   
+  - People that have not received bouns points in previous weeks (random selection).   
 
 ### Forecast 8 Points Awarded:
 - **One Week forecast (10/11-10/17)**:
