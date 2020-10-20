@@ -156,10 +156,10 @@ plt.legend(loc='upper left')
 
 # Add Histogram of results, plots each student's guess.
 plt.figure(figsize=(8, 6))
-plt.hist(forecasts2, bins=120, label='Student Guesses')
-plt.plot([obs_week]*3, np.arange(0, 3, 1), color='red',
+plt.hist(forecasts2, bins=120)
+plt.plot([obs_week]*3, np.arange(0, 3, 1), color='orange',
          linestyle='-', label='Actual mean')
-plt.title('Student Guesses, week 2')
+plt.title('Student Guesses and actual mean, week 2')
 plt.xlabel('Flow Forecast')
 plt.ylabel('Count')
 plt.legend(loc='upper right')
