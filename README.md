@@ -149,6 +149,23 @@ ___
   - Adam (8.1 cfs), Diana (10.9 cfs), Jill (12.15 cfs)
   - Least combined error for both 1 week and 2 week forecast (and not already receiving points)  
 
+### Forecast 7 Points Awarded:
+- **One Week forecast (10/11 - 10/17)**:
+  - Observed flow = 68.84 cfs
+  - First place: 67.81 cfs, Abigail
+  - Second place: 70.0 cfs, Camilo
+  - Third place: 70.38 cfs, Ben
+
+- **Two week forecast (10/11 - 10/17)**:
+  - Observed Flow = 68.84 cfs
+  - First Place: 62.6 cfs, Ben
+  - Second Place: 61.5 cfs, Lourdes
+  - Third Place: 60.0 cfs, Danielle
+
+- **Bonus points**:
+  - Xenia, Ben, Scott
+  - People that has not received bouns points in previous (random selection).   
+
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.
 ### Forecast X Points Awarded:
