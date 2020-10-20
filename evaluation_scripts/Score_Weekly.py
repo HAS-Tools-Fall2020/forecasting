@@ -65,11 +65,8 @@ obs_day = nwis.get_record(sites=station_id, service='dv',
 obs_week = np.mean(obs_day['00060_Mean'])
 dif1 = abs(forecasts1 - obs_week)
 # dif2 = np.zeros(nstudent)
-obs_day2 = nwis.get_record(sites=station_id, service='dv',
-                           start=start_date_2wk, end=stop_date_2wk,
-                           parameterCd='00060')
-obs_week2 = np.mean(obs_day2['00060_Mean'])
-dif2 = abs(forecasts2 - obs_week2)
+
+dif2 = abs(forecasts2 - obs_week)
 
 
 print('Average streamflow for this week:', np.round(obs_week, 3))
@@ -129,8 +126,8 @@ print('Third Place = ', list(summary.loc[summary['1week_ranking'] == 3].index),
       'flow forecast = ', summary.loc[summary['1week_ranking'] == 3,
                                       '1week_forecast'].head(1).values)
 
-print('2 Week Forecast (', start_date_2wk, '-', stop_date_2wk, ')')
-print('Observed Flow =', round(obs_week2, 3))
+print('2 Week Forecast (', start_date, '-', stop_date, ')')
+print('Observed Flow =', round(obs_week, 3))
 print('First Place = ', list(summary.loc[summary['2week_ranking'] == 1].index),
       'flow forecast = ', summary.loc[summary['2week_ranking'] == 1,
                                       '2week_forecast'].head(1).values)
@@ -160,7 +157,7 @@ plt.legend(loc='upper left')
 # Add Histogram of results, plots each student's guess.
 plt.figure(figsize=(8, 6))
 plt.hist(forecasts2, bins=120, label='Student Guesses')
-plt.plot([obs_week2]*3, np.arange(0, 3, 1), color='red',
+plt.plot([obs_week]*3, np.arange(0, 3, 1), color='red',
          linestyle='-', label='Actual mean')
 plt.title('Student Guesses, week 2')
 plt.xlabel('Flow Forecast')
@@ -194,7 +191,7 @@ fig, ax = plt.subplots()
 ax.plot(forecasts2, '-g', label='Forecast', alpha=.8)
 plt.axhline(y=class_avg2, linestyle='dashed',
             label='Class Avg', alpha=.8, color='red')
-plt.axhline(y=obs_week2, linestyle='dotted', label='Observed',
+plt.axhline(y=obs_week, linestyle='dotted', label='Observed',
             alpha=.8, color='blue')
 plt.xticks(np.arange(0, 19, 1))
 ax.set(title="Week 2 Forecasts", xlabel="Students",
