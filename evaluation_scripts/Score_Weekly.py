@@ -151,7 +151,7 @@ plt.hist(forecasts1, bins=120, color='blue', alpha=0.75,
          label='Student Guesses')
 plt.plot([obs_week]*3, np.arange(0, 3, 1), color='red',
          linestyle='-', label='Actual mean')
-plt.title('Student Guesses and actual mean, week 1')
+plt.title('Student Guesses, week 1')
 plt.xlabel('Flow Forecast')
 plt.ylabel('Count')
 plt.legend(loc='upper left')

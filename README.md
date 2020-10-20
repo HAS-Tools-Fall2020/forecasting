@@ -164,7 +164,7 @@ ___
 
 - **Bonus points**:
   - Xenia, Ben, Scott
-  - People that has not received bouns points in previous (random selection).   
+  - People that has not received bonus points in previous (random selection).   
 
 ### Forecast 8 Points Awarded:
 - **One Week forecast (10/11-10/17)**:

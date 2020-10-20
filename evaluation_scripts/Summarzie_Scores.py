@@ -51,8 +51,8 @@ for i in range(1, forecast_num+1):
 
 # %%
 scoreboard['total']=scoreboard.sum(axis=1)
-#technically this would be a more correct way to do this
-#scoreboard.loc[:, scoreboard.columns != 'total'].sum(axis=1)
+# technically this would be a more correct way to do this
+# scoreboard.loc[:, scoreboard.columns != 'total'].sum(axis=1)
 
 # Write out the reults
 filepath_out = os.path.join('..', 'scoreboard.csv')
