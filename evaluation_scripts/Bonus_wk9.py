@@ -108,6 +108,7 @@ max_error_df = max_error_df.sort_values(
 Bonus_winners = max_error_df.head(3)
 
 # get winners list from other code
+# Need to bring in winners here
 Weekly_winners = pd.DataFrame(winners, columns='names')
 
 if Bonus_winners.Names.isin([weekly_winners]):
@@ -116,92 +117,3 @@ Bonus_winners = max_error_df.head(3)
 print(Bonus_winners.Names)
 # Check if Bonus_winners are the forecast winners of this week or evaluators, if yes,
 # drop that and select next in sorted list
-
-
-def get_markerplot():
-    """
-    ------------------------------------
-
-    ------------------------------------
-    Parameters:
-
-
-    ------------------------------------
-    Outputs:
-
-    """
-
-    return marker_plot
-
-
-def get_boxwhiskplot():
-    """
-    ------------------------------------
-
-    ------------------------------------
-    Parameters:
-
-
-    ------------------------------------
-    Outputs:
-
-    """
-
-    return boxwhiskplot
-
-
-# %%
-class_avg1 = np.mean(forecasts1)
-
-fig, ax = plt.subplots()
-ax.plot(forecasts1, '-g', label='Forecast', alpha=.8)
-plt.axhline(y=class_avg1, linestyle='dashed',
-            label='Class Avg', alpha=.8, color='red')
-plt.axhline(y=obs_week, linestyle='dotted', label='Observed',
-            alpha=.8, color='blue')
-plt.xticks(np.arange(0, 19, 1))
-ax.set(title="Week 1 Forecasts", xlabel="Students",
-       ylabel="Weekly Avg Flow [cfs]")
-ax.legend(fancybox=True, framealpha=1, shadow=True,
-          borderpad=1)
-
-fig.set_size_inches(10, 4)
-# plt.savefig('Lplot_1.png')
-plt.show()
-
-# Week 2 - Obs vs Forecasts
-class_avg2 = np.mean(forecasts2)
-
-fig, ax = plt.subplots()
-ax.plot(forecasts2, '-g', label='Forecast', alpha=.8)
-plt.axhline(y=class_avg2, linestyle='dashed',
-            label='Class Avg', alpha=.8, color='red')
-plt.axhline(y=obs_week, linestyle='dotted', label='Observed',
-            alpha=.8, color='blue')
-plt.xticks(np.arange(0, 19, 1))
-ax.set(title="Week 2 Forecasts", xlabel="Students",
-       ylabel="Weekly Avg Flow [cfs]",)
-ax.legend(fancybox=True, framealpha=1, shadow=True,
-          borderpad=1)
-
-fig.set_size_inches(10, 4)
-# plt.savefig('Lplot_2.png')
-
-plt.show()
-
-
-title_string1 = 'Student guesses for Week 1'
-histogram1 = pf.get_histogram(forecasts1, obs_week, title_string1)
-
-title_string2 = 'Student guesses for Week 2'
-histogram2 = pf.get_histogram(forecasts2, obs_week, title_string2)
-
-class_avg1 = np.mean(forecasts1)
-title_string = 'Week 2 Forecasts'
-simpleplot1 = pf.get_simpleplot(
-    forecasts1, class_avg1, obs_week, title_string1)
-
-class_avg2 = np.mean(forecasts1)
-title_string2 = 'Week 2 Forecasts'
-simpleplot2 = pf.get_simpleplot(
-    forecasts2, class_avg2, obs_week, title_string2)
