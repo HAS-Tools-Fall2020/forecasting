@@ -93,10 +93,10 @@ obs_var = np.diff(weekly_flows['observed'], axis=0)
 pred_var = np.subtract(forecasts_2, forecasts_1)
 
 # For loop for getting errors in weekly prediction for each student
-err = np.zeros([nstudent, 6])
+err = np.zeros([nstudent, 15])
 max_err = np.zeros([nstudent, 1])
 for i in range(nstudent):
-    err[i] = (obs_var[0:6] - pred_var[i][0:6])
+    err[i] = (obs_var[0:15] - pred_var[i][0:15])
     # max error in consecutive week pred difference
     max_err[i] = np.max(np.absolute(err[i]))
 
@@ -108,12 +108,18 @@ max_error_df = max_error_df.sort_values(
 Bonus_winners = max_error_df.head(3)
 
 # get winners list from other code
-# Need to bring in winners here
-Weekly_winners = pd.DataFrame(winners, columns='names')
+winners = []
+for i in range(1, 4):
+    winners.append(list(summary.loc[summary['1week_ranking'] == i].index))
+    winners.append(list(summary.loc[summary['2week_ranking'] == i].index))
 
-if Bonus_winners.Names.isin([weekly_winners]):
+print(winners)
+
+if Bonus_winners.Names.isin([winners]):
     Bonus_winners == []  # delete row for which above cond is true
 Bonus_winners = max_error_df.head(3)
 print(Bonus_winners.Names)
 # Check if Bonus_winners are the forecast winners of this week or evaluators, if yes,
 # drop that and select next in sorted list
+
+# %%
