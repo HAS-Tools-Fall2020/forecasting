@@ -5,9 +5,11 @@ import matplotlib.pyplot as plt
 import dataretrieval.nwis as nwis
 import os
 import eval_functions as ef
+import plot_functions as pf
+
 
 # %%
-forecast_week = 8   # week 8 (Lourdes/Alexa 10/19/20)
+forecast_week = 9   # week 9 (Camilo/Shweta 10/27/20)
 
 # %%
 station_id = "09506000"
@@ -30,7 +32,7 @@ print("Evaluating forecasts up to", start_date, 'To', stop_date)
 weeks = []
 for i in range(16):
     # this is done because python counts 1 behind
-    weeks.append('week_' '%s' % (i+1))
+    weeks.append('Week ' '%s' % (i+1))
 
 # %%
 # mamking two empty arrays to  hold the forecasts
@@ -54,8 +56,8 @@ weekly_forecast1w = pd.DataFrame({}, index=firstnames)
 weekly_forecast2w = pd.DataFrame({}, index=firstnames)
 
 for i in range(16):
-    weekly_forecast1w.insert(i, 'week_%s' % (i+1), forecasts_1[:, i], True)
-    weekly_forecast2w.insert(i, 'week_%s' % (i+1), forecasts_2[:, i], True)
+    weekly_forecast1w.insert(i, 'Week %s' % (i+1), forecasts_1[:, i], True)
+    weekly_forecast2w.insert(i, 'Week %s' % (i+1), forecasts_2[:, i], True)
 
 # everything above this can be copied
 # and pasted into your analysis
@@ -70,173 +72,33 @@ weekly_flows = pd.read_csv("../weekly_results/weekly_observations.csv")
 # trim and tanspose to make plotting easier
 weekly_forecast1w_graph = weekly_forecast1w.iloc[:, 0:forecast_week-1].T
 weekly_forecast2w_graph = weekly_forecast2w.iloc[:, 0:forecast_week-1].T
-# trim and set index the same, weekly flow start 8/23
-# while student forecasts start 8/30 so need to trim dataset
-weekly_flows_graph = weekly_flows.iloc[1:forecast_week, 3:4]
-weekly_flows_graph.set_index(weekly_forecast1w_graph.index,
-                             append=False, inplace=True)
+
+# %% Week 9 Addition: Plot results using the functions from plot_functions
+
+# Plot 1 and 2 Week forecasts values for each student
+
+pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1,
+                        'forecast')
+pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2,
+                        'forecast')
+
+# %%
+# Plot errors (deviation) in 1 and 2 Week forecasts values for each student
+
+pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1,
+                        'abs_error')
+pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2,
+                        'abs_error')
+
 
 
 # %%
-# Week 7 addition, plot timeseries of
-# 1 week forecasts and observed weekly average flow
-markers = ['o', 'v', '^', 'D', '>', 's', 'P', 'X', '<', '>',
-           'X', 'o', 'v', 's', '^', 'P', '<', 'D', 's']
-fig, ax = plt.subplots()
-ax.plot(weekly_forecast1w_graph)
-for i, line in enumerate(ax.get_lines()):
-    line.set_marker(markers[i])
-ax.plot(weekly_flows['observed'], color='black', marker='o',
-        linestyle='--', linewidth=3)
-ax.set(title="1 Week Forecast", xlabel="Week",
-       ylabel="Weekly Avg Flow [cfs]",
-       xlim=(0, forecast_week-2), ylim=(0, None))
-# plt.xlim([0, forecast_week-1])
-plot_labels = firstnames + ['Observed Flow']
-ax.legend(plot_labels, loc='lower center',
-          bbox_to_anchor=(.5, -0.4), ncol=5)
-fig.set_size_inches(9, 5)
-plt.show()
-# fig.savefig("1Wk_Forecasts", bbox_inches='tight')
+# Plot the evolution of the forecasts for the HAS-Tools Class
+# Use 'box' as the last parameter to plot a box-whiskers plot.
+# Use 'plot' as the last parameter to plot the summary as series
 
+# 1 Week Forecast
+pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 1, 'box')
 
-# %%
-# Week 7 addition, plot timeseries of 1 week forecast error
-Errow_1wk = weekly_forecast1w_graph.subtract(weekly_flows_graph['observed'],
-                                             axis=0)
-
-fig, ax = plt.subplots()
-ax.plot(Errow_1wk)
-for i, line in enumerate(ax.get_lines()):
-    line.set_marker(markers[i])
-plt.axhline(y=0, color='black', linestyle='--', linewidth=3)
-ax.set(title="1 Week Forecast Error", xlabel="Week",
-       ylabel="Deviation from Weekly Avg Flow [cfs]",
-       xlim=(0, forecast_week-2), ylim=[-60, 60])
-plot_labels = firstnames
-ax.legend(plot_labels, loc='lower center',
-          bbox_to_anchor=(.5, -0.4), ncol=5)
-fig.set_size_inches(9, 5)
-plt.show()
-# fig.savefig("1Wk_Error", bbox_inches='tight')
-
-
-# %%
-# Week 7 addition, plot timeseries of
-# 2 week forecasts and observed weekly average flow
-fig, ax = plt.subplots()
-ax.plot(weekly_forecast2w_graph)
-for i, line in enumerate(ax.get_lines()):
-    line.set_marker(markers[i])
-ax.plot(weekly_flows['observed'], color='black', marker='o',
-        linestyle='--', linewidth=3)
-ax.set(title="2 Week Forecast", xlabel="Week",
-       ylabel="Weekly Avg Flow [cfs]",
-       xlim=(0, forecast_week-2), ylim=(0, None))
-plot_labels = firstnames + ['Observed Flow']
-ax.legend(plot_labels, loc='lower center',
-          bbox_to_anchor=(.5, -0.4), ncol=5)
-fig.set_size_inches(9, 5)
-plt.show()
-# fig.savefig("2Wk_Forecasts", bbox_inches='tight')
-
-# %%
-# Week 7 addition, plot timeseries of 2 week forecast error
-Errow_2wk = weekly_forecast2w_graph.subtract(weekly_flows_graph['observed'],
-                                             axis=0)
-
-fig, ax = plt.subplots()
-ax.plot(Errow_2wk)
-for i, line in enumerate(ax.get_lines()):
-    line.set_marker(markers[i])
-plt.axhline(y=0, color='black', linestyle='--', linewidth=3)
-ax.set(title="2 Week Forecast Error", xlabel="Week",
-       ylabel="Deviation from Weekly Avg Flow [cfs]",
-       xlim=(0, forecast_week - 2), ylim=[-60, 60])
-plot_labels = firstnames
-plt.xlim([0, forecast_week-2])
-ax.legend(plot_labels, loc='lower center',
-          bbox_to_anchor=(.5, -0.4), ncol=5)
-fig.set_size_inches(9, 5)
-plt.show()
-# fig.savefig("2Wk_Error", bbox_inches='tight')
-
-
-# %%
-# helpful for graphing
-weeks = []
-for i in range(16):
-    weeks.append('week_' '%s' % (i+2))
-    # made because student forecasts start week 2
-
-plt.style.use('seaborn-whitegrid')
-
-plt.plot(weeks, weekly_forecast1w.mean(), marker='o',
-         label='class average')
-plt.plot(weeks, weekly_forecast1w.quantile(0.25), marker='o',
-         label='lower quantile')
-plt.plot(weeks, weekly_forecast1w.quantile(0.75), marker='o',
-         label='upper quantile')
-plt.plot(weeks, weekly_forecast1w.min(), marker='o',
-         label='min')
-plt.plot(weeks, weekly_forecast1w.max(), marker='o',
-         label='max')
-plt.plot(weeks[:15], weekly_flows['observed'][1:],
-         color='black', marker='o', linestyle='--',
-         label='observed')
-plt.ylabel('Flow (cfs)')
-plt.ylim([0, 1000])
-plt.xlim([0, forecast_week-2])
-plt.title('Weekly Discharge Prediction')
-plt.xticks(rotation=45, fontsize=10)
-plt.legend()
-
-# %%
-# week 7 plot
-
-plt.style.use('seaborn-whitegrid')
-
-plt.plot(weeks, weekly_forecast1w.mean(), marker='o',
-         label='class average')
-plt.plot(weeks, weekly_forecast1w.quantile(0.25), marker='o',
-         label='lower quantile')
-plt.plot(weeks, weekly_forecast1w.quantile(0.75), marker='o',
-         label='upper quantile')
-plt.plot(weeks, weekly_forecast1w.min(), marker='o',
-         label='min')
-plt.plot(weeks, weekly_forecast1w.max(), marker='o',
-         label='max')
-plt.plot(weeks[:15], weekly_flows['observed'][1:],
-         color='black', marker='o', linestyle='--',
-         label='observed')
-plt.ylabel('Flow (cfs)')
-plt.ylim([0, 150])
-plt.xlim([0, forecast_week-2])
-plt.title('Weekly Discharge Prediction')
-plt.xticks(rotation=45, fontsize=10)
-plt.legend()
-
-# %%
-# week 7 plot
-
-plt.plot(weeks, weekly_forecast2w.mean(), marker='o',
-         label='class average')
-plt.plot(weeks, weekly_forecast2w.quantile(0.25), marker='o',
-         label='lower quantile')
-plt.plot(weeks, weekly_forecast2w.quantile(0.75), marker='o',
-         label='upper quantile')
-plt.plot(weeks, weekly_forecast2w.min(), marker='o',
-         label='min')
-plt.plot(weeks, weekly_forecast2w.max(), marker='o',
-         label='max')
-plt.plot(weeks[:14], weekly_flows['observed'][2:],
-         color='black', marker='o', linestyle='--',
-         label='observed')
-plt.ylabel('Flow (cfs)')
-plt.ylim([0, 150])
-plt.xlim([0, forecast_week-2])
-plt.title('Weekly Discharge Prediction')
-plt.xticks(rotation=45, fontsize=10)
-plt.legend()
-
-# %%
+# 2 Week Forecast
+pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 2, 'box')
