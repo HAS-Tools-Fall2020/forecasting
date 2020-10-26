@@ -102,3 +102,5 @@ pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 1, 'box')
 
 # 2 Week Forecast
 pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 2, 'box')
+
+# %%

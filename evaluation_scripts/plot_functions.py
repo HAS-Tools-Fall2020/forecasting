@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import eval_functions as ef
 import seaborn as sns
 
+#%% Functions
 
 def get_histogram(forecasts1, obs_week, title_string):
     """Get Histograms:
@@ -222,13 +223,12 @@ def plot_class_summary(df, week_flows, week, type_plot):
         medianprops = dict(linewidth=1.2, color='#E80B5F')
 
         # Plot boxplot and stripplot and set labels and title
-        total_data = pd.melt(df[column_weeks]
+        total_data = pd.melt(df[column_weeks])
         ax = sns.boxplot(x='variable', y='value', data=total_data,
                          linewidth=0.8, width=0.4, showfliers=False,
-                         whiskerprops=whiskerprops, color='w',
-                         boxprops=boxprops, medianprops=medianprops,
-                         capprops=capprops)
-        ax=sns.stripplot(x='variable', y='value', data=total_data,
+                         whiskerprops=whiskerprops,color='w',boxprops=boxprops,
+                         medianprops=medianprops,capprops=capprops)
+        ax = sns.stripplot(x='variable', y='value', data=total_data,
                          jitter=True, alpha=0.5)
         ax.set_ylabel('Flow (cfs)', fontsize=13, fontweight='bold')
         ax.set_xlabel('\n Weeks', fontsize=13, fontweight='bold')
@@ -292,3 +292,5 @@ def plot_class_summary(df, week_flows, week, type_plot):
 
         # Legend
         plt.legend(loc='lower center', bbox_to_anchor=(0.5,-0.4), ncol=3)
+
+# %%
