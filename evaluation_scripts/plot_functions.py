@@ -11,9 +11,10 @@ import matplotlib.pyplot as plt
 import eval_functions as ef
 import seaborn as sns
 
-#%% Functions
+# %% Functions
 
-def get_histogram(forecasts1, obs_week, title_string):
+
+def get_histogram(forecasts, obs_week, week):
     """Get Histograms:
     -----------------------------------
     This function plots histograms of predicted weekly flow data and
@@ -21,21 +22,21 @@ def get_histogram(forecasts1, obs_week, title_string):
     data for last week for comaparision.
     -----------------------------------
     Parameters:
-    forecasts1  = array
-                every student's forecast for week 1
+    forecasts  = array
+                every student's forecast for either week 1 or 2
     obs_week    = float
                 provides week's observed flow
-    title_string = string
-                   provides the title of the histogram
+    week        = Week number for the forecast (1 or 2)
     -----------------------------------
     Outputs:
     figure of Histogram plot
     """
     plt.figure(figsize=(8, 6))
-    plt.hist(forecasts1, bins=120, color='blue', alpha=0.75,
+    plt.hist(forecasts, bins=120, color='blue', alpha=0.75,
              label='Student Guesses')
     histogram = plt.plot([obs_week]*3, np.arange(0, 3, 1), color='red',
                          linestyle='-', label='Actual mean')
+    title_string = 'Student guesses for Week '+str(week)
     plt.title(title_string)
     plt.xlabel('Flow Forecast (cfs)')
     plt.ylabel('Count')
@@ -43,7 +44,7 @@ def get_histogram(forecasts1, obs_week, title_string):
     return histogram
 
 
-def get_simpleplot(forecasts, class_avg, obs_week, title_string):
+def get_simpleplot(forecasts, obs_week, week):
     """Get Simple plot:
     ------------------------------------
     This function plots a simple line plot of student's weekly averaged
@@ -52,23 +53,24 @@ def get_simpleplot(forecasts, class_avg, obs_week, title_string):
     Parameters:
     forecasts = array
                 provides weekly forecasted flow of each student
-    class_avg = float
-                provide average value of flow forecatsed by all students
     obs_week  = float
                 week's observed flow
-    title_string = string
-                   provides the title of the plot
+    week = string
+                Week number for the forecast (1 or 2)
     ------------------------------------
     Outputs: figure of simple line plot
 
     """
     fig, ax = plt.subplots()
+    clean_forecasts = [x for x in forecasts if not np.isnan(x)]
+    class_avg = np.mean(clean_forecasts)
     simple_plot = ax.plot(forecasts, '-g', label='Forecast', alpha=.8)
     plt.axhline(y=class_avg, linestyle='dashed',
                 label='Class Avg', alpha=.8, color='red')
     plt.axhline(y=obs_week, linestyle='dotted', label='Observed',
                 alpha=.8, color='blue')
     plt.xticks(np.arange(0, 19, 1))
+    title_string = 'Week '+str(week)+' Forecasts'
     ax.set(title=title_string, xlabel="Students",
            ylabel="Weekly Avg Flow [cfs]")
     ax.legend(fancybox=True, framealpha=1, shadow=True,
@@ -78,8 +80,7 @@ def get_simpleplot(forecasts, class_avg, obs_week, title_string):
     return simple_plot
 
 
-def plot_class_forecasts(df, week_flows, week, type_plot):
-
+def plot_class_forecasts(df, week_flows, leadtime, type_plot):
     """ plot_class_forecasts()
     ---------------------------------------------------------------------
     This function plots the forecasts submitted by each student for both
@@ -91,8 +92,8 @@ def plot_class_forecasts(df, week_flows, week, type_plot):
         Includes the weekly forecast values for Week 1 and 2 for each student.
     week_flows = Dataframe
                  Observed flows per week obtained from USGS.
-    week: int
-          The week for the forecast. It can only be 1 or 2
+    leadtime: int
+          leadtime for the forecast. It can only be 1 or 2
     type_plot: string
                Enter 'forecasts' to plot all submitted values, or 'abs_error'
                to plot the deviation from the observed value.
@@ -131,11 +132,11 @@ def plot_class_forecasts(df, week_flows, week, type_plot):
     if type_plot == 'abs_error':
         df = df.T.subtract(weekly_flows['observed'], axis=0).T
         plot_ylabel = "Deviation from Weekly Avg Flow [cfs]"
-        plot_title = 'Absolute Error in '+str(week)+' Week Forecast for \
-            HAS-Tools Class \n'
+        plot_title = 'Absolute Error in '+str(leadtime) + ' Week Forecast for \n\
+        HAS-Tools Class'
     elif type_plot == 'forecast':
         plot_ylabel = "Weekly Avg Flow [cfs]"
-        plot_title = str(week)+' Week Forecast for HAS-Tools Class \n '
+        plot_title = str(leadtime)+' Week Forecast for HAS-Tools Class \n '
 
     # Plotting process
     fig, ax = plt.subplots()
@@ -173,7 +174,6 @@ def plot_class_forecasts(df, week_flows, week, type_plot):
 
 
 def plot_class_summary(df, week_flows, week, type_plot):
-
     """ plot_class_summary()
     ---------------------------------------------------------------------
     This function plots the summary for the forecasts submitted by the students
@@ -215,6 +215,7 @@ def plot_class_summary(df, week_flows, week, type_plot):
     # Plotting process depending on the type of plot selected
     if type_plot == 'box':
 
+        fig, ax = plt.subplots()
         # Setup of the features of the boxplot
         boxprops = dict(linestyle='-', linewidth=0.8, color='#00145A',
                         facecolor='white')
@@ -226,19 +227,19 @@ def plot_class_summary(df, week_flows, week, type_plot):
         total_data = pd.melt(df[column_weeks])
         ax = sns.boxplot(x='variable', y='value', data=total_data,
                          linewidth=0.8, width=0.4, showfliers=False,
-                         whiskerprops=whiskerprops,color='w',boxprops=boxprops,
-                         medianprops=medianprops,capprops=capprops)
+                         whiskerprops=whiskerprops, color='w', boxprops=boxprops,
+                         medianprops=medianprops, capprops=capprops)
         ax = sns.stripplot(x='variable', y='value', data=total_data,
-                         jitter=True, alpha=0.5)
+                           jitter=True, alpha=0.5)
         ax.set_ylabel('Flow (cfs)', fontsize=13, fontweight='bold')
         ax.set_xlabel('\n Weeks', fontsize=13, fontweight='bold')
         ax.set_title('Weekly Discharge Prediction for Week'+str(week)+'\n',
-                     fontsize=15,fontweight='bold')
+                     fontsize=15, fontweight='bold')
 
         # Assigns the limits for y-axis based on user's input
-        if y_low == '' and y_max !='':
+        if y_low == '' and y_max != '':
             ax.set_ylim(0, float(y_max))
-        elif y_max == '' and y_low !='':
+        elif y_max == '' and y_low != '':
             ax.set_ylim(float(y_low), df[column_weeks].max().max())
         elif y_max == '' and y_low == '':
             ax.set_ylim(0, df[column_weeks].max().max())
@@ -255,35 +256,34 @@ def plot_class_summary(df, week_flows, week, type_plot):
 
         # Legend
         ax.legend(loc='lower center',
-        bbox_to_anchor=(.5, -0.4), ncol=5)
+                  bbox_to_anchor=(.5, -0.4), ncol=5)
 
-    elif type_plot =='plot':
+    elif type_plot == 'plot':
 
         plt.style.use('seaborn-whitegrid')
 
-        #Plot boxplot and stripplot and set labels and title
-        ay=plt.plot(column_weeks, df[column_weeks].mean(), marker='o',
-                label='Class Average')
-        ay=plt.plot(column_weeks, df[column_weeks].quantile(0.25), marker='o',
-                label='Lower Quantile')
-        ay=plt.plot(column_weeks, df[column_weeks].quantile(0.75), marker='o',
-                label='Upper Quantile')
-        ay=plt.plot(column_weeks, df[column_weeks].min(), marker='o',
-                label='Min')
-        ay=plt.plot(column_weeks, df[column_weeks].max(), marker='o',
-                label='Max')
-        ay=plt.plot(column_weeks, week_flows['observed'][1:len(column_weeks)+1]
-                , color='black', marker='o', linestyle='--',
-                label='Observed')
+        # Plot boxplot and stripplot and set labels and title
+        ay = plt.plot(column_weeks, df[column_weeks].mean(), marker='o',
+                      label='Class Average')
+        ay = plt.plot(column_weeks, df[column_weeks].quantile(0.25), marker='o',
+                      label='Lower Quantile')
+        ay = plt.plot(column_weeks, df[column_weeks].quantile(0.75), marker='o',
+                      label='Upper Quantile')
+        ay = plt.plot(column_weeks, df[column_weeks].min(), marker='o',
+                      label='Min')
+        ay = plt.plot(column_weeks, df[column_weeks].max(), marker='o',
+                      label='Max')
+        ay = plt.plot(column_weeks, week_flows['observed'][1:len(column_weeks)+1], color='black', marker='o', linestyle='--',
+                      label='Observed')
         plt.ylabel('Flow (cfs)', fontsize=13, fontweight='bold')
         plt.xlabel('\n Weeks', fontsize=13, fontweight='bold')
         plt.title('Weekly Discharge Prediction for Week # '+str(week)+'\n',
-                 fontsize=15,fontweight='bold')
+                  fontsize=15, fontweight='bold')
 
         # Assigns the limits for y-axis based on user's input
-        if y_low == '' and y_max !='':
+        if y_low == '' and y_max != '':
             plt.ylim(0, float(y_max))
-        elif y_max == '' and y_low !='':
+        elif y_max == '' and y_low != '':
             plt.ylim(float(y_low), df[column_weeks].max().max())
         elif y_max == '' and y_low == '':
             plt.ylim(0, df[column_weeks].max().max())
@@ -291,6 +291,7 @@ def plot_class_summary(df, week_flows, week, type_plot):
             plt.ylim(float(y_low), float(y_max))
 
         # Legend
-        plt.legend(loc='lower center', bbox_to_anchor=(0.5,-0.4), ncol=3)
+        plt.legend(loc='lower center', bbox_to_anchor=(0.5, -0.4), ncol=3)
+
 
 # %%

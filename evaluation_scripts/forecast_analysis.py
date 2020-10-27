@@ -73,6 +73,7 @@ weekly_flows = pd.read_csv("../weekly_results/weekly_observations.csv")
 weekly_forecast1w_graph = weekly_forecast1w.iloc[:, 0:forecast_week-1].T
 weekly_forecast2w_graph = weekly_forecast2w.iloc[:, 0:forecast_week-1].T
 
+
 # %% Week 9 Addition: Plot results using the functions from plot_functions
 
 # Plot 1 and 2 Week forecasts values for each student

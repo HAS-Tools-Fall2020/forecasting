@@ -145,22 +145,14 @@ print('Third Place = ', list(summary.loc[summary['2week_ranking'] == 3].index),
 
 # Add Histogram of results, plots each student's guess,
 # and the actual mean value for week 1 and week 2.
-title_string1 = 'Student guesses for Week 1'
-histogram1 = pf.get_histogram(forecasts1, obs_week, title_string1)
+histogram1 = pf.get_histogram(forecasts1, obs_week, 1)
 
-title_string2 = 'Student guesses for Week 2'
-histogram2 = pf.get_histogram(forecasts2, obs_week, title_string2)
+histogram2 = pf.get_histogram(forecasts2, obs_week, 2)
 
 # Week 1 - Obs vs Forecasts
-class_avg1 = np.mean(forecasts1)
-title_string1 = 'Week 2 Forecasts'
-simpleplot1 = pf.get_simpleplot(
-    forecasts1, class_avg1, obs_week, title_string1)
+simpleplot1 = pf.get_simpleplot(forecasts1, obs_week, 1)
 
 # Week 2 - Obs vs Forecasts
-class_avg2 = np.mean(forecasts2)
-title_string2 = 'Week 2 Forecasts'
-simpleplot1 = pf.get_simpleplot(
-    forecasts2, class_avg2, obs_week, title_string2)
+simpleplot2 = pf.get_simpleplot(forecasts2, obs_week, 2)
 
 # %%
