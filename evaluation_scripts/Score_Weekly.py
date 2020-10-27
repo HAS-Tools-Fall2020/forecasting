@@ -10,10 +10,10 @@
 # %%
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import os
 import eval_functions as ef
 import dataretrieval.nwis as nwis
+import plot_functions as pf
 
 # %%
 # User variables:
@@ -21,7 +21,7 @@ import dataretrieval.nwis as nwis
 #                Use number for week that just ended,
 #                found in seasonal_forecst_Dates.pdf
 
-forecast_week = 8  # wk8 (Lourdes & Alexa 10/19)
+forecast_week = 9  # wk9 (Shweta & Camilo 10/27)
 
 # %%
 station_id = "09506000"
@@ -140,67 +140,19 @@ print('Third Place = ', list(summary.loc[summary['2week_ranking'] == 3].index),
 
 
 # %%
+# Week 9 addition:
+# Replaced plotting script with functions
 
 # Add Histogram of results, plots each student's guess,
-# and the actual mean value for week one.
-plt.figure(figsize=(8, 6))
-plt.hist(forecasts1, bins=120, color='blue', alpha=0.75,
-         label='Student Guesses')
-plt.plot([obs_week]*3, np.arange(0, 3, 1), color='red',
-         linestyle='-', label='Actual mean')
-plt.title('Student Guesses, week 1')
-plt.xlabel('Flow Forecast')
-plt.ylabel('Count')
-plt.legend(loc='upper left')
-# %%
+# and the actual mean value for week 1 and week 2.
+histogram1 = pf.get_histogram(forecasts1, obs_week, 1)
 
-# Add Histogram of results, plots each student's guess.
-plt.figure(figsize=(8, 6))
-plt.hist(forecasts2, bins=120)
-plt.plot([obs_week]*3, np.arange(0, 3, 1), color='orange',
-         linestyle='-', label='Actual mean')
-plt.title('Student Guesses and actual mean, week 2')
-plt.xlabel('Flow Forecast')
-plt.ylabel('Count')
-plt.legend(loc='upper right')
-# %%
-# Week 6 addition:  Line plots
+histogram2 = pf.get_histogram(forecasts2, obs_week, 2)
+
 # Week 1 - Obs vs Forecasts
-class_avg1 = np.mean(forecasts1)
-
-fig, ax = plt.subplots()
-ax.plot(forecasts1, '-g', label='Forecast', alpha=.8)
-plt.axhline(y=class_avg1, linestyle='dashed',
-            label='Class Avg', alpha=.8, color='red')
-plt.axhline(y=obs_week, linestyle='dotted', label='Observed',
-            alpha=.8, color='blue')
-plt.xticks(np.arange(0, 19, 1))
-ax.set(title="Week 1 Forecasts", xlabel="Students",
-       ylabel="Weekly Avg Flow [cfs]")
-ax.legend(fancybox=True, framealpha=1, shadow=True,
-          borderpad=1)
-
-fig.set_size_inches(10, 4)
-# plt.savefig('Lplot_1.png')
-plt.show()
+simpleplot1 = pf.get_simpleplot(forecasts1, obs_week, 1)
 
 # Week 2 - Obs vs Forecasts
-class_avg2 = np.mean(forecasts2)
+simpleplot2 = pf.get_simpleplot(forecasts2, obs_week, 2)
 
-fig, ax = plt.subplots()
-ax.plot(forecasts2, '-g', label='Forecast', alpha=.8)
-plt.axhline(y=class_avg2, linestyle='dashed',
-            label='Class Avg', alpha=.8, color='red')
-plt.axhline(y=obs_week, linestyle='dotted', label='Observed',
-            alpha=.8, color='blue')
-plt.xticks(np.arange(0, 19, 1))
-ax.set(title="Week 2 Forecasts", xlabel="Students",
-       ylabel="Weekly Avg Flow [cfs]",)
-ax.legend(fancybox=True, framealpha=1, shadow=True,
-          borderpad=1)
-
-fig.set_size_inches(10, 4)
-# plt.savefig('Lplot_2.png')
-
-plt.show()
 # %%

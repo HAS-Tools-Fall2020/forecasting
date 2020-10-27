@@ -14,45 +14,44 @@ ___
 <a name="Scoreboard"></a>
 ## Scoreboard
 
-|   Name   | Points  | Rank    |
-|:---------|---------|-------  |                                
-| Diana    |    8.0  |  1.0 |
-| Ben      |    6.0  |  2.0 |
-| Abigail  |    6.0  |  2.0 |
-| Adam     |    6.0  |  2.0 |
-| Danielle |    6.0  |  2.0 |
-| Lourdes  |    4.0  |  3.0 |
-| Richard  |    4.0  |  4.0 |
-| Xenia    |    4.0  |  4.0 |
-| Shweta   |    4.0  |  4.0 |
-| Patrick  |    4.0  |  4.0 |
-| Jill     |    3.0  |  4.0 |
-| Quinn    |    3.0  |  4.0 |
-| Alexa    |    3.0  |  5.0 |
-| Mekha    |    3.0  |  5.0 |
-| Jake     |    2.0  |  5.0 |
-| Camilo   |    2.0  |  5.0 |
-| Scott    |    2.0  |  5.0 |
-| Alcely   |    2.0  |  6.0 |
-| Ty       |    2.0  |  6.0 |
-
+| Name     | Points | Rank |
+|:-------- | ------ | ---- |
+| Ben      | 9.0    | 1.0  |
+| Diana    | 8.0    | 2.0  |
+| Adam     | 7.0    | 3.0  |
+| Jake     | 6.0    | 4.0  |
+| Danielle | 6.0    | 4.0  |
+| Abigail  | 6.0    | 4.0  |
+| Richard  | 5.0    | 5.0  |
+| Lourdes  | 5.0    | 5.0  |
+| Quinn    | 5.0    | 5.0  |
+| Alexa    | 4.0    | 6.0  |
+| Xenia    | 4.0    | 6.0  |
+| Shweta   | 4.0    | 6.0  |
+| Patrick  | 4.0    | 6.0  |
+| Jill     | 4.0    | 6.0  |
+| Camilo   | 4.0    | 6.0  |
+| Mekha    | 3.0    | 7.0  |
+| Scott    | 3.0    | 7.0  |
+| Alcely   | 2.0    | 8.0  |
+| Ty       | 2.0    | 8.0  |
 
 ## Seasonal Forecast Leaders
 
-|  Fcst #    | First   | Second    | Third    |
-|:-----------|---------|---------  |--------- |
-|  1         |         |           |          |
-|  2         |         |           |          |
-|  3         |         |           |          |
-|  4         |         |           |          |
-|  5         |         |           |          |
-|  6         |         |           |          |
-|  7         |         |           |          |
-|  8         |         |           |          |
-|  9         |         |           |          |
-|  10        |         |           |          |
-|  11        |         |           |          |
-|  12        |         |           |          |
+| Fcst # | First | Second | Third |
+|:------ | ----- | ------ | ----- |
+| 1      |       |        |       |
+| 2      |       |        |       |
+| 3      |       |        |       |
+| 4      |       |        |       |
+| 5      |       |        |       |
+| 6      |       |        |       |
+| 7      |       |        |       |
+| 8      |       |        |       |
+| 9      |       |        |       |
+| 10     |       |        |       |
+| 11     |       |        |       |
+| 12     |       |        |       |
 
 ### Forecast 1 Points Awarded:
 - **One Week forecast (8/30-9/5)**:
@@ -147,7 +146,7 @@ ___
 
 - **Bonus points**:
   - Adam (8.1 cfs), Diana (10.9 cfs), Jill (12.15 cfs)
-  - Least combined error for both 1 week and 2 week forecast (and not already receiving points)  
+  - Least combined error for both 1 week and 2 week forecast (and not already receiving points)
 
 ### Forecast 7 Points Awarded:
 - **One Week forecast (10/11 - 10/17)**:
@@ -164,7 +163,7 @@ ___
 
 - **Bonus points**:
   - Xenia, Ben, Scott
-  - People that have not received bouns points in previous weeks (random selection).   
+  - People that have not received bouns points in previous weeks (random selection).
 
 ### Forecast 8 Points Awarded:
 - **One Week forecast (10/11-10/17)**:
@@ -183,6 +182,22 @@ ___
   - NAMES
   - Reason
 
+  ### Forecast 9 Points Awarded:
+  - **One Week forecast (10/18 - 10/24)**:
+    - Observed flow = 80.16 cfs
+    - First place: 77.71 cfs, Jake
+    - Second place: 76.1 cfs, Ben|
+    - Third place: 75.67 cfs, Quinn
+
+  - **Two week forecast (10/18 - 10/24)**:
+    - Observed Flow = 80.16 cfs
+    - First Place: 77.95 cfs, Ben
+    - Second Place: 82.82 cfs, Jake
+    - Third Place: 74.85 cfs, Camilo
+
+  - **Bonus points**:
+    - Adam, Richard and Alexa
+    - Bonus points goes to those who has the highest error in prediction between consecutive weekly flow. Note: Neither winners or evaluators were able to receive bonus points).
 
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.
