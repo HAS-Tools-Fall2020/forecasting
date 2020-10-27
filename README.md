@@ -197,7 +197,7 @@ ___
 
   - **Bonus points**:
     - Adam, Richard and Alexa
-    - Bonus points goes to those who has the highest error in prediction between consecutive weekly flow 
+    - Bonus points goes to those who has the highest error in prediction between consecutive weekly flow. Note: Neither winners or evaluators were able to receive bonus points).
 
 -----
 ### Template forecast scoring text copy this above and fill out the info to add a new week.
