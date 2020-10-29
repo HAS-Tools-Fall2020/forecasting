@@ -102,8 +102,8 @@ def student_csv(lastname):
     """ Reads the .cvs student file as a dataframe.
     ---------------------------------
     Parameters:
-    lastname = list of strings
-               student's last name.
+    lastname = string
+               list of student's last name.
     ---------------------------------
     Returns:
     file_df = DataFrame

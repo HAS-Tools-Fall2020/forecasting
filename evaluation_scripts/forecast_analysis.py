@@ -99,7 +99,7 @@ for i in range(nstudent):
 
     seasonal_rmse[firstnames[i]] = rmse_list
 
-# Probably will be use as plot input or bonus input?
+# Probably will be use as plot input or bonus input? Still to be worked on later in the week.
 weekly_rmse_mean = pd.DataFrame(weekly_rmse.mean(axis=1)).sort_values(0)
 seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
 
