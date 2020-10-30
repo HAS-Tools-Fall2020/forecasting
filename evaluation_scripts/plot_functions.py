@@ -293,5 +293,82 @@ def plot_class_summary(df, week_flows, week, type_plot):
         # Legend
         plt.legend(loc='lower center', bbox_to_anchor=(0.5, -0.4), ncol=3)
 
+# Week 10 Additions
+
+def plot_seasonal_rmse(seasonal_rmse):
+    """Seasonal Root Mean Square Error:
+    -----------------------------------
+    This function plots the root mean square error of weekly flow
+    data for weeks 1 and 2. You have the option of entering in minumum
+    and maximum y values. 
+    -----------------------------------
+    Parameters:
+    Seasonal_rmse = pandas dataframe
+                    every student's seasonal root meet square error 
+    -----------------------------------
+    Output:
+    Figure of long term weekly prediction root mean square errors
+    """
+    # Request the parameters for the plots
+    y_low = (input('Please introduce the lower limit for y-Axis (Hit enter for \
+             default value 0):'))
+    y_max = (input('Please introduce the upper limit for y-Axis (Hit enter for \
+            default values):'))
+
+    column_weeks = [i for i in seasonal_rmse.columns]
+
+    # Markers for the plot
+    markers = ['o', 'v', '^', 'D', '>', 's', 'P', 'X', '<', '>',
+               'X', 'o', 'v', 's', '^', 'P', '<', 'D', 's']
+
+    # Get the array of firstnames for the plot
+    firstnames = ef.getFirstNames()
+
+    # plotting 
+    fig, ax = plt.subplots()
+    ax.plot(seasonal_rmse)
+    for i, line in enumerate(ax.get_lines()):
+        line.set_marker(markers[i])
+    ax.set_xlabel('Weeks', fontsize=13, fontweight='bold')
+    ax.set_ylabel("Root Mean Square Error", fontsize=13, fontweight='bold')
+    ax.set_title("Seasonal Root Mean Square Error", fontsize=13, fontweight='bold')
+
+    # Assigns the limits for y-axis based on user's input
+    if y_low == '' and y_max != '':
+        ax.set_ylim(seasonal_rmse[column_weeks].min().min(), float(y_max))
+    elif y_max == '' and y_low != '':
+        ax.set_ylim(float(y_low), df[column_weeks].max().max())
+    elif y_max == '' and y_low == '':
+        ax.set_ylim(seasonal_rmse[column_weeks].min().min(), seasonal_rmse[column_weeks].max().max())
+    else:
+        ax.set_ylim(float(y_low), float(y_max))
+    ax.legend(firstnames, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=6)
+    plt.show()
+
+
+def rmse_histogram(weekly_rmse):
+    """Root Mean Square Error Histogram:
+    -----------------------------------
+    This function plots a histogram of the root mean square error
+    of weekly flow data
+    -----------------------------------
+    Parameters:
+    weekly_rmse   = pandas dataframe
+                    every student's weekly root meet square error 
+    seasonal_rmse = pandas dataframe
+                    every student's seasonal root meet square error
+    -----------------------------------
+    Outputs:
+    Histogram plot of week 1 and 2 root mean square errors
+    """
+    plt.hist(weekly_rmse.iloc[:,0], bins=20, rwidth=0.8, color='green',
+             alpha=0.3, label = 'Week 1')
+    plt.hist(weekly_rmse.iloc[:,1], bins=20, rwidth=0.8, color='red',
+             alpha=0.3, label = 'Week 2')
+    plt.xlabel('Root Mean Square Error', fontweight='bold')
+    plt.ylabel('Frequency', fontweight='bold')
+    plt.title('Root Mean Square Errors', fontweight='bold')
+    plt.legend()
+
 
 # %%

@@ -99,10 +99,9 @@ for i in range(nstudent):
 
     seasonal_rmse[firstnames[i]] = rmse_list
 
-# Probably will be use as plot input or bonus input? Still to be worked on later in the week.
+# Probably will be use as bonus input? Still to be worked on later in the week.
 weekly_rmse_mean = pd.DataFrame(weekly_rmse.mean(axis=1)).sort_values(0)
 seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
-
 
 # %% Week 7 addition, format new dataframes for
 # weekly plotting, and assign same index
@@ -119,6 +118,7 @@ pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1,
                         'forecast')
 pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2,
                         'forecast')
+
 
 # %%
 # Plot errors (deviation) in 1 and 2 Week forecasts values for each student
@@ -141,5 +141,13 @@ pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 1, 'box')
 # 2 Week Forecast
 pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 2, 'box')
 
+
+# %%
+
+# Week 10 plot of the seasonal root mean square error
+plot_seasonal_rmse(seasonal_rmse)
+
+# Week 10 plot of a histogram of the weekly root mean square error
+rmse_histogram(weekly_rmse)
 
 # %%
