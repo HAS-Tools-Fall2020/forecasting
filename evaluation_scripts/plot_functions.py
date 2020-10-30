@@ -314,7 +314,6 @@ def plot_seasonal_rmse(seasonal_rmse):
              default value 0):'))
     y_max = (input('Please introduce the upper limit for y-Axis (Hit enter for \
             default values):'))
-
     column_weeks = [i for i in seasonal_rmse.columns]
 
     # Markers for the plot
@@ -342,6 +341,8 @@ def plot_seasonal_rmse(seasonal_rmse):
         ax.set_ylim(seasonal_rmse[column_weeks].min().min(), seasonal_rmse[column_weeks].max().max())
     else:
         ax.set_ylim(float(y_low), float(y_max))
+    
+    #showing the legend
     ax.legend(firstnames, loc='lower center', bbox_to_anchor=(.5, -0.4), ncol=6)
     plt.show()
 
@@ -367,7 +368,7 @@ def rmse_histogram(weekly_rmse):
              alpha=0.3, label = 'Week 2')
     plt.xlabel('Root Mean Square Error', fontweight='bold')
     plt.ylabel('Frequency', fontweight='bold')
-    plt.title('Root Mean Square Errors', fontweight='bold')
+    plt.title('Weekly Root Mean Square Errors', fontweight='bold')
     plt.legend()
 
 

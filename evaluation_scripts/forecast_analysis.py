@@ -9,7 +9,7 @@ import plot_functions as pf
 
 
 # %%
-forecast_week = 9   # week 9 (Camilo/Shweta 10/27/20)
+forecast_week = 9   # week 10 (Alcely and Diana 11/2/20)
 
 # %%
 station_id = "09506000"
@@ -143,11 +143,12 @@ pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 2, 'box')
 
 
 # %%
+# Week 10 plots of root mean square errors
 
-# Week 10 plot of the seasonal root mean square error
-plot_seasonal_rmse(seasonal_rmse)
+# Line plot of the seasonal root mean square error
+pf.plot_seasonal_rmse(seasonal_rmse)
 
-# Week 10 plot of a histogram of the weekly root mean square error
-rmse_histogram(weekly_rmse)
+# Histogram of the weekly root mean square error
+pf.rmse_histogram(weekly_rmse)
 
 # %%
