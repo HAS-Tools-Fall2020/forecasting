@@ -94,3 +94,45 @@ def write_bonus(bonus_names, weeknum):
     bonus_file = os.path.join('../weekly_results', filename)
     bonus.to_csv(bonus_file)
     print("Work done :)")
+
+# Week 10 additions:
+
+
+def student_csv(lastname):
+    """ Reads the .cvs student file as a dataframe.
+    ---------------------------------
+    Parameters:
+    lastname = string
+               list of student's last name.
+    ---------------------------------
+    Returns:
+    file_df = DataFrame
+              contains student's forecast entries.
+    """
+    filename = lastname + '.csv'
+    filepath = os.path.join('..', 'forecast_entries', filename)
+    print(filepath)
+    file_df = pd.read_csv(filepath, index_col='Forecast #')
+    return file_df
+
+
+def simpleRMSE(prediction, observation, decimals):
+    """ Calculates the Root Mean Square Error (RMSE) of a dataset.
+    ---------------------------------
+    Parameters:
+    prediction = DataFrame, array or list
+                 A prediction dataset.
+    observation = DataFrame, array or list
+                 A observation dataset with the same length
+                 that the prediction dataset.
+    decimals = Integer
+               Number of decimals in the result.
+    ---------------------------------
+    Returns:
+    rmse = Float
+    """
+    rmse = (((prediction - observation) ** 2).mean()
+            ** 0.5).round(decimals)
+    return rmse
+
+# %%
