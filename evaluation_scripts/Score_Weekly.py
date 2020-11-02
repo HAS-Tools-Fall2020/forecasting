@@ -1,12 +1,5 @@
 # This script is used to score the 1 week and 2 week forecasts
 
-# You should run this script twice:
-# First to judge the one week forecasts from last week
-# And then to judge the two week forecasts from two weeks ago
-
-# Potential additions -
-# Make this a function
-
 # %%
 import pandas as pd
 import numpy as np
@@ -155,4 +148,3 @@ simpleplot1 = pf.get_simpleplot(forecasts1, obs_week, 1)
 # Week 2 - Obs vs Forecasts
 simpleplot2 = pf.get_simpleplot(forecasts2, obs_week, 2)
 
-# %%
