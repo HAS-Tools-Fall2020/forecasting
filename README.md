@@ -53,168 +53,257 @@ ___
 | 11     |       |        |       |
 | 12     |       |        |       |
 
-### Forecast 1 Points Awarded:
-- **One Week forecast (8/30-9/5)**:
-  - Observed flow = 57.1 cfs
-  - First place: 59 cfs, Diana & Scott
-  - Second place: 55 cfs, Abagail & Alexa
-  - Third place: 60 cfs, Camilo, Quinn & Shweta
+
+## Seasonal Forecast Leaders
 
 
-- **Two week forecast (9/6 - 9/12)**:
-  - Observed flow = 42.26 cfs
-  - First place: 45 cfs, Alexa
-  - Second place: 52 cfs, Abagail
-  - Third place: 30 cfs, Danielle
+### Forecast Week 2: 8/30-9/5
+**Observed flow** = 57.1 cfs
 
-- **Bonus points**:
-  - Adam, Lourdes & Richard
-  - for being the first non ranking forecasts to be submitted on GitHub
+**1 Week Forecast**:
+- First place: 59 cfs, Diana & Scott
+- Second place: 55 cfs, Abagail & Alexa
+- Third place: 60 cfs, Camilo, Quinn & Shweta
 
-### Forecast 2 Points Awarded:
-- **One Week forecast (9/13 - 9/19)**:
-  - Observed flow = 42.26 cfs
-  - First place: 40 cfs, Diana
-  - Second place: 50 cfs, Abagail
-  - Third place: 53.6 cfs, Xenia
+**Bonus points**
+- Adam, Lourdes & Richard
+- for being the first non ranking forecasts to be submitted on GitHub
 
-- **Two week forecast (9/20 - 9/26)**:
-  - Observed Flow = 56.2
-  - Frist Place: 57.114 cfs, Xenia
-  - Second Place: 55 cfs  Jill
-  - Third Place = 60 cfs, Quinn, Mekha, Jake
+### Forecast Week 3: 9/6 - 9/12
+**Observed flow** = 42.26 cfs
 
-- **Bonus points**:
-  - Adam, Patrick and Ty
-  - For being our most optimistic forecasters :) (i.e. the largest flow  predictions of the 1week forecasts for this week)
+**One Week Forecast Points**:
+- First place: 40 cfs, Diana
+- Second place: 50 cfs, Abagail
+- Third place: 53.6 cfs, Xenia
 
-### Forecast 3 Points Awarded:
-  - **One Week forecast (9/13 - 9/19)**:
-    - Observed flow = 56.2 cfs
-    - First place: 56 cfs, Richard
-    - Second place: 55 cfs, Mekha
-    - Third place: 54.04 cfs, Alcely
+**Two Week Forecast Points**:
+- First place: 45 cfs, Alexa
+- Second place: 52 cfs, Abagail
+- Third place: 30 cfs, Danielle
 
-  - **Bonus points**:
-      - Adam, Patrick and Ty
-      - For being our most optimistic forecasters :) (i.e. the largest flow  predictions of the 1week forecasts for this week)
+**Bonus Points**:
+- Adam, Patrick and Ty
+- For being our most optimistic forecasters :) (i.e. the largest flow  predictions of the 1week forecasts for this week)
 
-### Forecast 4 Points Awarded:
-  - **One Week forecast (09/20-09/26)**:
-    - Observed flow = 58.429 cfs
-    - First place: 59 cfs, Patrick
-    - Second place: 60 cfs, Adam
-    - Third place: 56.39 cfs, Camilo
-  - **Two week forecast (9/20 - 9/26)**:
-    - Observed Flow = 58.429
-    - Frist Place: 57.5 cfs, Lourdes
-    - Second Place: 57 cfs  Jill
-    - Third Place = 60 cfs, Mekha
-  - **Bonus points**:
-    - Richard, Abigail, and DianaM
-    - Randomly chosen by the newest upgrade to the scoring codes. I did not want to have to subjectively choose.
+### Forecast Week 4: 9/13 - 9/19
+**Observed Flow** = 56.2
 
-### Forecast 5 Points Awarded:
-- **One Week forecast (9/27 - 10/3)**:
-  - Observed flow = 57.29 cfs
-  - First place: 57 cfs, Diana
-  - Second place: 57.9 cfs, Quinn
-  - Third place: 56.2 cfs, Jill
+**One Week forecast**:
+- First place: 56 cfs, Richard
+- Second place: 55 cfs, Mekha
+- Third place: 54.04 cfs, Alcely
 
-- **Two week forecast (10/40 - 10/10)**:
-  - Observed Flow = 57.29 cfs
-  - Frist Place: 61.14 cfs, Danielle
-  - Second Place: 51.7 cfs, Ben
-  - Third Place = 65 cfs, Adam
+**Two week forecast**:
+- Frist Place: 57.114 cfs, Xenia
+- Second Place: 55 cfs  Jill
+- Third Place = 60 cfs, Quinn, Mekha, Jake
 
-- **Bonus points**:
-  - Alcely, Shweta, Jake
-  - A little boost to the lowest point holders (selectively randomed)
+**Bonus points**:
+- Richard, Abigail, and DianaM
+- Randomly chosen by the newest upgrade to the scoring codes. I did not want to have to subjectively choose.
 
-### Forecast 6 Points Awarded:
-- **One Week forecast (10/4 - 10/10)**:
-  - Observed flow = 61.86 cfs
-  - First place: 61 cfs, Danielle
-  - Second place: 60,72 cfs, Lourdes
-  - Third place: 59.6 cfs, Ben
+### Forecast Week 5: 9/20 - 9/26
+**Observed flow** = 58.429 cfs
 
-- **Two week forecast (10/4 - 10/10)**:
-  - Observed Flow = 61.86 cfs
-  - First Place: 62.1 cfs, Shweta
-  - Second Place: 60 cfs, Quinn
-  - Third Place: 63.93 cfs, Jake
+**One Week forecast**:
+- First place: 59 cfs, Patrick
+- Second place: 60 cfs, Adam
+- Third place: 56.39 cfs, Camilo
 
-- **Bonus points**:
+**Two week forecast**:
+- Frist Place: 57.5 cfs, Lourdes
+- Second Place: 57 cfs  Jill
+- Third Place = 60 cfs, Mekha
+
+**Bonus points**: None this week
+
+### Forecast Week 6: 9/27 - 10/3
+**Observed flow** = 57.29 cfs
+
+**One Week forecast**
+- First place: 57 cfs, Diana
+- Second place: 57.9 cfs, Quinn
+- Third place: 56.2 cfs, Jill
+
+**Two week forecast**:
+- Frist Place: 61.14 cfs, Danielle
+- Second Place: 51.7 cfs, Ben
+- Third Place = 65 cfs, Adam
+
+**Bonus points**:
+- Alcely, Shweta, Jake
+- A little boost to the lowest point holders (selectively randomed)
+
+### Forecast Week 7: 10/4 - 10/10
+**Observed flow** = 61.86 cfs
+
+**One Week forecast**
+- First place: 61 cfs, Danielle
+- Second place: 60,72 cfs, Lourdes
+- Third place: 59.6 cfs, Ben
+
+**Two week forecast**:
+- First Place: 62.1 cfs, Shweta
+- Second Place: 60 cfs, Quinn
+- Third Place: 63.93 cfs, Jake
+
+**Bonus points**:
   - Adam (8.1 cfs), Diana (10.9 cfs), Jill (12.15 cfs)
   - Least combined error for both 1 week and 2 week forecast (and not already receiving points)
 
-### Forecast 7 Points Awarded:
-- **One Week forecast (10/11 - 10/17)**:
-  - Observed flow = 68.84 cfs
-  - First place: 67.81 cfs, Abigail
-  - Second place: 70.0 cfs, Camilo
-  - Third place: 70.38 cfs, Ben
+### Forecast Week 8:10/11 - 10/17
+**Observed flow** = 68.84 cfs
 
-- **Two week forecast (10/11 - 10/17)**:
-  - Observed Flow = 68.84 cfs
-  - First Place: 62.6 cfs, Ben
-  - Second Place: 61.5 cfs, Lourdes
-  - Third Place: 60.0 cfs, Danielle
+**One Week Forecast**:
+- First place: 67.81 cfs, Abigail
+- Second place: 70.0 cfs, Camilo
+- Third place: 70.38 cfs, Ben
 
-- **Bonus points**:
-  - Xenia, Ben, Scott
-  - People that have not received bouns points in previous weeks (random selection).
+- **Two Week Forecast**:
+- First Place: 62.6 cfs, Ben
+- Second Place: 61.5 cfs, Lourdes
+- Third Place: 60.0 cfs, Danielle
 
-### Forecast 8 Points Awarded:
-- **One Week forecast (10/11-10/17)**:
-  - Observed flow = 68.843 cfs
-  - First place: 67.81 cfs, Abigail
-  - Second place: 70.00 cfs, Camilo
-  - Third place: 70.38 cfs, Ben
+**Bonus points**:
+- Xenia, Ben, Scott
+- People that have not received bonus points in previous weeks (random selection).
 
-- **Two week forecast (m/dd - m/dd)**:
-  - Observed flow = 61.857 cfs
-  - First place: 61.5 cfs, Lourdes
-  - Second place: 62.6 cfs, Ben
-  - Third place: 60.0 cfs, Danielle
+### Forecast Week 9: 10/18 - 10/24
+**Observed flow** = 80.16 cfs
 
-- **Bonus points**:
-  - NAMES
-  - Reason
+**One Week forecast**:
+- First place: 77.71 cfs, Jake
+- Second place: 76.1 cfs, Ben
+- Third place: 75.67 cfs, Quinn
 
-  ### Forecast 9 Points Awarded:
-  - **One Week forecast (10/18 - 10/24)**:
-    - Observed flow = 80.16 cfs
-    - First place: 77.71 cfs, Jake
-    - Second place: 76.1 cfs, Ben|
-    - Third place: 75.67 cfs, Quinn
+**Two week forecast**:
+- First Place: 77.95 cfs, Ben
+- Second Place: 82.82 cfs, Jake
+- Third Place: 74.85 cfs, Camilo
 
-  - **Two week forecast (10/18 - 10/24)**:
-    - Observed Flow = 80.16 cfs
-    - First Place: 77.95 cfs, Ben
-    - Second Place: 82.82 cfs, Jake
-    - Third Place: 74.85 cfs, Camilo
+**Bonus points**:
+- Adam, Richard and Alexa
+- Bonus points goes to those who has the highest error in prediction between consecutive weekly flow. Note: Neither winners or evaluators were able to receive bonus points).
 
-  - **Bonus points**:
-    - Adam, Richard and Alexa
-    - Bonus points goes to those who has the highest error in prediction between consecutive weekly flow. Note: Neither winners or evaluators were able to receive bonus points).
+### Forecast Week 10:10/25 - 10/31
+*Judges:*
+**Observed flow** = flow cfs
 
------
-### Template forecast scoring text copy this above and fill out the info to add a new week.
-### Forecast X Points Awarded:
-- **One Week forecast (m/dd-m/dd)**:
-  - Observed flow = XX cfs
-  - First place: XX cfs, NAMES
-  - Second place: XX cfs, NAMES
-  - Third place: XX cfs, NAMES
+**One week forecast**:
+- First Place: flow, name(s)
+- Second Place: flow, name(s)
+- Third Place: flow, name(s)
 
-- **Two week forecast (m/dd - m/dd)**:
+**Two week forecast**:
+- First place: flow, name(s)
+- Second place: flow, name(s)
+- Third place: flow, name(s)
 
+**Bonus points**:
+-
 
-- **Bonus points**:
-  - NAMES
-  - Reason
+### Forecast Week 11:11/1 - 11/7
+*Judges:*
+**Observed flow** = flow cfs
 
+**One week forecast**:
+- First Place: flow, name(s)
+- Second Place: flow, name(s)
+- Third Place: flow, name(s)
+
+**Two week forecast**:
+- First place: flow, name(s)
+- Second place: flow, name(s)
+- Third place: flow, name(s)
+
+**Bonus points**:
+-
+
+### Forecast Week 12: 11/8 - 11/14
+*Judges:*
+**Observed flow** = flow cfs
+
+**One week forecast**:
+- First Place: flow, name(s)
+- Second Place: flow, name(s)
+- Third Place: flow, name(s)
+
+**Two week forecast**:
+- First place: flow, name(s)
+- Second place: flow, name(s)
+- Third place: flow, name(s)
+
+**Bonus points**:
+-
+
+### Forecast Week 13: 11/15 - 11/21
+*Judges:*
+**Observed flow** = flow cfs
+
+**One week forecast**:
+- First Place: flow, name(s)
+- Second Place: flow, name(s)
+- Third Place: flow, name(s)
+
+**Two week forecast**:
+- First place: flow, name(s)
+- Second place: flow, name(s)
+- Third place: flow, name(s)
+
+**Bonus points**:
+-
+
+### Forecast Week 14: 11/22 - 11/28
+*Judges:*
+**Observed flow** = flow cfs
+
+**One week forecast**:
+- First Place: flow, name(s)
+- Second Place: flow, name(s)
+- Third Place: flow, name(s)
+
+**Two week forecast**:
+- First place: flow, name(s)
+- Second place: flow, name(s)
+- Third place: flow, name(s)
+
+**Bonus points**:
+-
+
+### Forecast Week 15: 11/29 - 12/5
+*Judges:*
+**Observed flow** = flow cfs
+
+**One week forecast**:
+- First Place: flow, name(s)
+- Second Place: flow, name(s)
+- Third Place: flow, name(s)
+
+**Two week forecast**:
+- First place: flow, name(s)
+- Second place: flow, name(s)
+- Third place: flow, name(s)
+
+**Bonus points**:
+-
+
+### Forecast Week 16: 12/6 - 12/12
+*Judges:*
+**Observed flow** = flow cfs
+
+**One week forecast**:
+- First Place: flow, name(s)
+- Second Place: flow, name(s)
+- Third Place: flow, name(s)
+
+**Two week forecast**:
+- First place: flow, name(s)
+- Second place: flow, name(s)
+- Third place: flow, name(s)
+
+**Bonus points**:
+-
 ___
 <a name="howto"></a>
 ## How to play:
