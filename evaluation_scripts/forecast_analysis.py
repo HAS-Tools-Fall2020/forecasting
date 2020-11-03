@@ -9,7 +9,7 @@ import plot_functions as pf
 
 
 # %%
-forecast_week = 9   # week 10 (Alcely and Diana 11/2/20)
+forecast_week = 10   # week 10 (Alcely and Diana 11/2/20)
 
 # %%
 station_id = "09506000"
