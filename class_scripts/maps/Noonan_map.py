@@ -18,48 +18,8 @@ file = os.path.join('data', 'gagesII_9322_point_shapefile',
 gages = gpd.read_file(file)
 
 # %%
-type(gages)
-
-# %%
-gages.head()
-
-# %%
-gages.columns
-
-# %%
-gages.shape
-
-# %%
-# Looking at the geometry now
-gages.geom_type
-
-# %%
-# check our CRS - coordinate reference system
-gages.crs
-
-# %%
-# Check the spatial extent
-gages.total_bounds
-
-# %%
-# Now lets make a map!
-fig, ax = plt.subplots(figsize=(5, 5))
-gages.plot(ax=ax)
-plt.show()
-
-# %%
-# Zoom  in and just look at AZ
-gages.STATE.unique()
-
-# %%
+# pull out AZ data
 gages_AZ = gages[gages['STATE'] == 'AZ']
-gages_AZ.shape
-
-# %%
-# Basic plot of AZ gages
-fig, ax = plt.subplots(figsize=(5, 5))
-gages_AZ.plot(ax=ax)
-plt.show()
 
 # %%
 # //////////////
@@ -68,37 +28,8 @@ plt.show()
 # download: https://viewer.nationalmap.gov/basic/?basemap=b1&category=nhd&title=NHD%20View#productSearch
 # Reading it using geopandas
 file = os.path.join('data', 'WBD_15_HU2_Shape', 'Shape', 'WBDHU6.shp')
-fiona.listlayers(file)
-
-# %%
 wshed = gpd.read_file(file)
 
-# %%
-type(wshed)
-
-# %%
-wshed.head()
-
-# %%
-wshed.columns
-
-# %%
-wshed.shape
-
-# %%
-# Looking at the geometry now
-wshed.geom_type
-
-# %%
-wshed.crs
-
-# %%
-wshed.total_bounds
-
-# %%
-fig, ax = plt.subplots(figsize=(5, 5))
-wshed.plot(ax=ax)
-plt.show()
 
 # %%
 # //////////////////////
@@ -108,18 +39,7 @@ plt.show()
 # Reading it using geopandas
 file = os.path.join('data', 'GOVTUNIT_Arizona_State_Shape',
                     'Shape', 'GU_StateOrTerritory.shp')
-fiona.listlayers(file)
-
-# %%
 state = gpd.read_file(file)
-
-# %%
-state.crs
-
-# %%
-fig, ax = plt.subplots(figsize=(5, 5))
-state.plot(ax=ax)
-plt.show()
 
 # %%
 # Add some points
@@ -130,7 +50,6 @@ cities_list = np.array([[-112.074, 33.448], [-110.9747, 32.2226]])
 # %%
 # make these into spatial features
 cities_geom = [Point(xy) for xy in cities_list]
-cities_geom
 
 # %%
 # map a dataframe of these points
