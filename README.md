@@ -16,25 +16,27 @@ ___
 
 | Name     | Points | Rank |
 |:-------- | ------ | ---- |
-| Ben      | 9.0    | 1.0  |
-| Diana    | 8.0    | 2.0  |
-| Adam     | 7.0    | 3.0  |
-| Jake     | 6.0    | 4.0  |
-| Danielle | 6.0    | 4.0  |
-| Abigail  | 6.0    | 4.0  |
-| Richard  | 5.0    | 5.0  |
-| Lourdes  | 5.0    | 5.0  |
-| Quinn    | 5.0    | 5.0  |
-| Alexa    | 4.0    | 6.0  |
-| Xenia    | 4.0    | 6.0  |
-| Shweta   | 4.0    | 6.0  |
-| Patrick  | 4.0    | 6.0  |
-| Jill     | 4.0    | 6.0  |
-| Camilo   | 4.0    | 6.0  |
-| Mekha    | 3.0    | 7.0  |
-| Scott    | 3.0    | 7.0  |
-| Alcely   | 2.0    | 8.0  |
-| Ty       | 2.0    | 8.0  |
+| Jake     | 11.0   | 1.0  |
+| Ben      | 10.0   | 2.0  |
+| Diana    | 8.0    | 3.0  |
+| Danielle | 7.0    | 4.0  |
+| Abigail  | 6.0    | 5.0  |
+| Jill     | 6.0    | 5.0  |
+| Quinn    | 6.0    | 5.0  |
+| Adam     | 6.0    | 5.0  |
+| Richard  | 5.0    | 6.0  |
+| Alexa    | 5.0    | 6.0  |
+| Xenia    | 5.0    | 6.0  |
+| Lourdes  | 5.0    | 6.0  |
+| Camilo   | 5.0    | 6.0  |
+| Scott    | 5.0    | 6.0  |
+| Shweta   | 4.0    | 7.0  |
+| Mekha    | 4.0    | 7.0  |
+| Alcely   | 3.0    | 8.0  |
+| Patrick  | 3.0    | 8.0  |
+| Ty       | 1.0    | 9.0  |
+
+
 
 ## Seasonal Forecast Leaders
 
@@ -187,21 +189,21 @@ ___
 - Bonus points goes to those who has the highest error in prediction between consecutive weekly flow. Note: Neither winners or evaluators were able to receive bonus points).
 
 ### Forecast Week 10:10/25 - 10/31
-*Judges:*
-**Observed flow** = flow cfs
+**Observed flow** = 108.971
 
 **One week forecast**:
-- First Place: flow, name(s)
-- Second Place: flow, name(s)
-- Third Place: flow, name(s)
+- First Place: 112.29 cfs, Jake
+- Second Place: 100, Alexa
+- Third Place: 95.3, Jill
 
 **Two week forecast**:
-- First place: flow, name(s)
-- Second place: flow, name(s)
-- Third place: flow, name(s)
+- First place: 85.59, Jake
+- Second place: 83.53, Ben
+- Third place: 84.15, Camilo
 
 **Bonus points**:
--
+- Quinn, Scott, Danielle
+- Bonus points were given to those who had the lowest weekly root mean square error of the first week entries, but were not winners or evaluators.
 
 ### Forecast Week 11:11/1 - 11/7
 *Judges:*
