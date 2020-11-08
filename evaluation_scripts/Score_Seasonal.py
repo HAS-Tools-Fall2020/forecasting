@@ -31,7 +31,7 @@ for i in range(nstudent):
     forecasts[i,:] = temp.loc[forecast_num][3:]
 
 
-#put it inot a data frame for labeling rows and columns
+# put it inot a data frame for labeling rows and columns
 col_names = [str(x) for x in range(1, 17)]
 forecastsDF = pd.DataFrame(data=forecasts, index=names, columns=col_names)
 

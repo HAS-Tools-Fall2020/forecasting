@@ -14,7 +14,7 @@ import plot_functions as pf
 #                Use number for week that just ended,
 #                found in seasonal_forecst_Dates.pdf
 
-forecast_week = 10  # week 10 (Alcely and Diana, 11/2)
+forecast_week = 11  # week 11 (Danielle and Abigail, 11/10)
 
 # %%
 station_id = "09506000"
