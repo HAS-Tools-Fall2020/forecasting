@@ -6,27 +6,22 @@ import pandas as pd
 import numpy as np
 import os
 
-# %%    
-# Note: Run Forecast_analysis.py and Score_Weekly.py  first
-filepath = os.path.join('..','weekly_results', 'scoreboard.csv')
-ranks = pd.read_csv(filepath, index_col='rank')
-del(ranks['bonus'])
-
 # %%
 filepath = os.path.join('..','weekly_results', 'score_details.csv')
 points = pd.read_csv(filepath)
 print(points)
-# %%
-forecastwks = [range(1, 11)]
-print(forecastwks)
 
 # %%
-points['Total'] = points.sum(axis=1)
+points['Total_bonus'] = points[['fcst2_bonus', 'fcst3_bonus', 'fcst4_bonus', 'fcst5_bonus',\
+                                'fcst6_bonus', 'fcst7_bonus', 'fcst8_bonus', 'fcst9_bonus',\
+                                'fcst10_bonus']].sum(axis=1)
+bonus = points[['name','Total_bonus']]
+print(bonus)
 
-print(points)
 # %%
-print(ranks.tail(3))
-# %% This script below use a while loop that will determine the bonus point
+# %% This is from Diana and Alcely's script with conditionals to not include winners 
+
+# This script below use a while loop that will determine the bonus point
 # winners with the lowest ranking, as long as they are not already
 # weekly forecast winners and are not the script writers
 
