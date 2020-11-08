@@ -11,16 +11,7 @@ import os
 filepath = os.path.join('..','weekly_results', 'scoreboard.csv')
 ranks = pd.read_csv(filepath, index_col='rank')
 
-# %%
-# Scoreboard = pd.DataFrame(weekly_rmse.mean(axis=1)).sort_values(0)
-
-# can choose to use seasonal mean if desired
-# seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
-
-# This adds back in a 0-1 index
-# weekly_rmse_mean.reset_index(inplace=True)
-
-# This script below use a while loop that will determine the bonus point
+# %% This script below use a while loop that will determine the bonus point
 # winners with the lowest ranking, as long as they are not already
 # weekly forecast winners and are not the script writers
 
