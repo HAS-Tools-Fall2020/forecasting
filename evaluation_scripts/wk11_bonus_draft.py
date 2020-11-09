@@ -37,3 +37,9 @@ final_people = bonus[bonus.name.isin(new_points.name)]
 final_people = final_people.nsmallest(3, columns = 'Total_bonus', keep = 'first')
 print('Week 11 bonus point recipients',final_people)
 # %%
+# This should put the bonus point recipients into csv
+# BUT we want to change their values to 1 and still include the other students
+filename_out = 'bonus_week' + str(forecast_week) + '.csv'
+filepath_out = os.path.join('..', 'weekly_results', filename_out)
+summary.to_csv(filepath_out, index_label='name')
+# %%
