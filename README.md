@@ -16,25 +16,25 @@ ___
 
 | Name     | Points | Rank |
 |:-------- | ------ | ---- |
-| Jake     | 11.0   | 1.0  |
-| Ben      | 10.0   | 2.0  |
-| Diana    | 8.0    | 3.0  |
-| Danielle | 7.0    | 4.0  |
-| Abigail  | 6.0    | 5.0  |
-| Jill     | 6.0    | 5.0  |
-| Quinn    | 6.0    | 5.0  |
-| Adam     | 6.0    | 5.0  |
-| Richard  | 5.0    | 6.0  |
-| Alexa    | 5.0    | 6.0  |
-| Xenia    | 5.0    | 6.0  |
-| Lourdes  | 5.0    | 6.0  |
-| Camilo   | 5.0    | 6.0  |
-| Scott    | 5.0    | 6.0  |
-| Shweta   | 4.0    | 7.0  |
-| Mekha    | 4.0    | 7.0  |
-| Alcely   | 3.0    | 8.0  |
-| Patrick  | 3.0    | 8.0  |
-| Ty       | 1.0    | 9.0  |
+| Ben      | 10.0   | 1.0  |
+| Jake     | 9.0    | 2.0  |
+| Diana    | 9.0    | 2.0  |
+| Danielle | 7.0    | 3.0  |
+| Abigail  | 6.0    | 4.0  |
+| Jill     | 6.0    | 4.0  |
+| Quinn    | 6.0    | 4.0  |
+| Adam     | 6.0    | 4.0  |
+| Richard  | 5.0    | 5.0  |
+| Alexa    | 5.0    | 5.0  |
+| Xenia    | 5.0    | 5.0  |
+| Lourdes  | 5.0    | 5.0  |
+| Camilo   | 5.0    | 5.0  |
+| Scott    | 5.0    | 5.0  |
+| Shweta   | 4.0    | 6.0  |
+| Mekha    | 4.0    | 6.0  |
+| Alcely   | 3.0    | 7.0  |
+| Patrick  | 3.0    | 7.0  |
+| Ty       | 1.0    | 8.0  |
 
 
 
