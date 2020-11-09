@@ -33,10 +33,14 @@ def checkteam(member_list, team_name):
     else:
         print("A team member in ", team_name, " does not have the same forecast")
         df = teamdf.T
+        # this code is not showing the legend properly
         fig, ax = plt.subplots()
         ax.plot(df)
         ax.set(title=team_name, xlabel="Forecast", ylabel="Flow Prediction (cfs)")
         ax.legend()
+        # this code I found online has a legend of the names but
+        # does not have all the other great things, like title
+        # df.plot
         plt.show()
 
 
