@@ -48,4 +48,5 @@ final_people
 # %%
 # Creat list of names and feed into function to create bonus_week11.csv
 bonus_names = [final_people.name]
-write_bonus(bonus_names, 11):
+print(bonus_names)
+write_bonus(bonus_names, 11)
