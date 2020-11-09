@@ -12,6 +12,18 @@ import plot_functions as pf
 
 # %%
 def checkteam(member_list, team_name):
+    ''' Check Team Forecasts:
+    ----------------------------------------------
+    This function checks whether or not team members have the same forecast.
+    It calculates the standard deviation of team members forecasts,
+    and if the standard devation is different than 0, then it will return a message
+    and plot to see which team member deviated.
+    ----------------------------------------------
+    Parameters:
+     - member_list: A previously defined list of team member names
+     - team_name: The team name
+
+    '''
     teamdf = pd.DataFrame()
     for i in member_list:
         f = teamsdf.loc[i]
