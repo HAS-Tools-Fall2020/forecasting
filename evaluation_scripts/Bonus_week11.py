@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import os
 import glob as glob
-
+import write_bonus as write_bonus
 # %%
 filepath = os.path.join('..','weekly_results', 'score_details.csv')
 points = pd.read_csv(filepath)
