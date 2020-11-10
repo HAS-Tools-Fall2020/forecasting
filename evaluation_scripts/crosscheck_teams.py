@@ -28,9 +28,7 @@ def checkteam(member_list, team_name):
         f = teamsdf.loc[i]
         teamdf = teamdf.append(f)
     stdev = round(teamdf.std())
-    if stdev.any() <= 1.0:
-        print(team_name, "has has all the same forecasts")
-    elif stdev.any() >= -1.0:
+    if stdev.any() == 0.0:
         print(team_name, "has has all the same forecasts")
     else:
         print("A team member in ", team_name, " does not have the same forecast")
@@ -78,10 +76,10 @@ team5 = ['Jill', 'Mekha', 'Jake']
 
 # Using the function on the teams
 
-checkteam(team1, "Team 1")
-checkteam(team2, "Team 2")
-checkteam(team3, "Team 3")
-checkteam(team4, "Team 4")
-checkteam(team5, "Team 5")
+checkteam(team1, "Big Brain Squad")
+checkteam(team2, "Team SARS")
+checkteam(team3, "Aquaholics")
+checkteam(team4, "Dell for the Win?")
+checkteam(team5, "Team MJJ")
 
-# %%
+   # %%
