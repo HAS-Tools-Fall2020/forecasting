@@ -16,25 +16,25 @@ ___
 
 | Name     | Points | Rank |
 |:-------- | ------ | ---- |
-| Ben      | 10.0   | 1.0  |
-| Jake     | 9.0    | 2.0  |
-| Diana    | 9.0    | 2.0  |
-| Danielle | 7.0    | 3.0  |
-| Abigail  | 6.0    | 4.0  |
-| Jill     | 6.0    | 4.0  |
-| Quinn    | 6.0    | 4.0  |
-| Adam     | 6.0    | 4.0  |
-| Richard  | 5.0    | 5.0  |
-| Alexa    | 5.0    | 5.0  |
-| Xenia    | 5.0    | 5.0  |
-| Lourdes  | 5.0    | 5.0  |
-| Camilo   | 5.0    | 5.0  |
-| Scott    | 5.0    | 5.0  |
-| Shweta   | 4.0    | 6.0  |
-| Mekha    | 4.0    | 6.0  |
-| Alcely   | 3.0    | 7.0  |
-| Patrick  | 3.0    | 7.0  |
-| Ty       | 1.0    | 8.0  |
+| Ben      | 11.0   | 1.0  |
+| Diana    | 10.0   | 2.0  |
+| Jake     | 9.0    | 3.0  |
+| Alexa    | 8.0    | 4.0  |
+| Richard  | 7.0    | 5.0  |
+| Danielle | 7.0    | 5.0  |
+| Quinn    | 7.0    | 5.0  |
+| Abigail  | 6.0    | 6.0  |
+| Jill     | 6.0    | 6.0  |
+| Camilo   | 6.0    | 6.0  |
+| Adam     | 6.0    | 6.0  |
+| Xenia    | 5.0    | 7.0  |
+| Lourdes  | 5.0    | 7.0  |
+| Mekha    | 5.0    | 7.0  |
+| Scott    | 5.0    | 7.0  |
+| Alcely   | 4.0    | 8.0  |
+| Schweta  | 4.0    | 8.0  |
+| Patrick  | 3.0    | 9.0  |
+| Ty       | 2.0    | 10.0 |
 
 
 
@@ -206,21 +206,23 @@ ___
 - Bonus points were given to those who had the lowest weekly root mean square error of the first week entries, but were not winners or evaluators.
 
 ### Forecast Week 11:11/1 - 11/7
-*Judges:*
-**Observed flow** = flow cfs
+*Judges:* Abigail and Danielle
+
+**Observed flow** = 126.571
 
 **One week forecast**:
-- First Place: flow, name(s)
-- Second Place: flow, name(s)
-- Third Place: flow, name(s)
+- First Place: 124.1, Richard
+- Second Place: 129.29, Camilo
+- Third Place: 130, Alexa
 
 **Two week forecast**:
-- First place: flow, name(s)
-- Second place: flow, name(s)
-- Third place: flow, name(s)
+- First place: 120, Alexa
+- Second place: 95, Diana
+- Third place: 92.56, Ben
 
 **Bonus points**:
--
+- Mekha, Quinn, and Ty
+- Randomly selected based on those having the lowest accumulated bonus points, were not evaluators, and did not score in the current week
 
 ### Forecast Week 12: 11/8 - 11/14
 *Judges:*

@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import os
 import glob as glob
-import write_bonus as write_bonus
+import eval_functions as ef
 # %%
 filepath = os.path.join('..','weekly_results', 'score_details.csv')
 points = pd.read_csv(filepath)
@@ -46,9 +46,10 @@ final_people
 # bonus points, are not the evaluator(s), and did not score for current week 
 final_people = final_people.sample(n=3)
 final_people
-
 # %%
 # Creat list of names and feed into function to create bonus_week11.csv
-bonus_names = [final_people.name]
-print(bonus_names)
-write_bonus(bonus_names, 11)
+final_people = ["Mekha", "Quinn", "Ty"]
+
+# final_people = final_people.loc[final_people.name]
+ef.write_bonus(final_people, 11)
+# %%
