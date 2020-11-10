@@ -30,7 +30,7 @@ def checkteam(member_list, team_name):
     stdev = round(teamdf.std())
     if stdev.any() <= 1.0:
         print(team_name, "has has all the same forecasts")
-    elif stdev.any() >- -1.0:
+    elif stdev.any() >= -1.0:
         print(team_name, "has has all the same forecasts")
     else:
         print("A team member in ", team_name, " does not have the same forecast")

@@ -1,11 +1,13 @@
-# Abigail and Danielle's Week 11 Bonus script
-# %% This week's bonus points will go to those with the lowest ranking
+# Abigail and Danielle's Week 11 Bonus script 
+# %% 
+# This week's bonus points will go to those with lowest cumulative
+# bonus points
 
 import pandas as pd
 import numpy as np
 import os
 import glob as glob
-
+import write_bonus as write_bonus
 # %%
 filepath = os.path.join('..','weekly_results', 'score_details.csv')
 points = pd.read_csv(filepath)
@@ -21,7 +23,7 @@ print(bonus)
 # %%
 # Reading week 11 results into dataframe
 # Change file name to match current week
-filepath = os.path.join('..','weekly_results', 'forecast_week10_results.csv')
+filepath = os.path.join('..','weekly_results', 'forecast_week11_results.csv')
 bonus_eligible = pd.read_csv(filepath)
 
 # Excluding evaluators and people who received points this week
