@@ -55,13 +55,15 @@ ___
  conda install pip
  pip install dataretrieval
  ```
-2.  ** Work on your added functionality** Look through the scripts in this folder and add the functionality you would like. When you are done adding functionality you can do a pull request to merge your branch back in with the mater.
+2.  **Work on your added functionality** Look through the scripts in this folder and add the functionality you would like. When you are done adding functionality you can do a pull request to merge your branch back in with the mater.
 
-3. **Score the Forecasts After noon on Monday** pull the latest updates from everyone and run the weekly forecast evaluation. Using the `score_weekly.py` script. You will need to update the following the forecast week to run this script. You can look that up in the `Seasonal_Forecast_Dates.pdf` file. This will create the `forecast_week4_results.csv` file. Look at these results and the results that get printed from the script to see how everyone did.
+3. **Score the Forecasts After noon on Monday***
+pull the latest updates from everyone and run the weekly forecast evaluation. Using the `score_weekly.py` script. You will need to update the following the forecast week to run this script. You can look that up in the `Seasonal_Forecast_Dates.pdf` file. This will create the `forecast_week4_results.csv` file. Look at these results and the results that get printed from the script to see how everyone did.
+****Note:*** If this is a team submission week, make sure to run `crosscheck_teams.py` to verify that all the forecasts are the same
 
 4. **Assign Bonus points** After you do the scoring decide how you will assign bonus points. You should write your  own analysis script to determine how to assign bonus points you can save this  as  `Bonus_wk#.py`. Once the bonus points are decided you should use the function `write_bonus`  from the `eval_functions.py` script to write out your Bonus points file for this week. See the bottom of the `Bonus_wk8.py` script for an example of how to do this.
 
-5. **Document your added functionality** If any of your changes alter the instructions provided in this file update the instructions here so that people will be able to use your added functionality correctly. 
+5. **Document your added functionality** If any of your changes alter the instructions provided in this file update the instructions here so that people will be able to use your added functionality correctly.
 
 5. **Calculate total scores** Run `Scoreboard.py` script to see the overall rankings and total scores.
 
