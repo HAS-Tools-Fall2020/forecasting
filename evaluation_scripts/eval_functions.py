@@ -131,8 +131,8 @@ def simpleRMSE(prediction, observation, decimals):
     Returns:
     rmse = Float
     """
-    rmse = (((prediction - observation) ** 2).mean()
-            ** 0.5).round(decimals)
+    rmse = round((((prediction - observation) ** 2).mean()
+                 ** 0.5), decimals)
     return rmse
 
 # %%
