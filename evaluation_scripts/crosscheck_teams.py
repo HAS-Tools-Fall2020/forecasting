@@ -27,18 +27,15 @@ def checkteam(member_list, team_name):
     for i in member_list:
         f = teamsdf.loc[i]
         teamdf = teamdf.append(f)
-    if teamdf.std == 0:
+    stdev = round(teamdf.std())
+    if stdev.any() <= 1.0:
+        print(team_name, "has has all the same forecasts")
+    elif stdev.any() >- -1.0:
         print(team_name, "has has all the same forecasts")
     else:
         print("A team member in ", team_name, " does not have the same forecast")
+        print(stdev)
         df = teamdf.T
-        # this code is not showing the legend properly
-       # fig, ax = plt.subplots()
-        #ax.plot(df)
-        #ax.set(title=team_name, xlabel="Forecast", ylabel="Flow Prediction (cfs)")
-       #ax.legend()
-        # this code I found online has a legend of the names but
-        # does not have all the other great things, like title
         df.plot(legend=True)
         plt.show()
 
@@ -50,7 +47,7 @@ def checkteam(member_list, team_name):
 #                Use number for week that just ended,
 #                found in seasonal_forecst_Dates.pdf
 
-forecast_num = 10  # week 11 (Danielle and Abigail, 11/10)
+forecast_num = 11  # week 11 (Danielle and Abigail, 11/10)
 
 # Getting names
 names = ef.getLastNames()
