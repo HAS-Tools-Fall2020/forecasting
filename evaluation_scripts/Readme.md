@@ -2,8 +2,8 @@
 This  folder contains the python scripts for doing forecast evaluation. When it is your week to be the evaluator you should follow the instructions below to score the forecasts.  Additionally you should modify the scripts here to provide some added functionality and if needed update the instructions for future forecast evaluators.
 ____
 ## Table of Contents:
-1. [ GitHub Instructions](#github)
-1. [ Evaluation Instructions](#eval)
+1. [GitHub Instructions](#github)
+2. [Evaluation Instructions](#evaluation)
 ___
 <a name="github"></a>
 ## Github instructions
