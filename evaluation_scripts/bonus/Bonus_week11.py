@@ -1,3 +1,5 @@
+# 11122020 - Quinn Hull - archived/antiquated script (will not run)
+
 # Abigail and Danielle's Week 11 Bonus script 
 # %% 
 # This week's bonus points will go to those with lowest cumulative
