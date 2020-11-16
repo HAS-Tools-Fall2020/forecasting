@@ -225,21 +225,21 @@ ___
 - Randomly selected based on those having the lowest accumulated bonus points, were not evaluators, and did not score in the current week
 
 ### Forecast Week 12: 11/8 - 11/14
-*Judges:*
-**Observed flow** = flow cfs
+*Judges:* Quinn and Ben
+**Observed flow** = 154.714 cfs
 
 **One week forecast**:
-- First Place: flow, name(s)
-- Second Place: flow, name(s)
-- Third Place: flow, name(s)
+- First Place =  ['Diana', 'Xenia', 'Camilo', 'Danielle'] flow forecast =  [139.39]
+- Second Place =  ['Jill', 'Jake'] flow forecast =  [133.12]
+- Third Place =  ['Quinn', 'Abigail', 'Alexa'] flow forecast =  [132.98]
 
 **Two week forecast**:
-- First place: flow, name(s)
-- Second place: flow, name(s)
-- Third place: flow, name(s)
+- First Place =  ['Jill'] flow forecast =  [156.5]
+- Second Place =  ['Abigail'] flow forecast =  [146.41]
+- Third Place =  ['Diana'] flow forecast =  [146.]
 
 **Bonus points**:
--
+- Lourdes, Abigail, Shweta
 
 ### Forecast Week 13: 11/15 - 11/21
 *Judges:*
