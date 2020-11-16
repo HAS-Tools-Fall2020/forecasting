@@ -91,7 +91,7 @@ final_people = out_df.head(3).index.values.tolist()
 
 # %%
 # write bonus
-# # ef.write_bonus(final_people, 11)
+ef.write_bonus(final_people, 12)
 
 
 # %%
