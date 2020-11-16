@@ -368,6 +368,15 @@ ___
 
 Each week one or two people will be assigned the job of 'Forecast Evaluator'. Your job description is as follows:
 
+0. **'Git' oriented**. Spend some time getting familiar with the structure of the forecast repo. For evaluators:
+  * **Important Dates/Times**
+    * You should have made a pull request for the changes you want to submit by **Monday at 8am** (and ideally before)
+    * You should submit your forecast evaluations after Monday at noon, and before class on Tuesday
+  * **Important File Locations**
+    * The folder `evaluation_scripts` contains all of the python scripts used to evaluate forecasts. **Take time to understand the structure of this folder by looking at the `readme.md` contained within it.**
+    * The folder `weekly_results` contains all the products of the forecast evaluation, such as the weekly bonus point allocation, forecast results, and the scoreboard etc...
+
+
 1. **Make an improvement to the functionality of our forecast analysis scripts**. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder so that we can continuously build on people's improvements. Once your additions have been made you will submit a pull request for  me to review your changes and merger your branch (this is covered in the detailed instructions). You should submit your pull request by Monday morning at 8am so that  I can review your code changes and merge your branch.
 
 2. **Run the forecast evaluation scripts to score the weekly forecasts** after the forecast submission deadline (noon on Monday). You will be evaluating two forecasts (1) the one week forecast from last week and (2) the two week forecast from  two weeks ago

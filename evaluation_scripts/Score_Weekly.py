@@ -25,13 +25,13 @@ firstnames = ef.getFirstNames()
 nstudent = len(names)
 
 # get start and end date of forecast week for 1 wk forecast
-week_date = ef.weekDates(forecast_week-1)
+week_date = ef.weekDates(forecast_week)
 start_date = week_date[0]
 stop_date = week_date[1]
 print("Evaluating forecasts for", start_date, 'To', stop_date)
 
 # get start and end date of forecast week for 2 wk forecast
-week_date2 = ef.weekDates(forecast_week)
+week_date2 = ef.weekDates(forecast_week-1)
 start_date_2wk = week_date2[0]
 stop_date_2wk = week_date2[1]
 
@@ -156,6 +156,3 @@ simpleplot2 = pf.get_simpleplot(sim_path2, forecasts2, obs_week, 2)
 # Week 12 Additions
 team_comp_path = "all_charts/Team_Comparison_Plot1.png"
 team_comparison_plots = pf.noIinTEAM(team_comp_path, firstnames, obs_week, forecasts1, forecasts2, 0.3)
-
-# %%
-

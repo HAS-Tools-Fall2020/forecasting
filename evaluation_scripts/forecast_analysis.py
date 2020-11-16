@@ -111,8 +111,8 @@ seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
 # %% Week 7 addition, format new dataframes for
 # weekly plotting, and assign same index
 # trim and tanspose to make plotting easier
-weekly_forecast1w_graph = weekly_forecast1w.iloc[:, 0:forecast_week].T
-weekly_forecast2w_graph = weekly_forecast2w.iloc[:, 0:forecast_week].T
+weekly_forecast1w_graph = weekly_forecast1w.iloc[:, 0:forecast_week-1].T
+weekly_forecast2w_graph = weekly_forecast2w.iloc[:, 0:forecast_week-1].T
 
 
 # %% Week 9 Addition: Plot results using the functions from plot_functions
