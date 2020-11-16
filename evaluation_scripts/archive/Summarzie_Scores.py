@@ -57,3 +57,5 @@ scoreboard['total']=scoreboard.sum(axis=1)
 # Write out the reults
 filepath_out = os.path.join('..', 'scoreboard.csv')
 scoreboard.to_csv(filepath_out, index_label='name')
+
+# %%
