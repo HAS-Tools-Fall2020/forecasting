@@ -44,6 +44,9 @@ def get_histogram(savepath, forecasts, obs_week, week):
     plt.xlabel('Flow Forecast (cfs)')
     plt.ylabel('Count')
     plt.legend(loc='upper left')
+    fig2.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
 
     fig2.savefig(savepath)
     
@@ -85,6 +88,9 @@ def get_simpleplot(savepath, forecasts, obs_week, week):
            ylabel="Weekly Avg Flow [cfs]")
     ax.legend(fancybox=True, framealpha=1, shadow=True,
               borderpad=1)
+    fig3.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
     
     fig3.savefig(savepath)
 
@@ -181,6 +187,7 @@ def plot_class_forecasts(df, week_flows, leadtime, type_plot):
     ax.legend(plot_labels, loc='lower center',
               bbox_to_anchor=(.5, -0.4), ncol=6)
     fig.set_size_inches(9, 5)
+    fig.patch.set_facecolor('xkcd:white')
     plt.show()
 
 
@@ -303,6 +310,7 @@ def plot_class_summary(df, week_flows, week, type_plot):
 
         # Legend
         plt.legend(loc='lower center', bbox_to_anchor=(0.5, -0.4), ncol=3)
+        fig.patch.set_facecolor('xkcd:white')
 
 
 #%%
@@ -359,7 +367,9 @@ def plot_seasonal_rmse(savepath, seasonal_rmse):
     # showing the legend
     ax.legend(firstnames, loc='lower center', 
               bbox_to_anchor=(.5, -0.4), ncol=6)
+    fig10.patch.set_facecolor('xkcd:white')
     plt.show()
+
     fig10.savefig(savepath)
 
 
@@ -385,6 +395,9 @@ def rmse_histogram(savepath, weekly_rmse):
     plt.ylabel('Frequency', fontweight='bold')
     plt.title('Weekly Root Mean Square Errors', fontweight='bold')
     plt.legend()
+    fig11.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
 
     fig11.savefig(savepath)
 
@@ -438,6 +451,8 @@ def noIinTEAM(savepath, class_list, obs_week, oneweek_forecasts, twoweek_forecas
     ax.legend( loc='lower center', fontsize=20,
               bbox_to_anchor=(.5, -0.4), ncol=5)
     plt.text(0.7, obs_week, 'Observed Flow', fontsize=21)
+    fig12.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
     plt.show()
 
     fig12.savefig(savepath)
@@ -466,6 +481,8 @@ def last_2_weeks(savepath, obs_week, oneweek_forecasts, twoweek_forecasts, bar_w
     ax.legend( loc='lower center', fontsize=20,
               bbox_to_anchor=(.5, -0.4), ncol=5)
     plt.text(0.7, obs_week, 'Observed Flow', fontsize=21)
+    fig13.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
     plt.show()
 
     fig13.savefig(savepath)
@@ -498,6 +515,8 @@ def last_2_weeks_diff(savepath, obs_week, oneweek_forecasts, twoweek_forecasts, 
     ax.legend( loc='lower center', fontsize=20,
               bbox_to_anchor=(.5, -0.4), ncol=5)
     # plt.text(0, 0, 'Observed Flow', fontsize=21)
+    fig14.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
     plt.show()
 
     fig14.savefig(savepath)
