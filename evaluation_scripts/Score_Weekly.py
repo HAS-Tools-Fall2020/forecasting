@@ -156,3 +156,14 @@ simpleplot2 = pf.get_simpleplot(sim_path2, forecasts2, obs_week, 2)
 # Week 12 Additions
 team_comp_path = "all_charts/Team_Comparison_Plot1.png"
 team_comparison_plots = pf.noIinTEAM(team_comp_path, firstnames, obs_week, forecasts1, forecasts2, 0.3)
+
+# %%
+# other plotting functions
+last_2_weeks_path = "all_charts/Last_two_weeks_Plot1.png"
+last_2_week_plot = pf.last_2_weeks(last_2_weeks_path, obs_week, forecasts1, forecasts2, 0.3)
+
+last_2_diff_path = "all_charts/Last_two_weeks_diff_Plot1.png"
+last_2_diff_plot = pf.last_2_weeks_diff(last_2_diff_path, obs_week, forecasts1, forecasts2, 0.3)
+
+
+# %%
