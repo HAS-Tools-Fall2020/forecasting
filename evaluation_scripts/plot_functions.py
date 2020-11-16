@@ -16,7 +16,6 @@ import seaborn as sns
 
 # %% Functions
 
-
 def get_histogram(savepath, forecasts, obs_week, week):
     """Get Histograms:
     -----------------------------------
