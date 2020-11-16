@@ -403,9 +403,9 @@ def noIinTEAM(savepath, class_list, obs_week, oneweek_forecasts, twoweek_forecas
     team_tol = [*team1, *team2, *team3, *team4, *team5]
 
     class_pre_dict = pd.DataFrame({'oneweek_forecasts':oneweek_forecasts,
-                                  'twoweek_forecasts':twoweek_forecasts},
-                                  index = class_list,
-                                  columns = ['oneweek_forecasts', 'twoweek_forecasts'])
+                                   'twoweek_forecasts':twoweek_forecasts},
+                                   index = class_list,
+                                   columns = ['oneweek_forecasts', 'twoweek_forecasts'])
 
     # Organizing by team name
     Big_Brain_Squad = class_pre_dict.loc[team1]
@@ -441,6 +441,66 @@ def noIinTEAM(savepath, class_list, obs_week, oneweek_forecasts, twoweek_forecas
     plt.show()
 
     fig12.savefig(savepath)
+
+
+def last_2_weeks(savepath, obs_week, oneweek_forecasts, twoweek_forecasts, bar_width):
+      
+    # Get the array of firstnames for the plot
+    firstnames = ef.getFirstNames()
+    class_forecasts = pd.DataFrame({'oneweek_forecasts':oneweek_forecasts,
+                                     'twoweek_forecasts':twoweek_forecasts},
+                                     index = firstnames,
+                                     columns = ['oneweek_forecasts', 'twoweek_forecasts'])
+    
+    stu = np.arange(0, 19, 1)
+    fig13 = plt.figure()
+    fig13.set_size_inches(25, 8)
+    ax = fig13.add_subplot()
+    w = bar_width
+    plt.xticks(stu + w/2, firstnames, rotation = 60, fontsize=15)
+    ax.bar(stu, class_forecasts.oneweek_forecasts, width=w, align='center', label = 'week1')
+    ax.bar(stu+w, class_forecasts.twoweek_forecasts, width=w, align='center', label = 'week2')
+    ax.axhline(y=obs_week, linewidth=2, linestyle = '--', color='k')
+    plt.xlabel('Student', fontsize=15)
+    plt.ylabel('Average Flow', fontsize=15)
+    ax.legend( loc='lower center', fontsize=20,
+              bbox_to_anchor=(.5, -0.4), ncol=5)
+    plt.text(0.7, obs_week, 'Observed Flow', fontsize=21)
+    plt.show()
+
+    fig13.savefig(savepath)
+
+    
+def last_2_weeks_diff(savepath, obs_week, oneweek_forecasts, twoweek_forecasts, bar_width):
+      
+    # Get the array of firstnames for the plot
+    firstnames = ef.getFirstNames()
+    class_forecasts = pd.DataFrame({'oneweek_forecasts':oneweek_forecasts,
+                                  'twoweek_forecasts':twoweek_forecasts},
+                                   index = firstnames,
+                                   columns = ['oneweek_forecasts', 'twoweek_forecasts'])
+
+    class_forecasts.insert(2, 'Diff_1', np.array(class_forecasts['oneweek_forecasts'] - obs_week), True)
+    class_forecasts.insert(3, 'Diff_2', np.array(class_forecasts['twoweek_forecasts'] - obs_week), True)
+    
+    # Plotting Diff
+    stu = np.arange(0, 19, 1)
+    fig14 = plt.figure()
+    fig14.set_size_inches(25, 8)
+    ax = fig14.add_subplot()
+    w = bar_width
+    plt.xticks(stu + w/2, firstnames, rotation = 60, fontsize=15)
+    ax.bar(stu, class_forecasts.Diff_1, width=w, align='center', label = 'week1')
+    ax.bar(stu+w, class_forecasts.Diff_2, width=w, align='center', label = 'week2')
+    ax.axhline(y=0, linewidth=2, linestyle = '--', color='k')
+    plt.xlabel('Student', fontsize=15)
+    plt.ylabel('Average Flow', fontsize=15)
+    ax.legend( loc='lower center', fontsize=20,
+              bbox_to_anchor=(.5, -0.4), ncol=5)
+    # plt.text(0, 0, 'Observed Flow', fontsize=21)
+    plt.show()
+
+    fig14.savefig(savepath)
 
 
 # %%
