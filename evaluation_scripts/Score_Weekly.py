@@ -14,7 +14,7 @@ import plot_functions as pf
 #                Use number for week that just ended,
 #                found in seasonal_forecst_Dates.pdf
 
-forecast_week = 10  # week 10 (Alcely and Diana, 11/2)
+forecast_week = input('What forecast week is it? (1-16): ')  # week 12 (Quinn and Ben, 11/13)
 
 # %%
 station_id = "09506000"
@@ -56,11 +56,10 @@ obs_day = nwis.get_record(sites=station_id, service='dv',
                           start=start_date, end=stop_date,
                           parameterCd='00060')
 obs_week = np.mean(obs_day['00060_Mean'])
+
+# calculate difference between student forecasts and reality
 dif1 = abs(forecasts1 - obs_week)
-# dif2 = np.zeros(nstudent)
-
 dif2 = abs(forecasts2 - obs_week)
-
 
 print('Average streamflow for this week:', np.round(obs_week, 3))
 

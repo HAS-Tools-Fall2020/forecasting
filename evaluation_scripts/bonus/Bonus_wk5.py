@@ -1,3 +1,5 @@
+# 11122020 - Quinn Hull - archived/antiquated script (will not run)
+
 import random               # Added for the assign random points by Schulze 9/25/20
 # %%
 # Random distribution of bonus points

@@ -1,3 +1,4 @@
+# 11122020 - Quinn Hull - archived/antiquated script (will not run)
 
 # Script for assigning bonus points for week 9
 
