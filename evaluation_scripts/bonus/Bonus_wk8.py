@@ -1,3 +1,5 @@
+# 11122020 - Quinn Hull - archived/antiquated script (will not run)
+
 #%% Libraries that you'll need
 import pandas as pd
 import numpy as np

@@ -1,3 +1,4 @@
+# 11122020 - Quinn Hull - archived/antiquated script (will not run)
 
 #%%
 # Week 6 - Bonus Points assigned to lowest scores from previous week (see "Scoreboard.png")
