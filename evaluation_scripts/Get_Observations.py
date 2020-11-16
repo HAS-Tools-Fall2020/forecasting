@@ -25,7 +25,7 @@ import dataretrieval.nwis as nwis
 # list of dates associated with each forecast week
 # you should set forecast_week equal to the forecast
 # week that just completed
-week = 10
+week = input('What forecast week is it? (1-16): ') # Week 12, 11/13, Quinn and Ben
 station_id = "09506000"
 
 # %%

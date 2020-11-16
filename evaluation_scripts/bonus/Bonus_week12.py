@@ -1,3 +1,5 @@
+# 11122020 - Quinn Hull - archived/antiquated script (will not run)
+
 # Abigail and Danielle's Week 11 Bonus script 
 # %% 
 # This week's bonus points will go to those with lowest cumulative
@@ -7,9 +9,11 @@ import pandas as pd
 import numpy as np
 import os
 import glob as glob
+import sys
+sys.path.append('../')
 import eval_functions as ef
 # %%
-filepath = os.path.join('..','weekly_results', 'score_details.csv')
+filepath = os.path.join('../..','weekly_results', 'score_details.csv')
 points = pd.read_csv(filepath)
 
 # %%
@@ -23,7 +27,7 @@ print(bonus)
 # %%
 # Reading week 11 results into dataframe
 # Change file name to match current week
-filepath = os.path.join('..','weekly_results', 'forecast_week11_results.csv')
+filepath = os.path.join('../..','weekly_results', 'forecast_week11_results.csv')
 bonus_eligible = pd.read_csv(filepath)
 
 # Excluding evaluators and people who received points this week
@@ -48,8 +52,7 @@ final_people = final_people.sample(n=3)
 final_people
 # %%
 # Creat list of names and feed into function to create bonus_week11.csv
-final_people = ["Mekha", "Quinn", "Ty"]
+final_people = ["Mekha", "Patrick", "Ty"]
 
 # final_people = final_people.loc[final_people.name]
 ef.write_bonus(final_people, 11)
-# %%
