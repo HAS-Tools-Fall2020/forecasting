@@ -3,6 +3,9 @@
 
 # Author: Shweta Narkhede and Camilo Salcedo
 # Created on: Oct 24th, 2020
+
+# Edited by: Benjamin Mitchell, Quinn Hull
+# Edited on: Nov 15th, 2020
 # %%
 import pandas as pd
 import os
@@ -13,8 +16,7 @@ import seaborn as sns
 
 # %% Functions
 
-
-def get_histogram(forecasts, obs_week, week):
+def get_histogram(savepath, forecasts, obs_week, week):
     """Get Histograms:
     -----------------------------------
     This function plots histograms of predicted weekly flow data and
@@ -31,7 +33,8 @@ def get_histogram(forecasts, obs_week, week):
     Outputs:
     figure of Histogram plot
     """
-    plt.figure(figsize=(8, 6))
+    fig2 = plt.figure()
+    fig2.set_size_inches(8, 6)
     plt.hist(forecasts, bins=120, color='blue', alpha=0.75,
              label='Student Guesses')
     histogram = plt.plot([obs_week]*3, np.arange(0, 3, 1), color='red',
@@ -41,10 +44,16 @@ def get_histogram(forecasts, obs_week, week):
     plt.xlabel('Flow Forecast (cfs)')
     plt.ylabel('Count')
     plt.legend(loc='upper left')
+    fig2.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
+
+    fig2.savefig(savepath)
+    
     return histogram
 
 
-def get_simpleplot(forecasts, obs_week, week):
+def get_simpleplot(savepath, forecasts, obs_week, week):
     """Get Simple plot:
     ------------------------------------
     This function plots a simple line plot of student's weekly averaged
@@ -61,7 +70,11 @@ def get_simpleplot(forecasts, obs_week, week):
     Outputs: figure of simple line plot
 
     """
-    fig, ax = plt.subplots()
+    # Get the array of firstnames for the plot
+    firstnames = ef.getFirstNames()
+
+    fig3, ax = plt.subplots()
+    fig3.set_size_inches(10, 4)
     clean_forecasts = [x for x in forecasts if not np.isnan(x)]
     class_avg = np.mean(clean_forecasts)
     simple_plot = ax.plot(forecasts, '-g', label='Forecast', alpha=.8)
@@ -69,14 +82,18 @@ def get_simpleplot(forecasts, obs_week, week):
                 label='Class Avg', alpha=.8, color='red')
     plt.axhline(y=obs_week, linestyle='dotted', label='Observed',
                 alpha=.8, color='blue')
-    plt.xticks(np.arange(0, 19, 1))
+    plt.xticks(ticks = np.arange(0, 19, 1), labels = firstnames, rotation = 60)
     title_string = 'Week '+str(week)+' Forecasts'
     ax.set(title=title_string, xlabel="Students",
            ylabel="Weekly Avg Flow [cfs]")
     ax.legend(fancybox=True, framealpha=1, shadow=True,
               borderpad=1)
+    fig3.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
+    
+    fig3.savefig(savepath)
 
-    fig.set_size_inches(10, 4)
     return simple_plot
 
 
@@ -170,6 +187,7 @@ def plot_class_forecasts(df, week_flows, leadtime, type_plot):
     ax.legend(plot_labels, loc='lower center',
               bbox_to_anchor=(.5, -0.4), ncol=6)
     fig.set_size_inches(9, 5)
+    fig.patch.set_facecolor('xkcd:white')
     plt.show()
 
 
@@ -292,11 +310,13 @@ def plot_class_summary(df, week_flows, week, type_plot):
 
         # Legend
         plt.legend(loc='lower center', bbox_to_anchor=(0.5, -0.4), ncol=3)
+        fig.patch.set_facecolor('xkcd:white')
 
+
+#%%
 # Week 10 Additions
 
-
-def plot_seasonal_rmse(seasonal_rmse):
+def plot_seasonal_rmse(savepath, seasonal_rmse):
     """Seasonal Root Mean Square Error:
     -----------------------------------
     This function plots the root mean square error of seasonal flow
@@ -325,7 +345,7 @@ def plot_seasonal_rmse(seasonal_rmse):
     firstnames = ef.getFirstNames()
 
     # plotting
-    fig, ax = plt.subplots()
+    fig10, ax = plt.subplots()
     ax.plot(seasonal_rmse)
     for i, line in enumerate(ax.get_lines()):
         line.set_marker(markers[i])
@@ -347,10 +367,13 @@ def plot_seasonal_rmse(seasonal_rmse):
     # showing the legend
     ax.legend(firstnames, loc='lower center', 
               bbox_to_anchor=(.5, -0.4), ncol=6)
+    fig10.patch.set_facecolor('xkcd:white')
     plt.show()
 
+    fig10.savefig(savepath)
 
-def rmse_histogram(weekly_rmse):
+
+def rmse_histogram(savepath, weekly_rmse):
     """Root Mean Square Error Histogram:
     -----------------------------------
     This function plots a histogram of the root mean square error
@@ -363,6 +386,7 @@ def rmse_histogram(weekly_rmse):
     Outputs:
     Histogram plot of week 1 and 2 root mean square errors
     """
+    fig11 = plt.figure()
     plt.hist(weekly_rmse.iloc[:, 0], bins=20, rwidth=0.8, color='green',
              alpha=0.3, label='Week 1')
     plt.hist(weekly_rmse.iloc[:, 1], bins=20, rwidth=0.8, color='red',
@@ -371,6 +395,131 @@ def rmse_histogram(weekly_rmse):
     plt.ylabel('Frequency', fontweight='bold')
     plt.title('Weekly Root Mean Square Errors', fontweight='bold')
     plt.legend()
+    fig11.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
+
+    fig11.savefig(savepath)
+
+
+# %%
+# Week 12 Additions
+def noIinTEAM(savepath, class_list, obs_week, oneweek_forecasts, twoweek_forecasts, bar_width):
+    # Gettting team names for data collection
+    team1 = ['Adam', 'Lourdes', 'Patrick', 'Ben']
+    team2 = ['Alcely', 'Shweta', 'Richard', 'Scott']
+    team3 = ['Camilo', 'Diana', 'Xenia', 'Danielle']
+    team4 = ['Alexa', 'Quinn', 'Abigail']
+    team5 = ['Jill', 'Mekha', 'Jake']
+    team_names = ['Big_Brain_Squad', 'Team_SARS', 'Aquaholics',
+                  'Dell_for_the_Win?', 'Team_MJJ']
+    team_tol = [*team1, *team2, *team3, *team4, *team5]
+
+    class_pre_dict = pd.DataFrame({'oneweek_forecasts':oneweek_forecasts,
+                                   'twoweek_forecasts':twoweek_forecasts},
+                                   index = class_list,
+                                   columns = ['oneweek_forecasts', 'twoweek_forecasts'])
+
+    # Organizing by team name
+    Big_Brain_Squad = class_pre_dict.loc[team1]
+    Team_SARS = class_pre_dict.loc[team2]
+    Aquaholics = class_pre_dict.loc[team3]
+    Dell_for_the_Win = class_pre_dict.loc[team4]
+    Team_MJJ = class_pre_dict.loc[team5]
+
+    #Ploting time!
+    x = np.arange(0, 18, 1)
+    fig12 = plt.figure()
+    fig12.set_size_inches(25, 8)
+    ax = fig12.add_subplot()
+    w = bar_width
+    plt.xticks(x + w/2, team_tol, rotation = 60, fontsize=15)
+    plt.yticks(fontsize=15)
+    ax.bar(x[0:4], Big_Brain_Squad.oneweek_forecasts, width=w, align='center', label = 'team1')
+    ax.bar(x[0:4]+w, Big_Brain_Squad.twoweek_forecasts, width=w, align='center', label = 'single1')
+    ax.bar(x[4:8], Team_SARS.oneweek_forecasts, width=w, align='center', label = 'team2')
+    ax.bar(x[4:8]+w, Team_SARS.twoweek_forecasts, width=w, align='center', label = 'single2')
+    ax.bar(x[8:12], Aquaholics.oneweek_forecasts, width=w, align='center', label = 'team3')
+    ax.bar(x[8:12]+w, Aquaholics.twoweek_forecasts, width=w, align='center', label = 'single3')
+    ax.bar(x[12:15], Dell_for_the_Win.oneweek_forecasts, width=w, align='center', label = 'team4')
+    ax.bar(x[12:15]+w, Dell_for_the_Win.twoweek_forecasts, width=w, align='center', label = 'single4')
+    ax.bar(x[15:18], Team_MJJ.oneweek_forecasts, width=w, align='center', label = 'team5')
+    ax.bar(x[15:18]+w, Team_MJJ.twoweek_forecasts, width=w, align='center', label = 'single5')
+    ax.axhline(y=obs_week, linewidth=2, linestyle = '--', color='k')
+    plt.xlabel('Student', fontsize=15)
+    plt.ylabel('Average Flow', fontsize=15)
+    ax.legend( loc='lower center', fontsize=20,
+              bbox_to_anchor=(.5, -0.4), ncol=5)
+    plt.text(0.7, obs_week, 'Observed Flow', fontsize=21)
+    fig12.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
+
+    fig12.savefig(savepath)
+
+
+def last_2_weeks(savepath, obs_week, oneweek_forecasts, twoweek_forecasts, bar_width):
+      
+    # Get the array of firstnames for the plot
+    firstnames = ef.getFirstNames()
+    class_forecasts = pd.DataFrame({'oneweek_forecasts':oneweek_forecasts,
+                                     'twoweek_forecasts':twoweek_forecasts},
+                                     index = firstnames,
+                                     columns = ['oneweek_forecasts', 'twoweek_forecasts'])
+    
+    stu = np.arange(0, 19, 1)
+    fig13 = plt.figure()
+    fig13.set_size_inches(25, 8)
+    ax = fig13.add_subplot()
+    w = bar_width
+    plt.xticks(stu + w/2, firstnames, rotation = 60, fontsize=15)
+    ax.bar(stu, class_forecasts.oneweek_forecasts, width=w, align='center', label = 'week1')
+    ax.bar(stu+w, class_forecasts.twoweek_forecasts, width=w, align='center', label = 'week2')
+    ax.axhline(y=obs_week, linewidth=2, linestyle = '--', color='k')
+    plt.xlabel('Student', fontsize=15)
+    plt.ylabel('Average Flow', fontsize=15)
+    ax.legend( loc='lower center', fontsize=20,
+              bbox_to_anchor=(.5, -0.4), ncol=5)
+    plt.text(0.7, obs_week, 'Observed Flow', fontsize=21)
+    fig13.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
+
+    fig13.savefig(savepath)
+
+    
+def last_2_weeks_diff(savepath, obs_week, oneweek_forecasts, twoweek_forecasts, bar_width):
+      
+    # Get the array of firstnames for the plot
+    firstnames = ef.getFirstNames()
+    class_forecasts = pd.DataFrame({'oneweek_forecasts':oneweek_forecasts,
+                                  'twoweek_forecasts':twoweek_forecasts},
+                                   index = firstnames,
+                                   columns = ['oneweek_forecasts', 'twoweek_forecasts'])
+
+    class_forecasts.insert(2, 'Diff_1', np.array(class_forecasts['oneweek_forecasts'] - obs_week), True)
+    class_forecasts.insert(3, 'Diff_2', np.array(class_forecasts['twoweek_forecasts'] - obs_week), True)
+    
+    # Plotting Diff
+    stu = np.arange(0, 19, 1)
+    fig14 = plt.figure()
+    fig14.set_size_inches(25, 8)
+    ax = fig14.add_subplot()
+    w = bar_width
+    plt.xticks(stu + w/2, firstnames, rotation = 60, fontsize=15)
+    ax.bar(stu, class_forecasts.Diff_1, width=w, align='center', label = 'week1')
+    ax.bar(stu+w, class_forecasts.Diff_2, width=w, align='center', label = 'week2')
+    ax.axhline(y=0, linewidth=2, linestyle = '--', color='k')
+    plt.xlabel('Student', fontsize=15)
+    plt.ylabel('Average Flow', fontsize=15)
+    ax.legend( loc='lower center', fontsize=20,
+              bbox_to_anchor=(.5, -0.4), ncol=5)
+    # plt.text(0, 0, 'Observed Flow', fontsize=21)
+    fig14.patch.set_facecolor('xkcd:white')
+    plt.tight_layout()
+    plt.show()
+
+    fig14.savefig(savepath)
 
 
 # %%
