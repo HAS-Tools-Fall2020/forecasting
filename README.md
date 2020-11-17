@@ -14,27 +14,27 @@ ___
 <a name="Scoreboard"></a>
 ## Scoreboard
 
-| Name     | Points | Rank |
-|:-------- | ------ | ---- |
-| Ben      | 11.0   | 1.0  |
-| Diana    | 10.0   | 2.0  |
-| Jake     | 9.0    | 3.0  |
-| Alexa    | 8.0    | 4.0  |
-| Richard  | 7.0    | 5.0  |
-| Danielle | 7.0    | 5.0  |
-| Quinn    | 7.0    | 5.0  |
-| Abigail  | 6.0    | 6.0  |
-| Jill     | 6.0    | 6.0  |
-| Camilo   | 6.0    | 6.0  |
-| Adam     | 6.0    | 6.0  |
-| Xenia    | 5.0    | 7.0  |
-| Lourdes  | 5.0    | 7.0  |
-| Mekha    | 5.0    | 7.0  |
-| Scott    | 5.0    | 7.0  |
-| Alcely   | 4.0    | 8.0  |
-| Schweta  | 4.0    | 8.0  |
-| Patrick  | 3.0    | 9.0  |
-| Ty       | 2.0    | 10.0 |
+|Name      | Points    | Rank
+|:-------- | :-------- | :--------
+|Diana |      13 |       1
+|Ben |      11 |       2
+|Alexa |      10 |       3
+|Jake |      10 |       3
+|Jill |      9 |       4
+|Danielle |      9 |       4
+|Abigail |      9 |       4
+|Quinn |      8 |       5
+|Camilo |      8 |       5
+|Richard |      7 |       6
+|Xenia |      7 |       6
+|Lourdes |      6 |       7
+|Adam |      6 |       7
+|Shweta |      5 |       8
+|Mekha |      5 |       8
+|Scott |      5 |       8
+|Alcely |      3 |       9
+|Patrick |      3 |       9
+|Ty |      2 |       10
 
 
 
