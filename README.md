@@ -226,6 +226,7 @@ ___
 
 ### Forecast Week 12: 11/8 - 11/14
 *Judges:* Quinn and Ben
+
 **Observed flow** = 154.714 cfs
 
 **One week forecast**:
@@ -240,6 +241,7 @@ ___
 
 **Bonus points**:
 - Lourdes, Abigail, Shweta
+- Points given on the basis of daringness with the seasonal forecast
 
 ### Forecast Week 13: 11/15 - 11/21
 *Judges:*
