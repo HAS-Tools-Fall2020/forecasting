@@ -9,7 +9,8 @@ import plot_functions as pf
 
 
 # %%
-forecast_week = 10   # week 10 (Alcely and Diana 11/2/20)
+forecast_week = int(input('What forecast week is it? (1-16): '))   # week 12 (Quinn and Ben 11/13/20)
+
 
 # %%
 station_id = "09506000"
@@ -26,6 +27,7 @@ start_date = dates[0]
 stop_date = dates[1]
 
 print("Evaluating forecasts up to", start_date, 'To', stop_date)
+
 
 # %%
 # Setting up a list of week numbers to be used in plotting
@@ -48,6 +50,7 @@ for i in range(nstudent):
         forecasts_1[i, n-1] = temp.loc[(n), '1week']
         forecasts_2[i, n-1] = temp.loc[(n), '2week']
 
+
 # %%
 # compiled into data frames you can use for graphing
 weekly_forecast1w = pd.DataFrame({}, index=firstnames)
@@ -59,6 +62,7 @@ for i in range(16):
 
 # everything above this can be copied
 # and pasted into your analysis
+
 
 # %%
 # Week 7 addition, create dataframe containing weekly flows
@@ -103,6 +107,7 @@ for i in range(nstudent):
 weekly_rmse_mean = pd.DataFrame(weekly_rmse.mean(axis=1)).sort_values(0)
 seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
 
+
 # %% Week 7 addition, format new dataframes for
 # weekly plotting, and assign same index
 # trim and tanspose to make plotting easier
@@ -123,11 +128,10 @@ pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2,
 # %%
 # Plot errors (deviation) in 1 and 2 Week forecasts values for each student
 
-pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1,
+pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1, # removed '-1' from weekly_flows to make the imput 1 equal to Week_1!
                         'abs_error')
-pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2,
+pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2, # removed '-1' from weekly_flows to make the imput 1 equal to Week_1!
                         'abs_error')
-
 
 
 # %%
@@ -146,9 +150,11 @@ pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 2, 'box')
 # Week 10 plots of root mean square errors
 
 # Line plot of the seasonal root mean square error
-pf.plot_seasonal_rmse(seasonal_rmse)
+rmse_sea_path = "all_charts/Seasonal_Root_Mean_Square_Error1.png"
+pf.plot_seasonal_rmse(rmse_sea_path, seasonal_rmse)
 
 # Histogram of the weekly root mean square error
-pf.rmse_histogram(weekly_rmse)
+rmse_his_path = "all_charts/Root_Mean_Square_Error_Histogram1.png"
+pf.rmse_histogram(rmse_his_path, weekly_rmse)
 
 # %%

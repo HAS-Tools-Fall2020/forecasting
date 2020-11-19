@@ -14,27 +14,27 @@ ___
 <a name="Scoreboard"></a>
 ## Scoreboard
 
-| Name     | Points | Rank |
-|:-------- | ------ | ---- |
-| Ben      | 11.0   | 1.0  |
-| Diana    | 10.0   | 2.0  |
-| Jake     | 9.0    | 3.0  |
-| Alexa    | 8.0    | 4.0  |
-| Richard  | 7.0    | 5.0  |
-| Danielle | 7.0    | 5.0  |
-| Quinn    | 7.0    | 5.0  |
-| Abigail  | 6.0    | 6.0  |
-| Jill     | 6.0    | 6.0  |
-| Camilo   | 6.0    | 6.0  |
-| Adam     | 6.0    | 6.0  |
-| Xenia    | 5.0    | 7.0  |
-| Lourdes  | 5.0    | 7.0  |
-| Mekha    | 5.0    | 7.0  |
-| Scott    | 5.0    | 7.0  |
-| Alcely   | 4.0    | 8.0  |
-| Schweta  | 4.0    | 8.0  |
-| Patrick  | 3.0    | 9.0  |
-| Ty       | 2.0    | 10.0 |
+|Name      | Points    | Rank
+|:-------- | :-------- | :--------
+|Diana |      13 |       1
+|Ben |      11 |       2
+|Alexa |      10 |       3
+|Jake |      10 |       3
+|Jill |      9 |       4
+|Danielle |      9 |       4
+|Abigail |      9 |       4
+|Quinn |      8 |       5
+|Camilo |      8 |       5
+|Richard |      7 |       6
+|Xenia |      7 |       6
+|Lourdes |      6 |       7
+|Adam |      6 |       7
+|Shweta |      5 |       8
+|Mekha |      5 |       8
+|Scott |      5 |       8
+|Alcely |      3 |       9
+|Patrick |      3 |       9
+|Ty |      2 |       10
 
 
 
@@ -225,21 +225,23 @@ ___
 - Randomly selected based on those having the lowest accumulated bonus points, were not evaluators, and did not score in the current week
 
 ### Forecast Week 12: 11/8 - 11/14
-*Judges:*
-**Observed flow** = flow cfs
+*Judges:* Quinn and Ben
+
+**Observed flow** = 154.714 cfs
 
 **One week forecast**:
-- First Place: flow, name(s)
-- Second Place: flow, name(s)
-- Third Place: flow, name(s)
+- First Place =  ['Diana', 'Xenia', 'Camilo', 'Danielle'] flow forecast =  [139.39]
+- Second Place =  ['Jill', 'Jake'] flow forecast =  [133.12]
+- Third Place =  ['Quinn', 'Abigail', 'Alexa'] flow forecast =  [132.98]
 
 **Two week forecast**:
-- First place: flow, name(s)
-- Second place: flow, name(s)
-- Third place: flow, name(s)
+- First Place =  ['Jill'] flow forecast =  [156.5]
+- Second Place =  ['Abigail'] flow forecast =  [146.41]
+- Third Place =  ['Diana'] flow forecast =  [146.]
 
 **Bonus points**:
--
+- Lourdes, Abigail, Shweta
+- Points given on the basis of daringness with the seasonal forecast
 
 ### Forecast Week 13: 11/15 - 11/21
 *Judges:*
@@ -367,6 +369,15 @@ ___
 ## Evaluator Job Description :
 
 Each week one or two people will be assigned the job of 'Forecast Evaluator'. Your job description is as follows:
+
+0. **'Git' oriented**. Spend some time getting familiar with the structure of the forecast repo. For evaluators:
+  * **Important Dates/Times**
+    * You should have made a pull request for the changes you want to submit by **Monday at 8am** (and ideally before)
+    * You should submit your forecast evaluations after Monday at noon, and before class on Tuesday
+  * **Important File Locations**
+    * The folder `evaluation_scripts` contains all of the python scripts used to evaluate forecasts. **Take time to understand the structure of this folder by looking at the `readme.md` contained within it.**
+    * The folder `weekly_results` contains all the products of the forecast evaluation, such as the weekly bonus point allocation, forecast results, and the scoreboard etc...
+
 
 1. **Make an improvement to the functionality of our forecast analysis scripts**. For example, you could make a graphical summary output, add something to autogenerate our leaderboard, move analysis into functions, add documentation, etc. Additional suggestions are also included at the top of each script but you can feel free to make whatever addition you would like. Note that your additions should be made directly to the evaluation scripts in the **evaluation_scripts** folder so that we can continuously build on people's improvements. Once your additions have been made you will submit a pull request for  me to review your changes and merger your branch (this is covered in the detailed instructions). You should submit your pull request by Monday morning at 8am so that  I can review your code changes and merge your branch.
 

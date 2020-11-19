@@ -7,7 +7,6 @@ from glob import glob
 # %%
 # Forecast Functions Week 8
 
-
 def getLastNames():
     """Get classlist of last names.
     ---------------------------------
@@ -80,10 +79,10 @@ def weekDates(weekNumber):
 
 
 def write_bonus(bonus_names, weeknum):
-    """" This function needs week forecast (week_no) and the
-    list of student's names (list_names) you want to give bonus
+    """" This function needs week forecast (weeknum) and the
+    list of student's names (bonus_names) you want to give bonus
     points for this week """
-    file_listB = glob(os.path.join('../weekly_results', 'bonus*.csv'))
+    file_listB = glob(os.path.join('../../weekly_results', 'bonus*.csv'))
     temp = pd.read_csv(file_listB[0], index_col='name')
     bonus = pd.DataFrame(data=np.zeros(len(temp)),
                          index=temp.index,
@@ -91,12 +90,12 @@ def write_bonus(bonus_names, weeknum):
     del(temp)
     bonus.loc[bonus_names, 'points'] = 1
     filename = 'bonus_week' + str(weeknum) + '.csv'
-    bonus_file = os.path.join('../weekly_results', filename)
+    bonus_file = os.path.join('../../weekly_results', filename)
     bonus.to_csv(bonus_file)
     print("Work done :)")
 
-# Week 10 additions:
 
+# Week 10 additions:
 
 def student_csv(lastname):
     """ Reads the .cvs student file as a dataframe.
@@ -134,5 +133,6 @@ def simpleRMSE(prediction, observation, decimals):
     rmse = round((((prediction - observation) ** 2).mean()
                  ** 0.5), decimals)
     return rmse
+
 
 # %%
