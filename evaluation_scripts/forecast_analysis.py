@@ -101,8 +101,8 @@ for i in range(nstudent):
 
     seasonal_rmse[firstnames[i]] = rmse_list
 
-# %% Week 13 additions start (Adam, Jill)
 
+# Week 13 additions start (Adam, Jill)
 # %%
 # gives the maximum value RMSE per week
 max_wk = seasonal_rmse.max(axis=1)
@@ -149,17 +149,16 @@ mean_RMSE = seasonal_rmse.mean(axis=0)
 
 # %%
 # Converts mean_weekly_RMSE series to df
-mean_RMSE_df = mean_RMSE.to_frame(name = "Seasonal-Mean_RMSE-All_Weeks")
-mean_RMSE_df
+mean_RMSE_df = mean_RMSE.to_frame(name = "Overall_Seasonal_Average-RMSE")
 
 # %%
 # Sort dataframe by values acsending to get top 3 "winners"
 # print dataframe to a PNG
-Overall_Seas_Min = mean_RMSE_df.sort_values(by=["Seasonal-Mean_RMSE-All_Weeks"], ascending=True)
-dfi.export(Overall_Seas_Min, "Overall_Seasonal_Minimum-RMSE.png")
+Overall_Seas_Min = mean_RMSE_df.sort_values(by=["Overall_Seasonal_Average-RMSE"], ascending=True)
+dfi.export(Overall_Seas_Min, "Overall_Seasonal_Average-RMSE.png")
 Overall_Seas_Min
 
-# %% Week 13 additions end (Adam, Jill)
+# Week 13 additions end (Adam, Jill)
 
 # %%
 # Probably will be use as bonus input? Still to be worked on later in the week.
