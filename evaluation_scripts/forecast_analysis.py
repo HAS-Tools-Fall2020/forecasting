@@ -1,3 +1,4 @@
+
 # %%
 import pandas as pd
 import numpy as np
@@ -101,6 +102,8 @@ for i in range(nstudent):
     seasonal_rmse[firstnames[i]] = rmse_list
 
 # %% Week 13 additions start (Adam, Jill)
+
+# %%
 # gives the maximum value RMSE per week
 max_wk = seasonal_rmse.max(axis=1)
 max_wk
@@ -111,12 +114,14 @@ min_wk = seasonal_rmse.min(axis=1)
 min_wk
 
 # %%
+# finds person with minimum weekly RMSE
 # looks at seasonal_rmse df and pulls out MINIMUM weekly RMSE value\
 # and lists column name (person)
 min_weekly_RMSE = seasonal_rmse.idxmin(axis=1)
 min_weekly_RMSE
 
 # %%
+# # finds person with maximum weekly RMSE
 # looks at seasonal_rmse df and pulls out MAXIMUM weekly RMSE value\
 # and lists column name (person) 
 max_weekly_RMSE = seasonal_rmse.idxmax(axis=1)
@@ -134,25 +139,29 @@ max_weekly_RMSE_df = max_weekly_RMSE.to_frame(name="RMSE-weekly_max")
 # Join two dataframes
 Min_Max_RMSE = min_weekly_RMSE_df.join(max_weekly_RMSE_df)
 Min_Max_RMSE
+print(Min_Max_RMSE)
 dfi.export(Min_Max_RMSE, "Min-Max-Weekly_RMSE.png")
 
 # %%
-# Calculates the mean RMSE per person (for each column)/
+# Calculates the mean seasonal RMSE per person (for each column)/
 # over all weeks (seasonal forecast entries)
 mean_RMSE = seasonal_rmse.mean(axis=0)
-mean_RMSE  
 
 # %%
-# Converts max_weekly_RMSE series to df
+# Converts mean_weekly_RMSE series to df
 mean_RMSE_df = mean_RMSE.to_frame(name = "Seasonal-Mean_RMSE-All_Weeks")
 mean_RMSE_df
 
-# %% Week 13 additions end (Adam, Jill)
+# %%
 # Sort dataframe by values acsending to get top 3 "winners"
 # print dataframe to a PNG
-mean_RMSE_df.sort_values(by=["Seasonal-Mean_RMSE-All_Weeks"], ascending=True)
-dfi.export(mean_RMSE_df, "Overall_Seasonal_Minium-RMSE.png")
+Overall_Seas_Min = mean_RMSE_df.sort_values(by=["Seasonal-Mean_RMSE-All_Weeks"], ascending=True)
+dfi.export(Overall_Seas_Min, "Overall_Seasonal_Minimum-RMSE.png")
+Overall_Seas_Min
 
+# %% Week 13 additions end (Adam, Jill)
+
+# %%
 # Probably will be use as bonus input? Still to be worked on later in the week.
 weekly_rmse_mean = pd.DataFrame(weekly_rmse.mean(axis=1)).sort_values(0)
 seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
