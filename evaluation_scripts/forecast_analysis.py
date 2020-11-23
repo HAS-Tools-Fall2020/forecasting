@@ -140,7 +140,7 @@ max_weekly_RMSE_df = max_weekly_RMSE.to_frame(name="RMSE-weekly_max")
 Min_Max_RMSE = min_weekly_RMSE_df.join(max_weekly_RMSE_df)
 Min_Max_RMSE
 print(Min_Max_RMSE)
-dfi.export(Min_Max_RMSE, "Min-Max-Weekly_RMSE.png")
+dfi.export(Min_Max_RMSE, "all_charts/Min-Max-Weekly_RMSE.png")
 
 # %%
 # Calculates the mean seasonal RMSE per person (for each column)/
@@ -155,7 +155,7 @@ mean_RMSE_df = mean_RMSE.to_frame(name = "Overall_Seasonal_Average-RMSE")
 # Sort dataframe by values acsending to get top 3 "winners"
 # print dataframe to a PNG
 Overall_Seas_Min = mean_RMSE_df.sort_values(by=["Overall_Seasonal_Average-RMSE"], ascending=True)
-dfi.export(Overall_Seas_Min, "Overall_Seasonal_Average-RMSE.png")
+dfi.export(Overall_Seas_Min, "all_charts/Overall_Seasonal_Average-RMSE.png")
 Overall_Seas_Min
 
 # Week 13 additions end (Adam, Jill)
