@@ -158,60 +158,78 @@ Overall_Seas_Min = mean_RMSE_df.sort_values(by=["Overall_Seasonal_Average-RMSE"]
 dfi.export(Overall_Seas_Min, "all_charts/Overall_Seasonal_Average-RMSE.png")
 Overall_Seas_Min
 
+# %%
+# Calculates the seasonal RMSEvariance per person (for each column)/
+# over all weeks (seasonal forecast entries)
+vary_RMSE = seasonal_rmse.var(axis=0)
+
+# %%
+# Converts mean_weekly_RMSE series to df
+vary_RMSE_df = vary_RMSE.to_frame(name = "Overall_Seasonal_Variance-RMSE")
+
+# %%
+# Sort dataframe by values acsending to get top 3 "winners"
+# print dataframe to a PNG
+Overall_Seas_Vary = vary_RMSE_df.sort_values(by=["Overall_Seasonal_Variance-RMSE"], ascending=True)
+dfi.export(Overall_Seas_Min, "all_charts/Overall_Seasonal_Variance-RMSE.png")
+Overall_Seas_Vary
+
 # Week 13 additions end (Adam, Jill)
 
-# %%
-# Probably will be use as bonus input? Still to be worked on later in the week.
-weekly_rmse_mean = pd.DataFrame(weekly_rmse.mean(axis=1)).sort_values(0)
-seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
+# # %%
+# # Probably will be use as bonus input? Still to be worked on later in the week.
+# weekly_rmse_mean = pd.DataFrame(weekly_rmse.mean(axis=1)).sort_values(0)
+# seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
 
-# %% Week 7 addition, format new dataframes for
-# weekly plotting, and assign same index
-# trim and tanspose to make plotting easier
-weekly_forecast1w_graph = weekly_forecast1w.iloc[:, 0:forecast_week-1].T
-weekly_forecast2w_graph = weekly_forecast2w.iloc[:, 0:forecast_week-1].T
-
-
-# %% Week 9 Addition: Plot results using the functions from plot_functions
-
-# Plot 1 and 2 Week forecasts values for each student
-
-pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1,
-                        'forecast')
-pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2,
-                        'forecast')
+# # %% Week 7 addition, format new dataframes for
+# # weekly plotting, and assign same index
+# # trim and tanspose to make plotting easier
+# weekly_forecast1w_graph = weekly_forecast1w.iloc[:, 0:forecast_week-1].T
+# weekly_forecast2w_graph = weekly_forecast2w.iloc[:, 0:forecast_week-1].T
 
 
-# %%
-# Plot errors (deviation) in 1 and 2 Week forecasts values for each student
+# # %% Week 9 Addition: Plot results using the functions from plot_functions
 
-pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1, # removed '-1' from weekly_flows to make the imput 1 equal to Week_1!
-                        'abs_error')
-pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2, # removed '-1' from weekly_flows to make the imput 1 equal to Week_1!
-                        'abs_error')
+# # Plot 1 and 2 Week forecasts values for each student
 
-
-# %%
-# Plot the evolution of the forecasts for the HAS-Tools Class
-# Use 'box' as the last parameter to plot a box-whiskers plot.
-# Use 'plot' as the last parameter to plot the summary as series
-
-# 1 Week Forecast
-pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 1, 'box')
-
-# 2 Week Forecast
-pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 2, 'box')
+# pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1,
+#                         'forecast')
+# pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2,
+#                         'forecast')
 
 
-# %%
-# Week 10 plots of root mean square errors
+# # %%
+# # Plot errors (deviation) in 1 and 2 Week forecasts values for each student
 
-# Line plot of the seasonal root mean square error
-rmse_sea_path = "all_charts/Seasonal_Root_Mean_Square_Error1.png"
-pf.plot_seasonal_rmse(rmse_sea_path, seasonal_rmse)
+# pf.plot_class_forecasts(weekly_forecast1w_graph.T, weekly_flows, 1, # removed '-1' from weekly_flows to make the imput 1 equal to Week_1!
+#                         'abs_error')
+# pf.plot_class_forecasts(weekly_forecast2w_graph.T, weekly_flows, 2, # removed '-1' from weekly_flows to make the imput 1 equal to Week_1!
+#                         'abs_error')
 
-# Histogram of the weekly root mean square error
-rmse_his_path = "all_charts/Root_Mean_Square_Error_Histogram1.png"
-pf.rmse_histogram(rmse_his_path, weekly_rmse)
+
+# # %%
+# # Plot the evolution of the forecasts for the HAS-Tools Class
+# # Use 'box' as the last parameter to plot a box-whiskers plot.
+# # Use 'plot' as the last parameter to plot the summary as series
+
+# # 1 Week Forecast
+# pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 1, 'box')
+
+# # 2 Week Forecast
+# pf.plot_class_summary(weekly_forecast1w_graph.T, weekly_flows, 2, 'box')
+
+
+# # %%
+# # Week 10 plots of root mean square errors
+
+# # Line plot of the seasonal root mean square error
+# rmse_sea_path = "all_charts/Seasonal_Root_Mean_Square_Error1.png"
+# pf.plot_seasonal_rmse(rmse_sea_path, seasonal_rmse)
+
+# # Histogram of the weekly root mean square error
+# rmse_his_path = "all_charts/Root_Mean_Square_Error_Histogram1.png"
+# pf.rmse_histogram(rmse_his_path, weekly_rmse)
+
+# # %%
 
 # %%
