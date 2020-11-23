@@ -170,9 +170,19 @@ vary_RMSE_df = vary_RMSE.to_frame(name = "Overall_Seasonal_Variance-RMSE")
 # %%
 # Sort dataframe by values acsending to get top 3 "winners"
 # print dataframe to a PNG
-Overall_Seas_Vary = vary_RMSE_df.sort_values(by=["Overall_Seasonal_Variance-RMSE"], ascending=True)
+Overall_Seas_Vary = vary_RMSE_df.sort_values(by=["Overall_Seasonal_Variance-RMSE"], ascending=False)
 dfi.export(Overall_Seas_Min, "all_charts/Overall_Seasonal_Variance-RMSE.png")
 Overall_Seas_Vary
+
+# %%
+# Print list of top 3 in selected winning categories:
+# 1) Lowest overall seasonal RMSE
+# 2) Highest overall seasonal RMSE variance
+# 3) Three overall closest singular RMSE values
+
+print("Top 3 lowest overall seasonal RMSE winners are:", Overall_Seas_Min.head(3))
+print("\n")
+print("Top 3 highest variance in seasonal RMSE winners are:", Overall_Seas_Vary.head(3))
 
 # Week 13 additions end (Adam, Jill)
 
