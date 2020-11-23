@@ -14,7 +14,7 @@ import plot_functions as pf
 #                Use number for week that just ended,
 #                found in seasonal_forecst_Dates.pdf
 
-forecast_week = input('What forecast week is it? (1-16): ')  # week 12 (Quinn and Ben, 11/13)
+forecast_week = int(input('What forecast week is it? (1-16): '))  # week 12 (Quinn and Ben, 11/14)
 
 # %%
 station_id = "09506000"
@@ -137,13 +137,33 @@ print('Third Place = ', list(summary.loc[summary['2week_ranking'] == 3].index),
 
 # Add Histogram of results, plots each student's guess,
 # and the actual mean value for week 1 and week 2.
-histogram1 = pf.get_histogram(forecasts1, obs_week, 1)
+his_path1 = "all_charts/get_histogram1.png"
+histogram1 = pf.get_histogram(his_path1, forecasts1, obs_week, 1)
 
-histogram2 = pf.get_histogram(forecasts2, obs_week, 2)
+his_path2 = "all_charts/get_histogram2.png"
+histogram2 = pf.get_histogram(his_path2, forecasts2, obs_week, 2)
 
+#%%
 # Week 1 - Obs vs Forecasts
-simpleplot1 = pf.get_simpleplot(forecasts1, obs_week, 1)
+sim_path1 = "all_charts/get_simpleplot1.png"
+simpleplot1 = pf.get_simpleplot(sim_path1, forecasts1, obs_week, 1)
 
 # Week 2 - Obs vs Forecasts
-simpleplot2 = pf.get_simpleplot(forecasts2, obs_week, 2)
+sim_path2 = "all_charts/get_simpleplot2.png"
+simpleplot2 = pf.get_simpleplot(sim_path2, forecasts2, obs_week, 2)
 
+# %%
+# Week 12 Additions
+team_comp_path = "all_charts/Team_Comparison_Plot1.png"
+team_comparison_plots = pf.noIinTEAM(team_comp_path, firstnames, obs_week, forecasts1, forecasts2, 0.3)
+
+# %%
+# other plotting functions
+last_2_weeks_path = "all_charts/Last_two_weeks_Plot1.png"
+last_2_week_plot = pf.last_2_weeks(last_2_weeks_path, obs_week, forecasts1, forecasts2, 0.3)
+
+last_2_diff_path = "all_charts/Last_two_weeks_diff_Plot1.png"
+last_2_diff_plot = pf.last_2_weeks_diff(last_2_diff_path, obs_week, forecasts1, forecasts2, 0.3)
+
+
+# %%

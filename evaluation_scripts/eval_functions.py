@@ -7,7 +7,6 @@ from glob import glob
 # %%
 # Forecast Functions Week 8
 
-
 def getLastNames():
     """Get classlist of last names.
     ---------------------------------
@@ -95,8 +94,8 @@ def write_bonus(bonus_names, weeknum):
     bonus.to_csv(bonus_file)
     print("Work done :)")
 
-# Week 10 additions:
 
+# Week 10 additions:
 
 def student_csv(lastname):
     """ Reads the .cvs student file as a dataframe.
@@ -134,5 +133,6 @@ def simpleRMSE(prediction, observation, decimals):
     rmse = round((((prediction - observation) ** 2).mean()
                  ** 0.5), decimals)
     return rmse
+
 
 # %%
