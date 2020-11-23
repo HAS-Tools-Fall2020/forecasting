@@ -12,6 +12,8 @@
 
 # %%
 import pandas as pd
+import sys
+sys.path.append('../')
 import eval_functions as ef
 import random
 
