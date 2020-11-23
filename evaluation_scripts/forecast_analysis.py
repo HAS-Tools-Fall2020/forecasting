@@ -1,4 +1,3 @@
-
 # %%
 import pandas as pd
 import numpy as np
@@ -7,11 +6,11 @@ import dataretrieval.nwis as nwis
 import os
 import eval_functions as ef
 import plot_functions as pf
-import dataframe_image as dfi
 
 
 # %%
 forecast_week = int(input('What forecast week is it? (1-16): '))   # week 12 (Quinn and Ben 11/13/20)
+
 
 # %%
 station_id = "09506000"
@@ -28,6 +27,7 @@ start_date = dates[0]
 stop_date = dates[1]
 
 print("Evaluating forecasts up to", start_date, 'To', stop_date)
+
 
 # %%
 # Setting up a list of week numbers to be used in plotting
@@ -50,6 +50,7 @@ for i in range(nstudent):
         forecasts_1[i, n-1] = temp.loc[(n), '1week']
         forecasts_2[i, n-1] = temp.loc[(n), '2week']
 
+
 # %%
 # compiled into data frames you can use for graphing
 weekly_forecast1w = pd.DataFrame({}, index=firstnames)
@@ -61,6 +62,7 @@ for i in range(16):
 
 # everything above this can be copied
 # and pasted into your analysis
+
 
 # %%
 # Week 7 addition, create dataframe containing weekly flows
@@ -101,69 +103,10 @@ for i in range(nstudent):
 
     seasonal_rmse[firstnames[i]] = rmse_list
 
-
-# Week 13 additions start (Adam, Jill)
-# %%
-# gives the maximum value RMSE per week
-max_wk = seasonal_rmse.max(axis=1)
-max_wk
-
-# %%
-# gives the mininum value RMSE per week
-min_wk = seasonal_rmse.min(axis=1)
-min_wk
-
-# %%
-# finds person with minimum weekly RMSE
-# looks at seasonal_rmse df and pulls out MINIMUM weekly RMSE value\
-# and lists column name (person)
-min_weekly_RMSE = seasonal_rmse.idxmin(axis=1)
-min_weekly_RMSE
-
-# %%
-# # finds person with maximum weekly RMSE
-# looks at seasonal_rmse df and pulls out MAXIMUM weekly RMSE value\
-# and lists column name (person) 
-max_weekly_RMSE = seasonal_rmse.idxmax(axis=1)
-max_weekly_RMSE
-
-# %%
-# Converts min_weekly_RMSE series to df
-min_weekly_RMSE_df = min_weekly_RMSE.to_frame(name="RMSE-weekly_min")
-
-# %%
-# Converts max_weekly_RMSE series to df
-max_weekly_RMSE_df = max_weekly_RMSE.to_frame(name="RMSE-weekly_max")
-
-# %%
-# Join two dataframes
-Min_Max_RMSE = min_weekly_RMSE_df.join(max_weekly_RMSE_df)
-Min_Max_RMSE
-print(Min_Max_RMSE)
-dfi.export(Min_Max_RMSE, "Min-Max-Weekly_RMSE.png")
-
-# %%
-# Calculates the mean seasonal RMSE per person (for each column)/
-# over all weeks (seasonal forecast entries)
-mean_RMSE = seasonal_rmse.mean(axis=0)
-
-# %%
-# Converts mean_weekly_RMSE series to df
-mean_RMSE_df = mean_RMSE.to_frame(name = "Overall_Seasonal_Average-RMSE")
-
-# %%
-# Sort dataframe by values acsending to get top 3 "winners"
-# print dataframe to a PNG
-Overall_Seas_Min = mean_RMSE_df.sort_values(by=["Overall_Seasonal_Average-RMSE"], ascending=True)
-dfi.export(Overall_Seas_Min, "Overall_Seasonal_Average-RMSE.png")
-Overall_Seas_Min
-
-# Week 13 additions end (Adam, Jill)
-
-# %%
 # Probably will be use as bonus input? Still to be worked on later in the week.
 weekly_rmse_mean = pd.DataFrame(weekly_rmse.mean(axis=1)).sort_values(0)
 seasonal_rmse_mean = pd.DataFrame(seasonal_rmse.mean(axis=0)).sort_values(0)
+
 
 # %% Week 7 addition, format new dataframes for
 # weekly plotting, and assign same index
