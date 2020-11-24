@@ -17,29 +17,39 @@ ___
 |Name      | Points    | Rank
 |:-------- | :-------- | :--------
 |Diana |      14 |       1
-|Ben |      13 |       2
-|Alexa |      12 |       3
-|Jake |      12 |       3
-|Jill |      11 |       4
-|Camilo |      10 |       5
-|Danielle |      10 |       5
-|Quinn |      10 |       5
-|Abigail |      9 |       6
-|Richard |      8 |       7
-|Xenia |      8 |       7
-|Mekha |      8 |       7
+|Ben |      12 |       2
+|Alexa |      12 |       2
+|Jake |      12 |       2
+|Abigail |      11 |       3
+|Jill |      11 |       3
+|Camilo |      10 |       4
+|Danielle |      10 |       4
+|Quinn |      9 |       5
+|Xenia |      8 |       6
+|Mekha |      8 |       6
+|Richard |      7 |       7
 |Lourdes |       6|       8
 |Adam |      6 |       8
+|Shweta |      5 |       9
 |Patrick |      5 |       9
 |Scott |      5 |       9
-|Shweta |      4 |       10
-|Alcely |      4 |       10
+|Alcely |      3 |       10
 |Ty |      2 |       11
 
 
 
-## Seasonal Forecast Leaders
+## Seasonal Forecast Leaders -
 
+<<<<<<< refs/remotes/origin/master
+=======
+| Scoring Category | First | Second | Third |
+|:------ | ----- | ------ | ----- |
+| Overall Highest Seasonal Variance   | Patrick   |    Danielle   | Adam    |       
+| Overall Lowest Singular Seasonal Minimum RMSE      |  Shweta     |   Lourdes     |   Richard    |
+| Overall Minimum Seasonal Average RMSE      |   Jill    |    Alcely    |    Xenia   |
+
+## Seasonal Forecast Leaders
+>>>>>>> Updated ReadMe with current weekly and seasonal standings
 
 ___
 ## Weekly Summary
@@ -322,7 +332,7 @@ That said there will be prizes for the forecast competition (described below) an
  - 2 points to the closest weekly forecast and 1 point to the second and third place forecasts awarded every week (ties are allowed and in that case all tied parties gets the same points)
  - 2 points to the closest 2 week forecast and 1 point to the second and third place forecasts awarded every week (ties are allowed and in that case all tied parties gets the same points)
  - 3 points to be awarded by the evaluator for the week to three *different* people based on whatever criteria the evaluator chooses (literally anything -- most wrong, best consistency between forecasts, most extreme forecast, greatest difference in one week vs two week performance). The only constraints are: (1) the evaluator cannot give points to themselves or the top three students on the current leaderboard and (2) they most show their work (e.g. a graph or a table)
- - The seasonal forecasts will be scored based on the RMSE across all 16 weeks (i.e. each seasonal forecast issued will have one RMSE score associated with it, so every student will have a single RMSE score fore each week they issue a forecast). Points will be assigned to the top three students in each of the following categories (2 points to the closest and 1 point to the second and third place scores for every forecast issued). These points will be awarded once at the end of the semester. 
+ - The seasonal forecasts will be scored based on the RMSE across all 16 weeks (i.e. each seasonal forecast issued will have one RMSE score associated with it, so every student will have a single RMSE score fore each week they issue a forecast). Points will be assigned to the top three students in each of the following categories (2 points to the closest and 1 point to the second and third place scores for every forecast issued). These points will be awarded once at the end of the semester.
     1. Lowest average RMSE (i.e. averaging the RMSE for each Student across the RMSE's for each of the seasonal forecasts they issued).
     2. Lowest individual forecast RMSE (selecting the individual seasonal forecasts with the lowest RMSEs)
     3. Largest variance in forecast values (selecting the students who's seasonal forecasts evolved the most over the semester)
