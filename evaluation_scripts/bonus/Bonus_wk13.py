@@ -18,7 +18,7 @@ import eval_functions as ef
 import random
 
 # ENTER INFO HERE
-weekly_winners = ["Ty", "Alexa", "Scott"]
+weekly_winners = ["Diana", "Alexa", "Ben", "Jake"]
 evaluators = ["Adam", "Jill"]
 
 # %%
@@ -38,12 +38,12 @@ firstnames
 # %%
 # create list of emojis and shuffle randomly
 # SHAPE (# of list items) MUST MATCH FIRSTNAMES LIST
-emoji_list = ["&#x1F947;", "&#x1F948;", "&#x1F949;", "&#x1F62D;",
+emoji_list = ["&#x1F947;", "&#x1F948;", "&#x1F949;", 
               "&#x1F62D;", "&#x1F62D;", "&#x1F622;",
               "&#x1F622;", "&#x1F622;", "&#x1F616;",
               "&#x1F616;", "&#x1F61E;", "&#x1F61E;",
               "&#x1F61E;"]
-emoji_random = random.sample(emoji_list, 14)
+emoji_random = random.sample(emoji_list, 13)
 print(emoji_random)
 
 # %%
@@ -71,6 +71,6 @@ bonus_list
 
 # %%
 # write bonus using previous evaluator code
-ef.write_bonus(bonus_list, 12)
+ef.write_bonus(bonus_list, 13)
 
 # %%
