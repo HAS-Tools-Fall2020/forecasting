@@ -261,7 +261,8 @@ ___
 **Bonus points**:
 -
 - Mekha, Abigail, Camilo
-
+- (1) the evaluator cannot give points to themselves or the top three students on the current leaderboard
+- bonus points awarded via a random emoji generator - excluded from the drawing were the evaluators, and the top 3 rankings on current leaderboard.
 ### Forecast Week 14: 11/22 - 11/28
 *Judges:*
 **Observed flow** = flow cfs
