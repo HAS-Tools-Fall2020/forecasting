@@ -38,18 +38,13 @@ ___
 
 
 
-## Seasonal Forecast Leaders -
+## Seasonal Forecast Leaders
 
-<<<<<<< refs/remotes/origin/master
-=======
 | Scoring Category | First | Second | Third |
 |:------ | ----- | ------ | ----- |
 | Overall Highest Seasonal Variance   | Patrick   |    Danielle   | Adam    |       
 | Overall Lowest Singular Seasonal Minimum RMSE      |  Shweta     |   Lourdes     |   Richard    |
 | Overall Minimum Seasonal Average RMSE      |   Jill    |    Alcely    |    Xenia   |
-
-## Seasonal Forecast Leaders
->>>>>>> Updated ReadMe with current weekly and seasonal standings
 
 ___
 ## Weekly Summary
