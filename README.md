@@ -244,7 +244,8 @@ ___
 - Points given on the basis of daringness with the seasonal forecast
 
 ### Forecast Week 13: 11/15 - 11/21
-*Judges:*
+*Judges:* Jill and Adam  
+
 **Observed flow** = flow cfs
 
 **One week forecast**:
@@ -259,6 +260,7 @@ ___
 
 **Bonus points**:
 -
+- Points awarded using random emoji assignment generator - pluck the magic twanger and see who wins!
 
 ### Forecast Week 14: 11/22 - 11/28
 *Judges:*
