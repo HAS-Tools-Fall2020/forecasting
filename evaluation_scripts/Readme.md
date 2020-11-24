@@ -124,4 +124,4 @@ ___
       for seasonal forecast scoring:
            1) Lowest overall average seasonal RMSE
            2) Highest overall seasonal RMSE variance
-           3) Three overall closest singular RMSE values
+           3) Three overall lowest singular RMSE values
