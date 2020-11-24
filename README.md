@@ -246,21 +246,21 @@ ___
 ### Forecast Week 13: 11/15 - 11/21
 *Judges:* Jill and Adam  
 
-**Observed flow** = flow cfs
+**Observed flow** = 156.714 cfs
 
 **One week forecast**:
-- First Place: flow, name(s)
-- Second Place: flow, name(s)
-- Third Place: flow, name(s)
+- First Place: 157.3, Patrick
+- Second Place: 155, Alexa
+- Third Place: 159.05, Ben
 
 **Two week forecast**:
-- First place: flow, name(s)
-- Second place: flow, name(s)
-- Third place: flow, name(s)
+- First place: 157.45, Jill,Mekha,Jake
+- Second place: 152.92, Diana, Xenia, Camila, Danielle
+- Third place: 139.2, Quinn, Abigail, Alexa
 
 **Bonus points**:
 -
-- Points awarded using random emoji assignment generator - pluck the magic twanger and see who wins!
+- Mekha, Abigail, Camilo
 
 ### Forecast Week 14: 11/22 - 11/28
 *Judges:*
