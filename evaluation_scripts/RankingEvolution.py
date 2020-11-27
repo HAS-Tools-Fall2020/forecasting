@@ -102,11 +102,10 @@ for i in range(2, 17):
     ranking_weekly_evol = pd.DataFrame(data=np.zeros((len(temp))),
                             index=temp.index,
                             columns=[('rank' + str(i))])
-    ranking_weekly_evol[('rank' + str(i))] = temp['1week_points'] + temp['2week_points'] + tempB['points']
-    ranking_weekly_evol = ranking_weekly_evol.join(tempB['TotalPoints'])
-    score_weekly = score_weekly.rename(
-        columns={'points': ('fcst' + str(f) + '_bonus')})
-    ranking_weekly_evol[('rank' + str(i))] = ranking_weekly_evol.total.rank(method='dense', ascending=False)
-    ranking_weekly_evol = scoreboard.sort_values(by='total', ascending=False)
+    ranking_weekly_csv = pd.DataFrame(data=np.zeros((len(temp))),
+                            index=temp.index,
+                            columns=[('rank' + str(i))])
+    ranking_weekly_evol[('rank' + str(i))] = temp['1week_points']+ temp['2week_points'] + tempB['points']
     print(ranking_weekly_evol)
+
 # %%
