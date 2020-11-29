@@ -9,7 +9,6 @@ import eval_functions as ef
 import plot_functions as pf
 import dataframe_image as dfi
 
-
 # %%
 forecast_week = int(input('What forecast week is it? (1-16): '))   # week 12 (Quinn and Ben 11/13/20)
 
@@ -140,7 +139,7 @@ max_weekly_RMSE_df = max_weekly_RMSE.to_frame(name="RMSE-weekly_max")
 Min_Max_RMSE = min_weekly_RMSE_df.join(max_weekly_RMSE_df)
 Min_Max_RMSE
 print(Min_Max_RMSE)
-dfi.export(Min_Max_RMSE, "Min-Max-Weekly_RMSE.png")
+# dfi.export(Min_Max_RMSE, "all_charts/Min-Max-Weekly_RMSE.png")
 
 # %%
 # Calculates the mean seasonal RMSE per person (for each column)/
@@ -148,15 +147,87 @@ dfi.export(Min_Max_RMSE, "Min-Max-Weekly_RMSE.png")
 mean_RMSE = seasonal_rmse.mean(axis=0)
 
 # %%
-# Converts mean_weekly_RMSE series to df
+# Converts mean_RMSE series to df
 mean_RMSE_df = mean_RMSE.to_frame(name = "Overall_Seasonal_Average-RMSE")
 
 # %%
 # Sort dataframe by values acsending to get top 3 "winners"
 # print dataframe to a PNG
-Overall_Seas_Min = mean_RMSE_df.sort_values(by=["Overall_Seasonal_Average-RMSE"], ascending=True)
-dfi.export(Overall_Seas_Min, "Overall_Seasonal_Average-RMSE.png")
-Overall_Seas_Min
+Overall_Seas_Avg_Min = mean_RMSE_df.sort_values(by=["Overall_Seasonal_Average-RMSE"], ascending=True)
+dfi.export(Overall_Seas_Avg_Min, "all_charts/Overall_Seasonal_Average-RMSE.png")
+Overall_Seas_Avg_Min
+
+# %%
+# Calculates the min seasonal RMSE per person (for each column)/
+# over all weeks (seasonal forecast entries)
+min_RMSE = seasonal_rmse.min(axis=0)
+
+# %%
+# Converts min_RMSE series to df
+min_RMSE_df = min_RMSE.to_frame(name = "Overall_Seasonal_Minimum-RMSE")
+
+# %%
+# Sort dataframe by values acsending to get top 3 "winners"
+# print dataframe to a PNG
+Overall_Seas_Min_Min = min_RMSE_df.sort_values(by=["Overall_Seasonal_Minimum-RMSE"], ascending=True)
+dfi.export(Overall_Seas_Min_Min, "all_charts/Overall_Seasonal_Minimum-RMSE.png")
+Overall_Seas_Min_Min
+
+# %%
+# Calculates the seasonal RMSEvariance per person (for each column)/
+# over all weeks (seasonal forecast entries)
+vary_RMSE = seasonal_rmse.var(axis=0)
+
+# %%
+# Converts mean_weekly_RMSE series to df
+vary_RMSE_df = vary_RMSE.to_frame(name = "Overall_Seasonal_Variance-RMSE")
+
+# %%
+# Sort dataframe by values acsending to get top 3 "winners"
+# print dataframe to a PNG
+Overall_Seas_Vary = vary_RMSE_df.sort_values(by=["Overall_Seasonal_Variance-RMSE"], ascending=False)
+dfi.export(Overall_Seas_Vary, "all_charts/Overall_Seasonal_Variance-RMSE.png")
+Overall_Seas_Vary
+
+# %%
+# Next three code blocks are Adam and Jill's trials at pulling out lowest three overall RMSE
+# more challenging than it seems!
+# trying to figure out how to get lowest three overall, can get one!!
+# Lowest_RMSE_trial1 = seasonal_rmse.loc[:, ].min().min()
+# Lowest_RMSE_trial1
+
+# # %%
+# # or can get one lowest RMSE value with this:
+# Lowest_RMSE_trial2 = seasonal_rmse.to_numpy()
+# np.nanmin(Lowest_RMSE_trial2)
+
+# %%
+# Converting seasonal_rmse df to a list, 
+# Then sorting ascending RMSE values
+# rmse_list = seasonal_rmse.values.tolist() 
+# final_list = list() 
+# for i in range(len(rmse_list)):     
+#     for j in range(len(rmse_list[i])):         
+#         if (pd.isnull(rmse_list[i][j])):             
+#             final_list.append(10000)         
+#         else:             
+#             final_list.append(rmse_list[i][j])
+
+# final_list.sort()
+
+# print(final_list)
+
+# %%
+# This sections prints list of top 3 in selected winning categories:
+# 1) Lowest overall average seasonal RMSE
+# 2) Highest overall seasonal RMSE variance
+# 3) Three overall lowest singular RMSE values (per person)
+
+print("Top 3 lowest overall seasonal RMSE winners are:", Overall_Seas_Avg_Min.head(3))
+print("\n")
+print("Top 3 highest variance in seasonal RMSE winners are:", Overall_Seas_Vary.head(3))
+print("\n")
+print("Top 3 lowest singular seasonal RMSE values winners are:", Overall_Seas_Min_Min.head(3))
 
 # Week 13 additions end (Adam, Jill)
 
@@ -215,3 +286,5 @@ rmse_his_path = "all_charts/Root_Mean_Square_Error_Histogram1.png"
 pf.rmse_histogram(rmse_his_path, weekly_rmse)
 
 # %%
+
+%%

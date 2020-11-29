@@ -115,4 +115,13 @@ ___
     * We 'git' organized by archiving old scripts, files, and folders
     * We update the python workflow documentation in the readme and provide a visual aid showing connections between scripts, inputs, and outputs.
     * We add some new plots (like `temp_comparison_plot` in `Score_Weekly.py` and update old ones by exporting them to the folder `all_charts`
-    * We demand user-defined entry to `forecast_week` by using input boxes in `Get_Observations.py`, `forecast_analysis.py`, and `Score_Weekly.py`
+    * We demand user-defined entry to `forecast_week` by using input boxes in `Get_Observations.py`, `forecast_analysis.py`, and `Score_Weekly.py`.
+
+
+### Week 13:
+  * Evaluators: Jill and Adam
+    * We added code to `forecast_analysis.py` to calculate the top three leaders in three categories
+      for seasonal forecast scoring:
+           1) Lowest overall average seasonal RMSE
+           2) Highest overall seasonal RMSE variance
+           3) Three overall lowest singular RMSE values
