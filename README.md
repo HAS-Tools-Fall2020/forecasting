@@ -16,48 +16,38 @@ ___
 
 |Name      | Points    | Rank
 |:-------- | :-------- | :--------
-|Diana |      13 |       1
-|Ben |      11 |       2
-|Alexa |      10 |       3
-|Jake |      10 |       3
-|Jill |      9 |       4
-|Danielle |      9 |       4
-|Abigail |      9 |       4
-|Quinn |      8 |       5
-|Camilo |      8 |       5
-|Richard |      7 |       6
-|Xenia |      7 |       6
-|Lourdes |      6 |       7
-|Adam |      6 |       7
-|Shweta |      5 |       8
-|Mekha |      5 |       8
-|Scott |      5 |       8
-|Alcely |      3 |       9
-|Patrick |      3 |       9
-|Ty |      2 |       10
+|Diana |      14 |       1
+|Ben |      12 |       2
+|Alexa |      12 |       2
+|Jake |      12 |       2
+|Abigail |      11 |       3
+|Jill |      11 |       3
+|Camilo |      10 |       4
+|Danielle |      10 |       4
+|Quinn |      9 |       5
+|Xenia |      8 |       6
+|Mekha |      8 |       6
+|Richard |      7 |       7
+|Lourdes |       6|       8
+|Adam |      6 |       8
+|Shweta |      5 |       9
+|Patrick |      5 |       9
+|Scott |      5 |       9
+|Alcely |      3 |       10
+|Ty |      2 |       11
 
 
 
 ## Seasonal Forecast Leaders
 
-| Fcst # | First | Second | Third |
+| Scoring Category | First | Second | Third |
 |:------ | ----- | ------ | ----- |
-| 1      |       |        |       |
-| 2      |       |        |       |
-| 3      |       |        |       |
-| 4      |       |        |       |
-| 5      |       |        |       |
-| 6      |       |        |       |
-| 7      |       |        |       |
-| 8      |       |        |       |
-| 9      |       |        |       |
-| 10     |       |        |       |
-| 11     |       |        |       |
-| 12     |       |        |       |
+| Overall Highest Seasonal Variance   | Patrick   |    Danielle   | Adam    |       
+| Overall Lowest Singular Seasonal Minimum RMSE      |  Shweta     |   Lourdes     |   Richard    |
+| Overall Minimum Seasonal Average RMSE      |   Jill    |    Alcely    |    Xenia   |
 
-
-## Seasonal Forecast Leaders
-
+___
+## Weekly Summary
 
 ### Forecast Week 2: 8/30-9/5
 **Observed flow** = 57.1 cfs
@@ -188,7 +178,7 @@ ___
 - Adam, Richard and Alexa
 - Bonus points goes to those who has the highest error in prediction between consecutive weekly flow. Note: Neither winners or evaluators were able to receive bonus points).
 
-### Forecast Week 10:10/25 - 10/31
+### Forecast Week 10: 10/25 - 10/31
 **Observed flow** = 108.971
 
 **One week forecast**:
@@ -205,7 +195,7 @@ ___
 - Quinn, Scott, Danielle
 - Bonus points were given to those who had the lowest weekly root mean square error of the first week entries, but were not winners or evaluators.
 
-### Forecast Week 11:11/1 - 11/7
+### Forecast Week 11: 11/1 - 11/7
 *Judges:* Abigail and Danielle
 
 **Observed flow** = 126.571
@@ -244,22 +234,25 @@ ___
 - Points given on the basis of daringness with the seasonal forecast
 
 ### Forecast Week 13: 11/15 - 11/21
-*Judges:*
-**Observed flow** = flow cfs
+*Judges:* Jill and Adam  
+
+**Observed flow** = 156.714 cfs
 
 **One week forecast**:
-- First Place: flow, name(s)
-- Second Place: flow, name(s)
-- Third Place: flow, name(s)
+- First Place: 157.3, Patrick
+- Second Place: 155, Alexa
+- Third Place: 159.05, Ben
 
 **Two week forecast**:
-- First place: flow, name(s)
-- Second place: flow, name(s)
-- Third place: flow, name(s)
+- First place: 157.45, Jill,Mekha,Jake
+- Second place: 152.92, Diana, Xenia, Camila, Danielle
+- Third place: 139.2, Quinn, Abigail, Alexa
 
 **Bonus points**:
 -
-
+- Mekha, Abigail, Camilo
+- (1) the evaluator cannot give points to themselves or the top three students on the current leaderboard
+- bonus points awarded via a random emoji generator - excluded from the drawing were the evaluators, and the top 3 rankings on current leaderboard.
 ### Forecast Week 14: 11/22 - 11/28
 *Judges:*
 **Observed flow** = flow cfs
@@ -315,7 +308,7 @@ ___
 ## How to play:
 It sounds complicated, but don't worry it's not that bad:
 1. Every week you will generate three streamflow forecasts:
-   - **Seasonal Forecast**: A weekly forecast for each of the 16 weeks of the semester using only the observed streamflow through the start of the semester.
+   - **Seasonal Forecast**: A weekly forecast for each of the 16 weeks of the semester *using only the observed streamflow through the start of the semester*.
    - **One week forecast**: A forecast for the streamflow next week using the data up to this week.
    - **Two week forecast**: A forecast for the streamflow two weeks from now using the data up to this week.
 
@@ -334,7 +327,10 @@ That said there will be prizes for the forecast competition (described below) an
  - 2 points to the closest weekly forecast and 1 point to the second and third place forecasts awarded every week (ties are allowed and in that case all tied parties gets the same points)
  - 2 points to the closest 2 week forecast and 1 point to the second and third place forecasts awarded every week (ties are allowed and in that case all tied parties gets the same points)
  - 3 points to be awarded by the evaluator for the week to three *different* people based on whatever criteria the evaluator chooses (literally anything -- most wrong, best consistency between forecasts, most extreme forecast, greatest difference in one week vs two week performance). The only constraints are: (1) the evaluator cannot give points to themselves or the top three students on the current leaderboard and (2) they most show their work (e.g. a graph or a table)
- - The seasonal forecasts will be scored based on the RMSE across all 16 weeks for a given forecast at the end of the semester. With 2 points to the closest and 1 point to the second and third place scores for every forecast issued (i.e. there will be 15 sets of points awarded one for each week that seasonal forecasts were issued). We will keep a running tab on how everyone's seasonal forecasts are doing throughout the semester as observations come in but points will only be awarded at the end.
+ - The seasonal forecasts will be scored based on the RMSE across all 16 weeks (i.e. each seasonal forecast issued will have one RMSE score associated with it, so every student will have a single RMSE score fore each week they issue a forecast). Points will be assigned to the top three students in each of the following categories (2 points to the closest and 1 point to the second and third place scores for every forecast issued). These points will be awarded once at the end of the semester.
+    1. Lowest average RMSE (i.e. averaging the RMSE for each Student across the RMSE's for each of the seasonal forecasts they issued).
+    2. Lowest individual forecast RMSE (selecting the individual seasonal forecasts with the lowest RMSEs)
+    3. Largest variance in forecast values (selecting the students who's seasonal forecasts evolved the most over the semester)
 
     *NOTE: I reserve the right to change the rules and award bonus points as I see fit throughout the semester to keep things interesting :)*
 

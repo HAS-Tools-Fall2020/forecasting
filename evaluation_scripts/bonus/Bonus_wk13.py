@@ -12,11 +12,13 @@
 
 # %%
 import pandas as pd
+import sys
+sys.path.append('../')
 import eval_functions as ef
 import random
 
 # ENTER INFO HERE
-weekly_winners = ["Ty", "Alexa", "Scott"]
+weekly_winners = ["Diana", "Alexa", "Ben", "Jake"]
 evaluators = ["Adam", "Jill"]
 
 # %%
@@ -36,19 +38,19 @@ firstnames
 # %%
 # create list of emojis and shuffle randomly
 # SHAPE (# of list items) MUST MATCH FIRSTNAMES LIST
-emoji_list = ["&#x1F947;", "&#x1F948;", "&#x1F949;", "&#x1F600;",
-              "&#x1F601;", "&#x1F602;", "&#x1F603;",
-              "&#x1F604;", "&#x1F605;", "&#x1F606;",
-              "&#x1F607;", "&#x1F608;", "&#x1F609;",
-              "&#x1F610;"]
-emoji_random = random.sample(emoji_list, 14)
+emoji_list = ["&#x1F947;", "&#x1F948;", "&#x1F949;", 
+              "&#x1F62D;", "&#x1F62D;", "&#x1F622;",
+              "&#x1F622;", "&#x1F622;", "&#x1F616;",
+              "&#x1F616;", "&#x1F61E;", "&#x1F61E;",
+              "&#x1F61E;"]
+emoji_random = random.sample(emoji_list, 13)
 print(emoji_random)
 
 # %%
 # convert lists to dictionaries within a dataframe
 # write to csv
 Full_list = pd.DataFrame(dict(emoji=emoji_random), index=firstnames)
-Full_list.to_csv("full-list.csv")
+Full_list.to_csv("random-emoji-generator-list.csv")
 Full_list
 
 # %%
@@ -69,6 +71,6 @@ bonus_list
 
 # %%
 # write bonus using previous evaluator code
-ef.write_bonus(bonus_list, 12)
+ef.write_bonus(bonus_list, 13)
 
 # %%
