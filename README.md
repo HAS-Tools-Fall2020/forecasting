@@ -16,25 +16,26 @@ ___
 
 |Name      | Points    | Rank
 |:-------- | :-------- | :--------
-|Diana |      14 |       1
-|Ben |      12 |       2
-|Alexa |      12 |       2
-|Jake |      12 |       2
-|Abigail |      11 |       3
-|Jill |      11 |       3
-|Camilo |      10 |       4
-|Danielle |      10 |       4
+
+|Ben |      15 |       1
+|Diana |      14 |       2
+|Abigail |      12 |       3
+|Alexa |      12 |       3
+|Jake |      12 |       3
+|Camilo |      12 |       3
+|Jill |      11 |       4
+|Danielle |      11 |       4
 |Quinn |      9 |       5
 |Xenia |      8 |       6
 |Mekha |      8 |       6
 |Richard |      7 |       7
 |Lourdes |       6|       8
+|Shweta |      6 |       8
+|Scott |      6 |       8
 |Adam |      6 |       8
-|Shweta |      5 |       9
+|Alcely |      5 |       9
 |Patrick |      5 |       9
-|Scott |      5 |       9
-|Alcely |      3 |       10
-|Ty |      2 |       11
+|Ty |      2 |       10
 
 
 
@@ -254,8 +255,8 @@ ___
 - (1) the evaluator cannot give points to themselves or the top three students on the current leaderboard
 - bonus points awarded via a random emoji generator - excluded from the drawing were the evaluators, and the top 3 rankings on current leaderboard.
 ### Forecast Week 14: 11/22 - 11/28
-*Judges:*
-**Observed flow** = flow cfs
+*Judges:* Xenia
+**Observed flow** = 154 cfs
 
 **One week forecast**:
 - First Place: flow, name(s)
@@ -268,7 +269,9 @@ ___
 - Third place: flow, name(s)
 
 **Bonus points**:
--
+- Abigail, Scott, Alcely
+- Distributed randomly through those which name starts with letters "U", "S“ or "A" (USA) because we are celebrating the 4th of July.
+
 
 ### Forecast Week 15: 11/29 - 12/5
 *Judges:*
