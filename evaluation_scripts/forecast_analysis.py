@@ -10,7 +10,7 @@ import plot_functions as pf
 import dataframe_image as dfi
 
 # %%
-forecast_week = int(input('What forecast week is it? (1-16): '))   # week 12 (Quinn and Ben 11/13/20)
+forecast_week = int(input('What forecast week is it? (1-16): '))   # week 14 (Xenia 12/01/20)
 
 # %%
 station_id = "09506000"
@@ -286,5 +286,3 @@ rmse_his_path = "all_charts/Root_Mean_Square_Error_Histogram1.png"
 pf.rmse_histogram(rmse_his_path, weekly_rmse)
 
 # %%
-
-%%
