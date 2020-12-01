@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 from glob import glob
 import os
+import matplotlib.pyplot as plt
+from pandas.plotting import table
 
 # %%
 # Make a list of all the files in the results folder with names
@@ -101,5 +103,11 @@ markdownBoard = scoreboard[['total', 'rank']]
 markdownBoard.to_markdown()
 
 # %%
+# Saving scoreboard dataframe as an image to paste on markdowns
+ax = plt.subplot(111, frame_on=False) # no visible frame
+ax.xaxis.set_visible(False)  # hide the x axis
+ax.yaxis.set_visible(False)  # hide the y axis
+table(ax, scoreboard)
+plt.savefig('scoreboard.png')
 
-
+# %%
