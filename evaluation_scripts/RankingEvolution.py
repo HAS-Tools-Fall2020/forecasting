@@ -59,7 +59,9 @@ for f in range(np.min(forecast_nums), np.max(forecast_nums)+1):
     score_weekly = score_weekly.rename(
         columns={'2week_points': ('fcst' + str(f) + '_2wk')})
 
+
 # Add in the bonus points
+
 #for file in file_listB:
 for f in range(np.min(bonus_nums), np.max(bonus_nums)+1):
     fname = 'bonus_week' + str(f) + '.csv'
@@ -96,7 +98,17 @@ score_weekly.to_csv(filetemp, index_label='name')
 
 # %%
 
-# XENIAAA
+for i in range(2, 17):
+    ranking_weekly_evol = pd.DataFrame(data=np.zeros((len(temp))),
+                            index=temp.index,
+                            columns=[('rank' + str(i))])
+    ranking_weekly_csv = pd.DataFrame(data=np.zeros((len(temp))),
+                            index=temp.index,
+                            columns=[('rank' + str(i))])
+    ranking_weekly_evol[('rank' + str(i))] = temp['1week_points']+ temp['2week_points'] + tempB['points']
+    print(ranking_weekly_evol)
+
+=======
 i = 0
 f = 4
 for i in range(np.min(forecast_nums), np.max(forecast_nums)+1):
@@ -179,4 +191,3 @@ for i in range(1, (np.max(forecast_nums)+1)):
 # 3. Convert  Cumulative weekly points to ranks
 ranking = semester_total.rank(axis=1, ascending=False)
 
-# %%
