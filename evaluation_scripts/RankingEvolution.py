@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 from glob import glob
 import os
+import matplotlib.pyplot as plt
+from pandas.plotting import table
 
 # %%
 # Make a list of all the files in the results folder with names
@@ -85,6 +87,7 @@ print(scoreboard)
 
 
 # %%
+# NOTE: Update the number of the week
 # Xenias early morning
 # I need a BIG help woth for loops D:
 
@@ -183,6 +186,7 @@ df14
 
 # %%
 # Merge Acumulative points
+# NOTE: Update the number of the week
 
 rank_evol2 = df2
 rank_evol3  = pd.merge(rank_evol2, df3, right_index=True, left_index=True)
@@ -200,8 +204,23 @@ rank_evol14  = pd.merge(rank_evol13, df14, right_index=True, left_index=True)
 
 # %%
 # Write out the ranking evolution CSV
+# NOTE: Update the number of the week
 fname = 'ranking_weekly.csv'
 filetemp = os.path.join('../weekly_results', fname)
 rank_evol14.to_csv(filetemp, index_label='name')
+
+# %%
+# Plot ranking evolution
+
+rank_evol14.plot(subplots=False)
+plt.tight_layout()
+plt.show()
+
+# %%
+rank_evol14.plot()
+
+# %%
+rank_evol14T = rank_evol14.T
+rank_evol14T.plot()
 
 # %%
