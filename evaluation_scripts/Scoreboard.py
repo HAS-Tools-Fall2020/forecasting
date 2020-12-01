@@ -95,5 +95,11 @@ filetemp = os.path.join('../weekly_results', fname)
 score_weekly.to_csv(filetemp, index_label='name')
 
 # %%
+# Week 14 tiny functionality (Dec. 01, 2020)
+# This will let you have the scoreboard written with a markdown format.
+markdownBoard = scoreboard[['total', 'rank']]
+markdownBoard.to_markdown()
+
+# %%
 
 
