@@ -1,5 +1,5 @@
-# This script calcualtes the total scores for everyone using
-# the summary outputs from the score_weekly.py
+# This script calculates the evolution of the ranking for everyone and getting\
+# a CSV and a plot of the ranking evolution
 
 # %%
 import pandas as pd
@@ -88,8 +88,8 @@ print(scoreboard)
 
 # %%
 # NOTE: Update the number of the week
-# Xenias early morning
-# I need a BIG help woth for loops D:
+# Xenias Week 14 addition
+# I need a BIG help with for loops D:
 
 Points2 = score_weekly['fcst2_1wk'] + score_weekly['fcst2_2wk'] + score_weekly['fcst2_bonus']
 Points3 = score_weekly['fcst3_1wk'] + score_weekly['fcst3_2wk'] + score_weekly['fcst3_bonus']
@@ -210,17 +210,21 @@ filetemp = os.path.join('../weekly_results', fname)
 rank_evol14.to_csv(filetemp, index_label='name')
 
 # %%
-# Plot ranking evolution
-
-rank_evol14.plot(subplots=False)
-plt.tight_layout()
-plt.show()
-
-# %%
+# Ploting the rank evolution, but it does not seems ok.
 rank_evol14.plot()
 
 # %%
+# Creating the transpose of the ranking evolution dataframe to plot it better
 rank_evol14T = rank_evol14.T
-rank_evol14T.plot()
+
+# Selecting the 'y' values between the name of students
+
+y = ['Ty','Lourdes','Diana','Quinn','Abigail','Alcely','Richard','Alexa',
+    'Xenia','Ben','Shweta','Patrick','Jill','Mekha','Jake','Camilo','Scott',
+    'Adam']
+
+rank_evol14T.iloc[0::2].plot(y=y, title='Ranking Evolution', xlabel='Week',\
+                             ylabel='Score')
+plt.show()
 
 # %%
