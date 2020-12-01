@@ -256,17 +256,17 @@ ___
 - bonus points awarded via a random emoji generator - excluded from the drawing were the evaluators, and the top 3 rankings on current leaderboard.
 ### Forecast Week 14: 11/22 - 11/28
 *Judges:* Xenia
-**Observed flow** = 154 cfs
+**Observed flow** = 158.4285 cfs
 
 **One week forecast**:
-- First Place: flow, name(s)
-- Second Place: flow, name(s)
-- Third Place: flow, name(s)
+- First Place: 158.23, Camilo
+- Second Place:  158.14, Shweta
+- Third Place: 157.53, Ben
 
 **Two week forecast**:
-- First place: flow, name(s)
-- Second place: flow, name(s)
-- Third place: flow, name(s)
+- First place: 160.42, Ben
+- Second place: 155.79 Danielle
+- Third place: 154.06, Alcely
 
 **Bonus points**:
 - Abigail, Scott, Alcely
