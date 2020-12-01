@@ -17,25 +17,25 @@ ___
 |Name      | Points    | Rank
 |:-------- | :-------- | :--------
 
-|Ben |      15 |       1
-|Diana |      14 |       2
-|Abigail |      12 |       3
-|Alexa |      12 |       3
-|Jake |      12 |       3
-|Camilo |      12 |       3
-|Jill |      11 |       4
-|Danielle |      11 |       4
-|Quinn |      9 |       5
-|Xenia |      8 |       6
-|Mekha |      8 |       6
-|Richard |      7 |       7
-|Lourdes |       6|       8
-|Shweta |      6 |       8
-|Scott |      6 |       8
-|Adam |      6 |       8
-|Alcely |      5 |       9
-|Patrick |      5 |       9
-|Ty |      2 |       10
+|Ben     |      15 |     1 |
+|Diana   |      14 |     2 |
+|Abigail |      12 |     3 |
+|Alexa   |      12 |     3 |
+|Jake    |      12 |     3 |
+|Camilo  |      12 |     3 |
+|Jill    |      11 |     4 |
+|Danielle|      11 |     4 |
+|Quinn   |      9  |     5 |
+|Xenia   |      8  |     6 |
+|Mekha   |      8  |     6 |
+|Richard |      7  |     7 |
+|Lourdes |      6  |     8 |
+|Shweta  |      6  |     8 |
+|Scott   |      6  |     8 |
+|Adam    |      6  |     8 |
+|Alcely  |      5 |      9 |
+|Patrick |      5 |      9 |
+|Ty      |      2 |      10|
 
 
 
