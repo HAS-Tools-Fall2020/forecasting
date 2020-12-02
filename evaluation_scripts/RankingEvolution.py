@@ -1,6 +1,8 @@
 # This script calculates the evolution of the ranking for everyone and getting\
 # a CSV and a plot of the ranking evolution
 
+# NOTE: Update the number of the week in every cell that appears the word NOTE
+
 # %%
 import pandas as pd
 import numpy as np
@@ -210,7 +212,7 @@ filetemp = os.path.join('../weekly_results', fname)
 rank_evol14.to_csv(filetemp, index_label='name')
 
 # %%
-# Ploting the rank evolution, but it does not seems ok.
+# Ploting the rank evolution, BUT it does not seems ok.
 rank_evol14.plot()
 
 # %%
@@ -223,6 +225,8 @@ y = ['Ty','Lourdes','Diana','Quinn','Abigail','Alcely','Richard','Alexa',
     'Xenia','Ben','Shweta','Patrick','Jill','Mekha','Jake','Camilo','Scott',
     'Adam']
 
+# This plot the rank_evol14T by making a jump of two rows to selct just the \
+# acumulated points, not the rank.
 rank_evol14T.iloc[0::2].plot(y=y, title='Ranking Evolution', xlabel='Week',\
                              ylabel='Score')
 plt.show()
