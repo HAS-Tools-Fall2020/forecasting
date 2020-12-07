@@ -57,6 +57,7 @@ ___
 4. **Get 'true' average flow observations** Using the `Get_Observations.py` script, update the forecast week number and run the script to update the csv file containing the weekly average flows. This will update `weekly_observations.csv`.
 
 5. **Compare the forecasts to 'truth', to date** After using `Get_Observations.py`. Update the week number in `forecast_analysis.py` and run the script to review the class performance of weekly forecasts to date. The `forecast_analysis.py` script will produce many types of graphs of everyone's 1 week and 2 week forecasts, so we can review everyone's performance to date.
+6. **Calculate the ranking positions** Use the `RankingEvolution.py` script to obtain the acumulated points by each participant and its ranking positions. Remember to update the script with the current number of the week. This script will create a chart to visualizate the evolution of each participant, and also will update the document `ranking_weekly.csv` which is stored in the directory `weekly_results`.
 
 ### Post-Evaluation
 
@@ -125,3 +126,11 @@ ___
            1) Lowest overall average seasonal RMSE
            2) Highest overall seasonal RMSE variance
            3) Three overall lowest singular RMSE values
+
+
+### Week 14:
+  * Evaluator: Xenia :blush:
+    * I added two functions at the end of the `Scoreboard.py`.
+      1. The first function creates the scoreboard table with a format to paste it easily on a markdown.
+      2. The second function creates the scoreboard as an image.
+    * I created the `RankingEvolution.py` to visualizate through a chart the evolution of the ranking positions and the acumulated points by each participant.

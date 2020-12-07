@@ -14,7 +14,7 @@ import plot_functions as pf
 #                Use number for week that just ended,
 #                found in seasonal_forecst_Dates.pdf
 
-forecast_week = int(input('What forecast week is it? (1-16): '))  # week 12 (Quinn and Ben, 11/14)
+forecast_week = int(input('What forecast week is it? (1-16): '))  # week 14 (Xenia. Dec. 01, 2020)
 
 # %%
 station_id = "09506000"
