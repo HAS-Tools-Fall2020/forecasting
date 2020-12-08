@@ -286,4 +286,42 @@ rmse_his_path = "all_charts/Root_Mean_Square_Error_Histogram1.png"
 pf.rmse_histogram(rmse_his_path, weekly_rmse)
 
 # %%
+# Week 15, final week. Adding a visual graph of all the 16 week predictions
+# made by every student.
+# To get the line for observed flow, make sure to run Get_Observations.py first!
 
+for i in range(nstudent):
+    temp = ef.student_csv(names[i])
+    x1 = pd.Series(range(0, (len(obs_table) - 1)))
+    x2 = pd.Series(range(0, len(temp.iloc[1][4:])))
+    fig = plt.figure(figsize=(30, 10))
+    ax = fig.add_subplot(3, 8, (i+1))
+    ax.plot(x1, obs_table['observed'][0:15], '-r')
+    ax.plot(x1, temp['1week'], '-k')
+    ax.set(yscale='log', title=('16 weeks for ' + names[i]), xlabel='Week')
+    for n in range(0,14):
+        ax.plot(x2, temp.iloc[n][4:], alpha=0.2)
+
+# %%
+# Week 15 continued
+# This will give the rmse of the 1 week predictions
+rmse_1wk = []
+for i in range(nstudent):
+    temp = ef.student_csv(names[i])
+    rmse_1wk.append(ef.simpleRMSE(temp['1week'], obs_table['observed'][0:15], 3))
+Oneweek_rmse = pd.DataFrame(rmse_1wk, index=firstnames)
+# to get the name of the lowest person, run below
+Oneweek_rmse.idxmin(axis=0)
+# %%
+# Likewise this is for 2 week
+rmse_2wk = []
+for i in range(nstudent):
+    temp = ef.student_csv(names[i])
+    rmse_2wk.append(ef.simpleRMSE(temp['2week'], obs_table['observed'][1:15], 3))
+Twoweek_rmse = pd.DataFrame(rmse_2wk, index=firstnames)
+Twoweek_rmse.idxmin(axis=0)
+# %%
+# Finally the min rmse for the first week
+# just run thru line 104 on this .py
+seasonal_rmse.iloc[0].idxmin()
+# %%
